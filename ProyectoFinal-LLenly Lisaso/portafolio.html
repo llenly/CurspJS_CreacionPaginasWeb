@@ -1,0 +1,175 @@
+<!-- <!DOCTYPE html5> -->
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" media="all" />
+    <title>Proyecto final</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="cabecera">
+
+            <!-- AQUI VA LA FOTO PERSONAL -->
+            <div class="navegacion">
+                <div class="logo">
+                    <div>
+                        <h1 class="personal">Blog Personal</h1>
+                    </div>
+
+                </div>
+                <!-- AQUI VA EL MENU DE NAVEGACION             -->
+                <nav class="menu">
+                    <ul id="lista">
+                        <li class="enlaces" data-nombre="Home"><a href="index.html">Home</a></li>
+                        <li class="enlaces" data-nombre="Cursos"><a href="Cursos.html" target="blanck">Cursos</a></li>
+                        <li class="enlaces" data-nombre="Portafolio"><a href="Portafolio.html" target="blanck">Portafolio</a></li>
+                        <li class="enlaces" data-nombre="Contacto"><a href="Contacto.html" target="blanck">Contacto</a></li>
+
+                    </ul>
+
+                </nav>
+            </div>
+
+        </header>
+
+        <!-- <div class="principal"> -->
+        <!-- SECTION DEENCABEZADO-->
+        <div id="prueba">
+            <section>
+                <h1>Proyectos-Llenly Lisaso</h1>
+                <p>Desarrolladora Web</p>
+
+                <form action="">
+                    <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+                </form>
+
+
+
+                <div class="categorias" id="categorias">
+                    <a href="#" class="activo">Todos</a>
+                    <a href="#">Html</a>
+                    <a href="#">CSS</a>
+                    <a href="#">Javascript</a>
+                    <a href="#">Otros</a>
+
+                </div>
+            </section>
+            <!-- SECTION DE LA IMAGINES USANDO LIBRERIA MURRI y LA API DE HTML5 CON LOS ATRI Y LA DATA-->
+            <section class="grid" id="grid">
+
+                <!-- PROYECTO CARRITO DE COMPRAS -->
+                <div class="item" data-categoria="html" 
+                                  data-etiquetas="html css boostrap flexbox"
+                                  data-descripcion="contenido html css boostarp flexbox">
+                    <div class="item-contenido">
+                        <img src="./img/framework.png" alt="carrito de compra">
+                    </div>
+                </div>
+    <!-- PROYECTO BLOG CAFE -->
+    <div class="item" data-categoria="css" data-etiquetas="html normalize cafe proyecto-blog"
+    data-descripcion="proyectoblog normalizer cafe">
+    <div class="item-contenido">
+        <a href="file:///D:/Cursos/Master-Juan%20pablo%20de%20%20la%20torres/proyecto-blog-cafe/contacto.html"
+            target="blanck">
+            <img src="./img/blog1.png" alt="proyectofront">
+        </a>
+
+    </div>
+</div>
+
+                <div class="item" data-categoria="html" 
+                     data-etiquetas="html css boostrap flexbox"
+                     data-descripcion="contenido html css boostarp flexbox">
+                    <div class="item-contenido">
+                        <img src="./img/bootstrap_plain_wordmark_logo_icon_146620.png" alt="nose">
+                    </div>
+                </div>
+                <!-- 
+                PROYECTO FESTIVAL DE MUSICA -->
+                <div class="item" data-categoria="festival-musica" 
+                                  data-etiquetas="html  gulp node"
+                                   data-descripcion="festival-musica-sass">
+                    <div class="item-contenido">
+                        <a href="file:///D:/Cursos/Master-Juan%20pablo%20de%20%20la%20torres/festivalmusicaSass/index.html"
+                            target="blanck">
+                            <img src="./img/festival-mussica.png" alt="proyectofreelance">
+                        </a>
+
+                    </div>
+                </div>
+            
+                <!-- PROYECTO FONTEND CAMISETAS -->
+                <div class="item" data-categoria="javascript" data-etiquetas="html normalize javascript"
+                    data-descripcion="proyecto front javascript">
+                    <div class="item-contenido">
+                        <a href="file:///D:/Cursos/Master-Juan%20pablo%20de%20%20la%20torres/proyecto%20fronted/index.html"
+                            target="blanck">
+                            <img src="./img/proyectofront.png" alt="proyectofront">
+                        </a>
+
+                    </div>
+                </div>
+                <!-- PROYECTO FREELANCE -->
+                <div class="item" data-categoria="proyecto" data-etiquetas="html freelance css proyecto"
+                    data-descripcion="proyecto freelance ">
+                    <div class="item-contenido">
+                        <a href="file:///D:/Cursos/Master-Juan%20pablo%20de%20%20la%20torres/proyecto-freelance/index.html#"
+                            target="blanck">
+                            <img src="./img/udemy.png" alt="freelance">
+                        </a>
+
+                    </div>
+                </div>
+
+            </section>
+  <!-- SECTION DE PARA MOSTRAR SOLO UNA IMAGEN CUANDO SE LE DE CLICK CON EL FONDO NEGRO -->
+             <section class="overlay" id="overlay">
+                 <div class="contendor-img">
+                     <button id="btn-cerrar-popup"><i class="fas fa-times">x</i></button>
+                     <img src="" alt="">
+                 </div>
+                 <p class="descripcion"></p>
+             </section>
+        </div>
+        <!-- SECTION DE FOOTER -->
+
+        <footer class="footer">
+            <div class="navegacion">
+                <div class="logo">
+                    <div>
+                        <h1 class="personal">Blog Personal</h1>
+                    </div>
+
+                </div>
+                <!-- AQUI VA EL MENU DE NAVEGACION             -->
+                <nav class="menu">
+                    <ul id="lista">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="portafolio.html">Portafolio</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+
+                    </ul>
+
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

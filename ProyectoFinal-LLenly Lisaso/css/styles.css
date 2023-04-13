@@ -1,0 +1,771 @@
+/*FUENTE PARA LOS ICONOS Y LAS LETRAS*/
+
+@font-face {
+  font-family: "TrebuchetMS";
+  src: url("../css/fonts/TrebuchetMS.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: url("../css/fonts/BebasNeue.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "WebSymbolsRegular";
+  src: url("./css/fonts/websymbols-regular-webfont.eot"); /*fix para internet explorer*/
+  src: url("./css/fonts/websymbols-regular-webfont.eot?#efix")
+      format("embedded-opentype"),
+    url("./css/fonts/websymbols-regular-webfont.woff") format("woff"),
+    url("./css/fonts/websymbols-regular-webfont.ttf") format("truetype"),
+    url("./css/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular")
+      format("svg");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*ESTILOS GENERALES DE LA WEB */
+
+* {
+  margin: 0px; /* PARA QUE SE RESETEN Y NOSOTROS PODER DAR LO MARGENES Y LOS PADDING QUE QUERAMOS */
+  padding: 0px;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  overflow: hidden;
+  background: url("../img/pattern.png");
+  margin: auto;
+}
+
+.cabecera {
+  width: 100%;
+  height: 150px;
+  border: 1px solid black;
+  background-color: black;
+}
+
+.navegacion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 300px;
+  height: 80px;
+  /* border: 1px solid white; */
+  /* background-color: #2d5df8; */
+  text-align: center;
+  /* margin-top: 35px; */
+  margin-left: 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.logo h1 {
+  line-height: 70px;
+  margin: auto;
+  color: #2d5df8;
+  font-size: 30px;
+  margin-top: 5px;
+
+  transition: all 1s;
+}
+/*ANIMACION PARA EL TEXTO H3(BLOG), SALE TOTALMENTE DE LA CAJA DESDE LA DRECHA */
+.logo:hover h1 {
+  animation: fromRight 1s linear;
+}
+@keyframes fromRight {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/*ANIMACIONES KEYFRAME Y TRANSIIONES */
+
+.logo h1:hover {
+  border-radius: 3px;
+   background-color: rgb(251, 249, 249);
+  color: black;
+}
+
+.menu {
+  width: 650px;
+  height: 150px;
+  display: flex;
+}
+
+#lista {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+#lista li a {
+  text-decoration: none;
+  color: #2d5df8;
+}
+.menu ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  /* color: #2d5df8; */
+  color: white;
+  /* border: 1px solid white; */
+  margin-right: 15px;
+  text-transform: capitalize;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+  transition: all 200ms;
+}
+
+.menu ul li a:hover {
+  /* color: white; */
+  transform: scale(
+    1.2,
+    1.2
+  ); /* es un tipo de transicion o tranformcion ( cambio de color) sin cambiar el formato del elemnto */
+}
+
+/*BANNER ESTILOS*/
+
+#banner {
+  width: 90.5%;
+  height: 125px;
+  border: 10px solid white; /*te crea como una caja dentro de la caja (banner)*/
+  background-image: url(../img/Windows-11-Wallpaper-18-scaled.jpg);
+  box-shadow: 0px 0px 3px gray; /*resalta la cja por fuera dandole un efecto de sombra */
+  background-position: -328px -180px; /*los (-) en los eje x ,y , son para poder mover la imagen a donde queramos que nos quede de fondo */
+  margin: 30px auto; /*le va dar margen por todos lados y lo centra en la pagina */
+  overflow: hidden;
+  animation: backBanner 10s linear; /*ES PARA CREAR LA ANIMACION CON LOS @KEYFRAMES*/
+}
+/*ANIMACION PARA EL BANNER (LA CAJA )SE LE VA A MOVER EL FONDO DE LA IMAGEN
+    EMPIEZA DESDE CERO Y SE VA MOVIENDO HASTA LA POSICION QUE TENIA ORIGINAL  */
+
+@keyframes backBanner {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -328px -180px;
+  }
+}
+
+#banner h1 {
+  display: block; /*para trabajar con el como quieras solo*/
+  width: 565px;
+  font-family: "BebasNeue";
+  /* text-align: center; se soluciona con el margin , auto */
+  color: white;
+  text-align: center;
+  font-size: 45px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-shadow: 4px 0px 2px black;
+  margin: 30px auto; /*auto es para centrarlo*/
+  overflow: hidden;
+  animation: showText 10s linear; /*animacion para el texto del banner o sea el h1*/
+}
+
+@keyframes showText {
+  0% {
+    transform: translateX(-600%);
+    scale: (
+      5,
+      5
+    ); /*ESTO HACE QUE EL TEXTO ESTE OCULTO PORQUE EL BANNER EN SI TIENE UN HOVERFLOW HDDEN, y el texto en la misma ranformacion va a ser mas grande con el scale y opacity 1 es que es visble  */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(600%);
+    scale: (5, 5);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-600%);
+    scale: (5, 5);
+    text-shadow: none;
+    color: transparent;
+    opacity: 0; /*el texto desaparece*/
+  }
+  100% {
+    transform: translateX(0%);
+    scale: (1, 1);
+    text-shadow: 4px 0px 2px black;
+    color: white;
+    opacity: 1; /*el texto vuelve a su estado inicial*/
+  }
+}
+
+/* ESTILOS PARA LA GUIA EXPLICATIVA */
+#prueba h1,
+.datos h1,
+#art1 h1 {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  line-height: 75px;
+  color: black;
+  background: url("../img/pxgray.png");
+  box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f, 2px 3px 4px #393d3f,
+    3px 4px 0px #393d3f;
+  font-family: BebasNeue;
+  font-size: 40px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin: 0px auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+article div {
+  width: 95%;
+  height: auto;
+  /* border: 2px solid #ccc; */
+  margin-top: 25px;
+
+  margin: 10px auto;
+  font-family: TrebuchetMS;
+  color: black;
+  margin-bottom: 0px;
+}
+#parrafos {
+  width: 130%;
+  height: auto;
+  /* border: 2px solid #ccc; */
+  margin-top: 25px;
+  padding: 10px;
+  /* margin:  55px auto; */
+  font-family: TrebuchetMS;
+  /* background: white; */
+  color: black;
+  /* box-shadow: 1px 1px 2px #dddddd; */
+}
+
+#sponsor h2 {
+  display: block;
+  color: red;
+  text-shadow: 0px 2px 1px rgb(199, 82, 82);
+  text-align: center;
+  margin-bottom: 15px;
+  font-style: italic;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  cursor: progress;
+}
+#sponsor img {
+  width: 270px;
+ display: block;
+  margin: 30px auto;
+  border-radius: 5px;
+  /* border: 1px solid rgb(112, 112, 238);*/
+  box-shadow: 0px 0px 1px rgb(112, 112, 238), 0px 2px 6px rgb(112, 112, 238),
+    0px 1px rgb(112, 112, 238) inset, 0px -3px 2px rgb(112, 112, 238) inset;
+}
+
+#uno {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+/* ESTILOS PARA EL ARTCULO DEL PARRAFO  */
+#art1 {
+  padding: 25px;
+  text-align: justify;
+}
+/*ESTILOS DE LAS TARGETAS  
+#cards {
+  /* border: 1px solid black;
+  */
+/* height: 62%;
+  width: 90%;
+  margin: 0px auto;
+} */
+.card {
+  /* border: 2px solid #e9e1e1; */
+  /* box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f, 2px 3px 4px #393d3f,
+    3px 4px 0px #393d3f;
+   */
+  background: rgb(255, 255, 255);
+  margin: 25px auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 300ms;
+  box-shadow: 10px 10px 5px 0px rgb(0 0 0 / 75%);
+}
+
+/* .front {
+  width: 100%;
+  height: 600px;
+  border: 1px solid black; 
+}
+.back {
+  width: 100%;
+  height: 600px;
+ border: 1px solid black; 
+} */
+
+/* ESTILOS PARA FOOTER */
+.footer {
+  /* width: 1200px; */
+  height: 150px;
+  /* border: 1px solid black; */
+  background: black;
+  color: whitesmoke;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logofooter {
+  width: 350px;
+  height: 250px;
+  text-align: center;
+  line-height: 150px;
+}
+
+/*EFECTOs EN LAS TARGETAS*/
+
+.card:hover {
+  /* background: rgb(138, 197, 224); */
+  background: #2d5df8;
+}
+
+/*
+.card :last-child{
+  margin-right: 0px;
+} esto no se para que es */
+
+.card-img-top {
+  display: block;
+  margin: auto;
+  margin-top: 25px;
+  width: 80px;
+  height: 80px;
+}
+.card .card-img-top {
+  display: block;
+  width: 35%;
+  height: 100px;
+  font-size: 50px;
+  text-align: center;
+  line-height: 110px;
+  margin-top: 40px;
+  margin: px auto; /*no se que funcion hace */
+  transition: all 300ms;
+}
+
+.card:hover .card-img-top {
+  font-size: 70px;
+  color: #37bcf9;
+  animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon {
+  from {
+    transform: translateY(
+      -200%
+    ); /*la targeta se va afuera , pero cuando la transitio de 1s va a volver , parece que cae desde arriba */
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.card .category {
+  width: 100%;
+  height:40px;
+  font-family: "TrebuchetMS";
+  margin-top: 20px;
+  font-size: 30px;
+  font-style: italic;
+  /* font-weight: bold; en el curso esta asi para poner la letra en negro y quitria el font style    */
+  color: mediumblue;
+  text-align: center;
+  transition: all 300ms;
+  margin-bottom: 20px;
+} /*
+.card:nth-child(2) h2 {
+  font-size: 20px;
+  color: rgb(22, 189, 30);
+} */
+/*EFECTO PARA LAS CATEGRIA*/
+.card:hover .category {
+  color: white;
+  animation: showCategory 400ms linear; /*mas tiempo que ls iconos para que aparezca primero*/
+}
+
+@keyframes showCategory {
+  from {
+    transform: translateY(
+      -300%
+    ); /*viene desde arriba y -300 mayor que el icon para que aparezca despues que el  */
+    color: black;
+  }
+  to {
+    transform: translateY(0%);
+    color: white;
+  }
+}
+
+.card .description {
+  /* display: block; esto me lo invente  */
+  width: 90%;
+  height: 120px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+  text-align: center;
+  color: mediumblue;
+  font-family: "TrebuchetMS";
+  font-size: 20px;
+  transition: all 300ms;
+}
+/*ANIMACION DE LAS CATEGORIA*/
+
+.card:hover .description {
+  color: white;
+  animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription {
+  from {
+    transform: translateX(
+      -300%
+    ); /*aparece desde la izquierda al mismo tiempo que la categoria*/
+    color: black;
+  }
+  to {
+    transform: translateX(0%);
+    color: white;
+  }
+}
+
+/*.......................................................................................*/
+
+/*ESTILOS DE LAS TARGETAS ejemplo  */
+#cards1 {
+  /* border: 1px solid black;
+  */
+  height: 62%;
+  width: 90%;
+  margin: 0px auto;
+}
+.card1 {
+  /* float: left; */
+  width: 100%;
+  height: 500px;
+  /* border: 2px solid #e9e1e1; */
+  box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f, 2px 3px 4px #393d3f,
+    3px 4px 0px #393d3f;
+  /* box-shadow: 2px 1px 2px rgb(102, 102, 102); */
+  /* background: url(./img/AdobeColorGradient\ gradient_Windows-11-Wallpaper-18-scaled.png); */
+  background: whitesmoke;
+  /* margin: 25px;
+  margin-top: 40px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+#imagen {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card-img-top1 {
+  /* display:block;
+  margin: auto; */
+  margin-top: 25px;
+  width: 130px;
+  height: 160px;
+}
+/*............................ESTILOS PARA LA PAGINA CURSOS */
+#slide1 {
+  width: 90%;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.d-block {
+  width: 100%;
+  height: 498px;
+}
+
+#botones {
+  width: 100%;
+  height: 200px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*............................ESTILOS PARA LA PAGINA CURSOS */
+#prueba {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid black; */
+  margin: 25px auto;
+  margin-top: 40px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+#prueba button {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 60px 0;
+}
+
+#prueba button {
+  width: 12%;
+  list-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  border: 1px solid rgb(223, 220, 220);
+  text-transform: capitalize;
+  margin-right: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+article button:hover,
+.activo {
+ background: white; 
+  color: #393d3f;
+}
+
+article ul li:hover,
+.activo {
+  background: white;  
+  color: #393d3f;
+} 
+.listahtml {
+  float: right;
+  /* margin-top: 30px; */
+  justify-content: space-evenly;
+  align-self: center;
+  margin-right: 30px;
+}
+
+.card-img-top2 {
+  width: 150px;
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#boxs {
+  margin: auto;
+  margin-bottom: 30px;
+  /* height: 400px;
+overflow: hidden; */
+}
+
+#box {
+  border: 1px solid #ced5d8;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  margin: 30px auto;
+}
+
+.fotos {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid black; */
+  margin: 25px auto;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+#foto {
+  width: 100px;
+  height: 100px;
+}
+
+.img-top {
+  width: 190px;
+  height: 170px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* margin-left: 30px; */
+}
+.cardbases {
+  background: rgb(255, 255, 255);
+  margin: 10px auto;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 300ms;
+  box-shadow: 10px 10px 5px 0px rgb(0 0 0 / 75%);
+}
+
+#bases {
+  border: 1px solid black;
+  display: flex;
+  margin-bottom: 50px;
+}
+/*...............ESTILOS PARA PORTAFOLIO */
+#prueba p {
+  text-align: center;
+  color: #9b9b9b;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+div form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+section .barra-busqueda {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 70%;
+  height: 50px;
+  padding: 0 20px;
+  background: #fff;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 100px;
+  /* border: none; */
+  line-height: 50px;
+  align-items: center;
+}
+
+.barra-busqueda {
+  width: 70%;
+  height: 50px;
+  padding: 0 20px;
+  background: #fff;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 100px;
+  /* border: none; */
+  line-height: 50px;
+  align-items: center;
+}
+
+div.categorias {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.categorias a {
+  text-decoration: none;
+  padding: 10px 25px;
+  color: #9b9b9b;
+  border: 1px solid rgb(223, 220, 220);
+  text-transform: capitalize;
+  margin: 20px 20px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+div .categorias a.activo {
+  color: blue;
+}
+
+.grid {
+  width: 100%;
+  position: relative;
+  /*estas dos lineas es para quitar las img de un principio y con js hacer que aparezcan cuando aparezca toda las img*/
+  opacity: 0;
+  transition: opacity 0.5s linear 1s;
+}
+/*clase que va aparacer con js se le aplica al section que guarda las fotos cuando se cargue la pagina*/
+.grid.imagenes-cargadas {
+  opacity: 1;
+}
+.grid .item {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 10px;
+  width: calc(33.33% - 20px);
+}
+.grid .item-contenido {
+  position: relative;
+}
+.grid .item img {
+  width: 90%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+/*.........ESTILOS PARA LA IMGEN CUANDOSSE LE DE CLICK , FONDO NEGRO.............CSS*/
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, .9);
+  width: 100%;
+  height: 100vh;/*alto del dispositivo*/
+  display: none;/*no se muestra por defecto el fonfo negro hasta que de click en la imagen, se trabaja con js*/
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+/*ESTA CLASE SE AGREGA CON JS CUANDO DAMOS CLICK EN LA IMG*/
+.overlay.activo{
+  display: flex;/* mostrar la img cuando de clci agregando la clase*/
+}
+
+.overlay img{
+  max-width: 100%;
+}
+
+.overlay .descripcion{
+  display: block;
+  background: white;
+  padding: 20px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 10px;
+  max-width: 50%;
+
+}
+
+.contenedor-img{
+  position: relative; /*para acceder al boton y poder posisiconarlo*/
+}
+
+.overlay #btn-cerrar-popup{
+  background: none;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+}

@@ -1,0 +1,10 @@
+/*PANTALLAS MEDIANAS */
+@media (max-width: 740px){
+    #prueba p{
+       font-size: 10px;
+    }
+    #sponsor img {
+        width: 0px;
+
+    }
+}
