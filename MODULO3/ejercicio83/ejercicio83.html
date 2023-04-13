@@ -1,0 +1,326 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="Plantilla Javascript" />								
+	<link rel="icon" href="img/favicon.png">										
+	<title> Ejercicio 83 </title>	
+	
+</head>
+
+	<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+	
+	<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+											// Si solo ocupan una línea también se escriben así
+											// () Parentesis
+											// [] Corchetes
+											// {} Llaves
+    
+		
+    function enviarDatos(){
+
+        var mensaje;
+
+		var nombre = document.getElementById("nombre").value;
+		var apellido1 = document.getElementById("apellido1").value;
+		var apellido2 = document.getElementById("apellido2").value;
+
+		var edad = document.getElementById("edad").value;
+		var poblacion = document.getElementById("poblacion").value;
+		var movil = document.getElementById("movil").value;
+		var tel = document.getElementById("tel").value;
+		var email = document.getElementById("email").value;
+
+		mensaje = "Nombre de usuario: " + nombre + "\nApellidos: " + apellido1 + " " +apellido2;
+													
+		if ( edad != "" ) {
+			mensaje = mensaje + "\nEdad: " + edad;
+		}
+		
+		if ( poblacion != "") {
+			mensaje = mensaje + "\nPobl: " + poblacion;
+		}
+		
+		if ( movil != "" ) {
+			mensaje = mensaje + "\nMovil: " + movil;										
+		}
+		
+		if ( tel != "" ) {
+			mensaje = mensaje + "\nTeléfono Fijo: " + tel;
+		}
+		
+		mensaje = mensaje + "\nE-Mail: " + email;
+	
+		document.getElementById("mensaje").value = mensaje;
+		
+
+	}	
+
+	function borrarDatos() {
+
+		document.getElementById("mensaje").value = "";
+	}
+
+
+							
+	</script>
+
+					<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css"> 	/* En CSS los comentarios se escriben asi */
+
+body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	
+	
+	header{
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left:auto; 
+		margin-right:auto;			
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width:2px;
+		border-style: solid;
+		text-align: center;
+		display: flex; 
+		justify-content: space-evenly;
+		align-items: center;
+		
+	}
+	
+	
+	.titulo{
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left:auto; 
+		margin-right:auto;			
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width:2px;
+		border-style: solid;
+		text-align: center;
+		display: flex; 
+		justify-content: space-evenly;
+		align-items: center;
+		
+	}
+	
+	article{background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width:2px;
+		border-style: solid;
+		}
+	
+		
+	nav{
+		background-color: #D0D6D8;
+		width: 1200px;
+		height: 500px;
+		margin-left:auto; 
+		margin-right:auto;			
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width:2px;
+		border-style: solid;
+		text-align: center;
+		display: flex; 
+		justify-content: space-evenly;
+		align-items: center;
+		}
+	
+	h1, h2, h3{	font-family: Calibri, sans-serif;
+				font-weight: bold;
+				color: blue;
+			}
+
+	
+
+	label {
+		color: blue;
+		font-weight: bold;
+	}
+
+	.botones-input input {
+		padding: 10px 15px;
+		border-radius:15px;
+		border: 1px solid blue;
+	}
+
+	button {
+		padding: 0.4rem 0.9rem;
+		border-radius: 10px;
+		border: 2px solid blue;
+		cursor: pointer;
+		box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.3);
+	}
+
+	.datos{
+		height: 400px;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		margin: 0 auto;
+	}
+
+	.textarea {
+		display: flex;
+		flex-direction: column;
+	}
+
+	textarea {
+		width: 250px;
+		height: 200px;
+		border-radius: 10px;
+		resize: none;
+		box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.3);
+		padding: 30px;
+		border: 3px solid blue;
+	}
+
+	#form {
+		display: flex;
+		width: 550px;
+		
+	}
+
+	.formulario {
+		display: flex;
+		justify-content: space-around;
+	}
+	span{
+		color: red;
+	}
+
+</style> 
+
+
+
+
+<body>	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+<header>
+	
+		<img src="imagenes/HTML5.png" 	style="height:100px;" alt="HTML5">
+		
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+		
+		<img src="imagenes/CSS3.png" 	style="height:100px;" alt="CSS3">
+		
+</header>
+
+	<div class="titulo">
+		<article>
+			<h1>Formulario</h1>
+		</article>
+	</div>
+	
+	
+	<nav>
+	
+		<img src="imagenes/Javascript.png" 	style="height:100px;" alt="Javascript">
+
+		<div class="formulario">
+			<form id="form" action="javascript:enviarDatos()">
+				<div class="datos">
+					<div class="name">
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" required>*
+					</div>
+					
+					<div class="apell1">
+						<label for="apellido1">Apellido 1</label>
+						<input type="text" id="apellido1" required>*
+					</div>
+					
+					<div class="apell2">
+						<label for="apellido2">Apellido 2</label>
+						<input type="text" id="apellido2" required>*
+					</div>
+					
+					<div class="ege">
+						<label for="edad">Edad</label>
+						<input type="number" id="edad">
+					</div>
+					
+					<div class="pob">
+						<label for="poblacion">Población</label>
+						<input type="text" id="poblacion">
+					</div>
+					
+					<div class="phone1">
+						<label for="movil">Móvil</label>
+						<input type="number" id="movil">
+					</div>
+					
+					<div class="phone2">
+						<label for="tel">Teléfono Fijo</label>
+						<input type="number" id="tel">
+					</div>
+					
+					<div class="mail">
+						<label for="email">E-Mail</label>
+						<input type="email" id="email">*
+					</div>
+				
+	
+					<span>*Campos Obligatorios</span>
+					
+					<div class="btn">
+						<input type="submit" value="Enviar">
+						<input type="reset" value="Borrar">
+					</div>
+					
+				</div>
+				
+				
+				
+			</form>
+
+			<div class="area">
+				<textarea name="text_a" id="mensaje"></textarea>
+
+				<div class="botones">
+					<button type="reset" onclick="borrarDatos()">Borrar</button>
+				</div>
+				
+			</div>
+		</div>
+
+
+		
+		
+		<img src="imagenes/Javascript.png" 	style="height:100px;" alt="Javascript">
+		
+	
+	</nav>
+	
+</body>
+</html>

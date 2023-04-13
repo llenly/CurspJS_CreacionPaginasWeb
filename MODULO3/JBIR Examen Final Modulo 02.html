@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta language="esp"/>
+<meta name="author" content="Javier el Profe"/>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta name="keywords" content="plantilla HTML5" />
+<link rel="icon" href="img/favicon.png">
+<title>Examen Modulo 02 - UF2: Anexo IX de la Comunidad de Madrid</title>
+<style type="text/css">
+header {
+	background: #3B82A0;
+	width: 1200px;
+	height: 90px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-left: auto;
+	margin-right: auto;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+}
+img {
+	width: 240px;
+	height: 80px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+h1 {
+	color: blue;
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 20px;
+	padding-top: 30px;
+	text-align: center;
+	padding-botton: 50px;
+}
+#segundo {
+	color: black;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: 18px;
+}
+p {
+	float: left;
+}
+#obligatorio {
+	color: red;
+}
+div {
+	background-color: #D0D6D8;
+	width: 1200px;
+	height: 880px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+form {
+	padding-left: 35px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#lateral {
+	float: left;
+	margin-right: 21px;
+}
+footer {
+	background-color: #3B82A0;
+	width: 1200px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border-color: black;
+	border-width: 2px;
+	border-style: solid;
+	display: flex;
+	align-items: center;
+}
+article {
+	color: white;
+	font-family: Calibri;
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+}
+section {
+	width: 1200px;
+	text-align: center;
+}
+#botones {
+	margin: 5px;
+	width: 100px;
+	height: 25px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	line-height: 1;
+	color: #444;
+	background-color: #fff;
+	border: 2px solid blue;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+textarea{
+	resize:none;
+}
+</style>
+<script type="text/javascript">
+var idpersona;
+//Ejercicio 1
+function openpdf(){
+					var verpdf;
+					verpdf = window.open("docs/anexo_ix.pdf");
+				  }
+//Ejercicio 2
+var letras = new Array(23);
+var fotos = new Array(18);
+
+letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+
+
+function verificarId(){
+						var nacion, resto, verifid, guardaNie, findNif, letraDocumento, findNie;
+						
+						verifid = document.formulario.documentoId.value;
+						nacion = document.formulario.nacionalidad.value;
+						
+						if( nacion == "esp" ){
+												
+												if (verifid != ""){
+																			verifid = parseInt(verifid);
+																			resto = verifid%23;
+																			findNif = letras[resto];
+																			document.formulario.letracontrol.value = findNif;
+																			idpersona = verifid + "" + findNif;
+																			document.formulario.letraDocumento.disabled = true;
+																		}
+												else {
+														alert("Introduzca el número de DNI/NIF");
+													 }
+											 }
+						else if(nacion == "ext"){
+													letraDocumento = document.formulario.letraDocumento.value;
+													
+													letraDocumento = letraDocumento.toUpperCase();
+													
+													if( letraDocumento == ""){
+																				alert("Escriba la primera letra del NIE en la casilla correspondiente");
+																			 }
+													
+													if (verifid != ""){
+																				verifid = parseInt(verifid);
+																				guardaNie = verifid;
+																				if(letraDocumento == "Y"){
+																										  verifid = verifid + 10000000;
+																									     }
+																				else if(letraDocumento == "Z"){
+																											   verifid = verifid + 20000000;
+																											  }
+																				resto = verifid%23;																				
+																				findNie = letras[resto];
+																				document.formulario.letracontrol.value = findNie;
+																				idpersona = guardaNie + "" + guardaNie + findNie;
+																	   }
+													else {
+														  alert("Introduzca el número de NIE");
+														 }
+												 }
+								else { alert("Debe escoger la nacionalidad"); }
+				    }
+
+//Ejercicio 3
+function resultados(){
+						var nombre, dir, loc, reg, cp, movil, tel, email, ssoc, fecha, sex, winres, salida;
+						
+						nombre = document.formulario.nombre.value;
+						dir = document.formulario.dir.value;
+						loc = document.formulario.loc.value;
+						reg = document.formulario.reg.value;
+						cp = document.formulario.cp.value;
+						movil = document.formulario.movil.value;
+						tel = document.formulario.tel.value;
+						email = document.formulario.email.value;
+						ssoc = document.formulario.ssoc.value;
+						fecha = document.formulario.fecha.value;
+						switch(reg)
+								{ 
+								case "and":
+											salida = '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "ara":
+											salida = '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "cat":
+											salida = '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "mad":
+											salida = '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "val":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "gal":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "leo":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "vas":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "cna":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "cas":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "mur":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "bal":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "ext":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "ast":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "nav":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "can":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "rio":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "ceu":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								case "mel":
+											salida =  '<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>';
+								}
+						if(document.formulario.sex1.checked == true){
+																	 sex = document.formulario.sex1.value;
+																	}
+						else {
+								sex = document.formulario.sex2.value;
+							 }
+						
+						if(document.formulario.discaSi.checked == true){
+																		 sex = document.formulario.disc.value;
+																	   }
+						else {
+								sex = document.formulario.discaNo.value;
+							 }
+							 
+						mensaje = "Nombre: " + nombre + "\nDirección: " + dir + "\nLocalidad: " + loc + "\nComunidad: " + reg + "\nCP:" + cp + "\nTeléfono móvil: "+ movil + "\nTeléfono fijo: "+ tel + "\nCorreo electrónico: " + email + "\nSeguridad social: "+ ssoc + "\nFecha de nacimiento: " + fecha + "\nNIF/DNI/NIE: " + idpersona;
+						
+						winres = window.open('','resultados','width=380,height=500,left=300,top=100');
+						winres.document.write('<head><title>Resultados</title><style>textarea#texto{resize:none;}div.center{text-align:center;margin:10px auto;}</style>');
+						winres.document.write('<body>');
+						winres.document.write('<div class="center"><textarea id="texto" name="texto" cols=40 rows=40 readonly>' + mensaje + '</textarea></div>');
+						//winres.document.write('<div class="center"><img  src="imagenes\andalucia.png" id="ima" style="height:20px;"/></div>');
+						winres.document.write('<div class="center"><button type="button" id="botones" onClick="window.close()">Cerrar</button></div>');
+						winres.document.write('</body>');
+					 }
+
+</script>
+</head>
+
+<body>
+<header><img id="" src="imagenes\Logo CCMM.png"> <img id="" src="imagenes\Logo FSE.png"> <img id="" src="imagenes\Logo MinisterioTrabajo.png"></header>
+<div>
+  <form name="formulario" action="#" method="get" onSubmit="resultados()">
+    <h1>FORMULARIO DEL ANEXO IX - FORMACIÓN DE LA COMUNIDAD DE MADRID</h1>
+    
+    <!-- La etiqueta FIELDSET Sirve para agrupar elementos en un área visible dentro del formulario -->
+    
+    <fieldset style="width:1100px;">
+      <legend id="segundo">DATOS DEL/LA TRABAJADOR/A PARTICIPANTE</legend>
+      <font face="calibri" color="#393E46" size="3">
+      <p>Apellidos y Nombre:
+        <input type="text" id="name_control" name="nombre" maxlength="50" style="width:500px; border-color: red;" />
+        &nbsp &nbsp &nbsp &nbsp </p>
+      <p>Dirección:
+        <input type="text" id="dir_control" name="dir" style="width:300px; border-color: red;" maxlength="100" />
+        &nbsp &nbsp &nbsp </p>
+      <!-- La etiqueta &nbsp Sirve para dar espacio -->
+      
+      <p>Localidad:
+        <input type="text" id="loc_control" name="loc" style="width:200px; border-color: red;" maxlength="100" />
+        &nbsp &nbsp &nbsp </p>
+      <p>Comunidad:
+        <select id="regiones" name="reg" size="1" style="width:100px; border-color: red;">
+          <!-- Seleccionar desplegable comunidades. SIZE=1 Ver sólo una opción -->
+          <option value="bot"></option>
+          <option value="and">Andalucía</option>
+          <option value="ara">Aragón</option>
+          <option value="cat">Cataluña</option>
+          <option value="mad">Madrid</option>
+          <option value="val">Valencia</option>
+          <option value="gal">Galicia</option>
+          <option value="leo">Castilla León</option>
+          <option value="vas">País Vasco</option>
+          <option value="cna">Islas Canarias</option>
+          <option value="cas">Castilla La Mancha</option>
+          <option value="mur">Murcia</option>
+          <option value="bal">Islas Baleares</option>
+          <option value="ext">Extremadura</option>
+          <option value="ast">Principado de Asturias</option>
+          <option value="nav">Navarra</option>
+          <option value="can">Cantabria</option>
+          <option value="rio">La Rioja</option>
+          <option value="ceu">Ceuta</option>
+          <option value="mel">Melilla</option>
+        </select>
+        &nbsp &nbsp &nbsp </p>
+      <p>CP:
+        <input type="text" id="cp_control" name="cp" style="width:100px;" mformulariolength="5" />
+      </p>
+      <p>Teléfono Móvil:
+        <input type="text" id="mov_control" name="movil" style="width:100px; border-color: red;" mformulariolength="9" />
+        &nbsp &nbsp </p>
+      <p>Teléfono Fijo:
+        <input type="text" id="tel_control" name="tel" style="width:200px;" />
+      </p>
+      <br>
+      <br>
+      <br>
+      <p>Correo Electronico:
+        <input type="email" style="width:300px;border-color: red;" id="email_control" name="email" />
+        &nbsp &nbsp &nbsp </p>
+      <p>Nº de Afiliación a la Seguridad Social:
+        <input type="text" id="seg_control" name="ssoc" style="width:200px;" />
+        &nbsp &nbsp &nbsp </p>
+      <p>Fecha de nacimiento:
+        <input type="date" id="date_control" name="fecha" />
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </p>
+      <br>
+      <br>
+      <p>Sexo:
+        <input type="radio" id="var1" name="sex1" />
+        Hombre
+        <input type="radio" id="var1" name="sex2" />
+        Mujer &nbsp &nbsp &nbsp </p>
+      <p>Discapacidad:
+        <input type="radio" id="var2" name="discaSi" />
+        SI
+        <input type="radio" id="var2" name="discaNo" />
+        NO</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p>Nacionalidad:
+        <select id="nac_control" name="nacionalidad" style="width:100px; border-color: red;" size="1">
+		
+          <!-- Seleccionar nacionalidad. SIZE=1 Ver sólo una opción -->
+		  
+          <option value="bot"></option>
+          <option value="esp">Española</option>
+          <option value="ext">Extranjera</option>
+		  
+        </select>
+        &nbsp &nbsp </p>
+      <p>NIF / NIE:
+        <input type="text" id="letra_nie" name="letraDocumento" style="width:15px;" maxlength="1" value=""/>
+        -
+        <input type="text" id="nif_control" name="documentoId" style="width:100px; border-color: red;" maxlength="9"/>
+        -
+        <input type="text" id="letra_control" name="letracontrol" style="width:15px;" maxlength="1" readonly />
+        &nbsp &nbsp &nbsp </p>
+      <br>
+      <br>
+      <br>
+      <button type="button" id="botones" onClick="verificarId()" style="height:50px">Generar Letra NIF/NIE</button>
+      <br>
+      <font face="calibri" color="red" size="1"> <i> <sup>(*)</sup>Los campos en rojo son obligatorios. </i><font>
+    </fieldset>
+    <br>
+    <fieldset style="width:1100px;">
+      <legend id="segundo">ESTUDIOS</legend>
+      <font face="calibri" color="#393E46" size="3">
+      <table >
+        <tr>
+          <td width="200px"></td>
+          <td><input type="checkbox" id="var3" >
+            Sin titulación <br>
+            <input type="checkbox" id="var4" >
+            ESO / Graduado Esc. <br>
+            <input type="checkbox" id="var5" >
+            Técnico FP Grado Medio / FP1 <br>
+            <input type="checkbox" id="var6" >
+            Técnico FP Grado Superior / FP2 <br>
+            <input type="checkbox" id="var7" >
+            Bachiller <br></td>
+          <td width="100px"></td>
+          <td><input type="checkbox" id="var8">
+            Diplomado (E. Universitaria 1º Ciclo) <br>
+            <input type="checkbox" id="var9">
+            Licenciado (E. Universitaria 2º Ciclo) <br>
+            <input type="checkbox" id="var10">
+            Doctor <br>
+            <input type="checkbox" id="var11">
+            Otra titulación (especificar)<br>
+            &nbsp &nbsp &nbsp
+            <input type="text" style="width:300px;" mformulariolength="200"/></td>
+        </tr>
+      </table>
+      </font>
+    </fieldset>
+    <fieldset id="lateral" style="width:500px;height:180px;">
+      <legend id="segundo">SITUACIÓN LABORAL</legend>
+      <font face="calibri" color="#393E46" size="3">
+      <table>
+        <tr>
+          <td width="200px"><b>ÁREA FUNCIONAL</b></td>
+          <td><input type="radio" id="var12" >
+            Dirección <br>
+            <input type="radio" id="var12" >
+            Administración <br>
+            <input type="radio" id="var12" >
+            Comercial <br>
+            <input type="radio" id="var12" >
+            Mantenimiento <br>
+            <input type="radio" id="var12" >
+            Producción <br></td>
+      </table>
+      </font>
+    </fieldset>
+    <fieldset style="width:550px; height:180px;">
+      <legend id="segundo">CATEGORÍA</legend>
+      <font face="calibri" color="#393E46" size="3">
+      <table>
+        <tr>
+          <td width="200px"><b>CATEGORÍA</b></td>
+          <td><input type="radio" id="var13" >
+            Directivo/a <br>
+            <input type="radio" id="var13" >
+            Mando Intermedio <br>
+            <input type="radio" id="var13" >
+            Técnico <br>
+            <input type="radio" id="var13" >
+            Trabajador/a cualificado <br>
+            <input type="radio" id="var13" >
+            Trabajador/a de baja cualificación <sup>(*)</sup> <br></td>
+            </font>
+        <tr>
+          <td colspan=7><font face="calibri" color="#393E46" size="1"> <sup>(*)</sup> <i> Grupos de cotización 6, 7, 9, 10. <br>
+            Desempleados sin carné profesional, cert. prof. nivel 2 ó 3, título de formación profesional ni titulación universitaria. </i> </font></td>
+        </tr>
+      </table>
+    </fieldset>
+    <br>
+    <section>
+      <input id="botones" type="reset" value="Borrar" />
+      <input id="botones" type="submit" value="Enviar" />
+      <button type="button" id="botones" onclick="openpdf()" value="Ver Impreso">Ver Impreso </button>
+    </section>
+  </form>
+</div>
+<footer>
+  <article>Esta página web pertenece al curso "Creación Páginas Web"</article>
+</footer>
+</body>
+</html>

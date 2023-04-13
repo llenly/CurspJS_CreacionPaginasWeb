@@ -1,0 +1,291 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> Plantilla UF2 Javascript </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+											// Si solo ocupan una línea también se escriben así
+											// () Parentesis
+											// [] Corchetes
+											// {} Llaves
+
+
+
+
+
+
+</script>
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	#principal {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 450px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+	#marque {
+		width: 550px;
+		height: 450px;
+		margin-top: 100px;
+		background: url("imagenes/fondo.jpg");
+		background-repeat: no-repeat;
+		background-size: contain;
+
+	}
+
+	#boton {
+		width: 150px;
+		height: 350px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	button {
+		width: 100px;
+		height: 40px;
+		border-radius: 15px;
+		border: none;
+	}
+	#play{
+		
+		height: 365px;
+	}
+</style>
+
+
+
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:100px;" alt="CSS3">
+
+	</header>
+
+	<div id="principal">
+		<article>
+			<h1>Ejercicios</h1>
+		</article>
+	</div>
+
+
+	<nav>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div id="marque">
+			<marquee scrolldelay="0" loop="infinite" direction="left"> 
+
+				<!-- se le pasa por defecto cada img que cargues aqui -->
+				<img id="play" name="fotos" src="imagenes/playa/playa1.jpg"/>
+				<img id="play" name="fotos" src="imagenes/monte/monte1.jpg" />
+				<img id="play" name="fotos" src="imagenes/fiesta/fiesta1.jpg" />
+				<img id="play" name="fotos" src="imagenes/compras/compras1.jpg" />
+
+		
+			</marquee>
+		</div>
+
+		<div id="boton">
+			<button id="beach" onclick="cambiarFoto('playa')">Playa</button>
+			<button id="beach" onclick="cambiarFoto('monte')">Montaña</button>
+			<button id="beach" onclick="cambiarFoto('compras')">Compras</button>
+			<button id="beach" onclick="cambiarFoto('fiesta')">Fiestas</button>
+		</div>
+
+		</div>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+	<script>
+
+		//  hacer los array para cada foto primero  
+		var playa = new Array(4);
+		playa[0] = "imagenes/playa/playa1.jpg";
+		playa[1] = "imagenes/playa/playa2.jpg";
+		playa[2] = "imagenes/playa/playa3.jpg";
+		playa[3] = "imagenes/playa/playa4.jpg";
+
+		
+		//  hacer los array para cada foto primero  
+		var monte = new Array(4);
+		monte[0] = "imagenes/monte/monte1.jpg";
+		monte[1] = "imagenes/monte/monte2.jpg";
+		monte[2] = "imagenes/monte/monte3.jpg";
+		monte[3] = "imagenes/monte/monte4.jpg";
+
+		
+		//  hacer los array para cada foto primero  
+		var fiesta = new Array(4);
+		fiesta[0] = "imagenes/fiesta/fiesta1.jpg";
+		fiesta[1] = "imagenes/fiesta/fiesta2.jpg";
+		fiesta[2] = "imagenes/fiesta/fiesta3.jpg";
+		fiesta[3] = "imagenes/fiesta/fiesta4.jpg";
+
+		
+		//  hacer los array para cada foto primero  
+		var compras = new Array(4);
+		compras[0] = "imagenes/compras/compras1.jpg";
+		compras[1] = "imagenes/compras/compras2.jpg";
+		compras[2] = "imagenes/compras/compras3.jpg";
+		compras[3] = "imagenes/compras/compras4.jpg";
+
+
+
+		function cambiarFoto(foto) {
+
+		
+			for (i = 0; i < 4; i++) {
+			
+				// solo puedo usar por el name y por clases por  que tengo declarado un array
+				//se invoco al name de la marquesina  
+				
+				switch (foto) {
+					case "playa":
+						playa[i] = "imagenes/playa/playa"+( i + 1).toString() + ".jpg";
+						document.getElementsByName("fotos")[i].src = playa[i];
+						console.log(playa[i]);
+						break;
+					case "monte":
+						monte[i] = "imagenes/monte/monte"+( i + 1).toString()+ ".jpg";
+						document.getElementsByName("fotos")[i].src = monte[i];
+						break;
+					case "fiesta":
+						fiesta[i] = "imagenes/fiesta/fiesta"+( i + 1).toString()+ ".jpg";
+						document.getElementsByName("fotos")[i].src = fiesta[i];
+						break;
+					case "compras":
+						compras[i] = "imagenes/compras/compras"+( i + 1).toString()+ ".jpg";
+						document.getElementsByName("fotos")[i].src = compras[i];
+						break;
+					default:
+						break;
+				}
+
+				// document.getElementsByName("fotos")[i].src = playa[i];
+
+			}
+
+			
+		}
+
+
+
+    //  funcion para cambiar las fotos 
+
+
+	</script>
+</body>
+
+</html>

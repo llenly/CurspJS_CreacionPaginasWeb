@@ -1,0 +1,107 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="Plantilla Javascript" />								
+	<link rel="icon" href="img/favicon.png">										
+	<title> Ejemplo de formulario en ventana nueva </title>	
+	
+</head>
+
+
+	<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+	
+
+
+	
+			<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS3 -->
+	
+	<style type="text/css"> 	/* En CSS los comentarios se escriben asi */
+	
+	
+
+	
+	</style>
+
+
+<body>		<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+
+
+
+
+
+
+
+
+<form action="javascript:enviar()">
+
+	Escribe algo <input id="texto"/><br>
+
+	<input type="submit" value="Enviar a otro HTML"/>
+
+</form>
+
+
+
+
+	<!-- Escribe algo <input id="texto"/><br>
+
+	<button onclick="enviar()" >Enviar a otro HTML</button> -->
+
+</body>
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+											// Si solo ocupan una línea también se escriben así
+	
+	
+function enviar(){
+
+	var datos;
+	
+		datos = document.getElementById("texto").value;
+
+ 
+		//window.open("URL de la página","Nombre de la ventana","Dimensiones");
+	
+	
+var ventana = window.open("", "Pizarra Externa", "top=150px,left=150px,width=500px,height=500px");
+		
+	
+
+		ventana.document.write('<head><title>Pizarra Externa</title></head>');
+        ventana.document.write('<body>');
+			
+		ventana.document.write('<div id="contenedor" align="center" style="width: 350px; border: 2px solid blue; padding: 50px;" >');
+		ventana.document.write('<textarea id="pizarra" cols="45" rows="7" readonly style="resize: none;"></textarea><br><br>');
+		ventana.document.write('<button id="boton" onclick="window.close()" >Cerrar</button>');
+ 
+        ventana.document.write('</div></body>');
+		
+		
+		
+		
+		
+
+		ventana.document.getElementById("pizarra").value = "Has escrito: " + datos;
+		
+
+		
+		
+	
+   }
+
+
+
+
+	
+	
+
+	</script>
+
+</html>

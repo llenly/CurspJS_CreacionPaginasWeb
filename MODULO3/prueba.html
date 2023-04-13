@@ -1,0 +1,611 @@
+var nombre, dir, local, comuni, cp, movil, tel, email, seg_social, nacimiento, nacionalidad, mensaje = "";		
+var nie_completo, sexo, discapacidad,sit_lab, categ, estudios;
+
+
+function enviar() {
+	
+    nombre = document.form.nombre.value;
+    dir = document.form.dir.value;
+    local = document.form.local.value;
+    comuni = document.form.comuni.value;
+
+    cp = document.form.cp.value;
+    movil = document.form.movil.value;
+    tel = document.form.tel.value;
+    email = document.form.email.value;
+    seg_social = document.form.seg_social.value;
+    nacimiento = document.form.nacimiento.value;
+    nacionalidad = document.form.nacionalidad.value;
+
+    var imagenes = new Array("imagenes/andalucia.png","imagenes/aragon.png", "./imagenes/cataluna.png", "imagenes/madrid.png", "imagenes/valencia.png", "imagenes/galicia.jpg", "imagenes/leon.png", "imagenes/pais-vasco.png", "imagenes/canariass.png", "imagenes/la-mancha.png", "imagenes/murcia.png", "imagenes/baleares.png", "imagenes/extremadura.png", "imagenes/asturias.png", "imagenes/navarra.jpg", "imagenes/cantabria.png", "imagenes/rioja.png", "imagenes/ceuta.png", "imagenes/melilla.png");
+    
+    var impImg = "";
+
+
+    // VALIDACIONES
+    if(nombre == "") {
+        alert("Escriba su nombre");
+    }else{
+        mensaje = "Su nombre es " + nombre + "\n";
+    }
+
+    if (dir == "") {
+        alert("Escriba su dirección");
+    }else{
+        mensaje = mensaje + "Dirección: " + dir + "," + cp + "\n";
+    }
+
+    if (local == "") {
+        alert("Escriba su Localidad");
+    }else {
+        mensaje = mensaje + "Localidad: " + local + "\n";
+    }
+
+
+    // COMUNIDADES
+    switch (comuni) {
+        case "and":
+            mensaje = mensaje + "Andalucía" + "\n";
+            impImg = imagenes[0];
+            break;
+        case "ara":
+            mensaje = mensaje + "Aragón" + "\n";
+            impImg = imagenes[1];
+            break;
+        case "cat":
+            mensaje = mensaje + "Cataluña" + "\n";
+            impImg = imagenes[2];
+            break;
+        case "mad":
+            mensaje = mensaje + "Comunidad de Madrid" + "\n";
+            impImg = imagenes[3];
+            break;
+        case "val":
+            mensaje = mensaje + "Valencia" + "\n";
+            impImg = imagenes[4];
+            break;
+        case "gal":
+            mensaje = mensaje + "Galicia" + "\n";
+            impImg = imagenes[5];
+            break;
+        case "leo":
+            mensaje = mensaje + "Castilla León" + "\n";
+            impImg = imagenes[6];
+            break;
+        case "vas":
+            mensaje = mensaje + "País Vasco" + "\n";
+            impImg = imagenes[7];
+            break;
+        case "cna":
+            mensaje = mensaje + "Islas Canarias" + "\n";
+            impImg = imagenes[8];
+            break;
+        case "cas":
+            mensaje = mensaje + "Castilla La Mancha" + "\n";
+            impImg = imagenes[9];
+            break;
+        case "mur":
+            mensaje = mensaje + "Murcia" + "\n";
+            impImg = imagenes[10];
+            break;
+        case "bal":
+            mensaje = mensaje + "Islas Baleares" + "\n";
+            impImg = imagenes[11];
+            break;
+        case "ext":
+            mensaje = mensaje + "Extremadura" + "\n";
+            impImg = imagenes[12];
+            break;
+        case "ast":
+            mensaje = mensaje + "Principado de Asturias" + "\n";
+            impImg = imagenes[13];
+            break;
+        case "nav":
+            mensaje = mensaje + "Navarra" + "\n";
+            impImg = imagenes[14];
+            break;
+        case "can":
+            mensaje = mensaje + "Cantabria" + "\n";
+            impImg = imagenes[15];
+            break;
+        case "rio":
+            mensaje = mensaje + "La Rioja" + "\n";
+            impImg = imagenes[16];
+            break;
+        case "ceu":
+            mensaje = mensaje + "Ceuta" + "\n";
+            impImg = imagenes[17];
+            break;
+        case "mel":
+            mensaje = mensaje + "Melilla" + "\n";
+            impImg = imagenes[18];
+            break;
+        default:
+            alert("Escoja su comunidad");
+            break;
+    }
+
+    // MOVIL
+    if (movil == "") {
+        alert("Escriba su número de teléfono movil:");  
+    }else {
+        mensaje = mensaje + "Teléfono Móvil: " + movil + "\n";
+    }
+
+    // TELEFONO FIJO
+    if (tel == "") {
+        alert("Escriba su número de teléfono fijo:");  
+    }else {
+        mensaje = mensaje + "Teléfono Fijo: " + tel + "\n";
+    }
+
+
+    // EMAIL
+    if (email == "") {
+        alert("Escriba su email");
+    }else {
+        mensaje = mensaje + "Correo Electrónico: " + email + "\n";
+    }
+
+    mensaje = mensaje + "No. de Seguridad Social: " + seg_social + "\n";
+
+    mensaje = mensaje + "Fecha de Nacimiento: " + nacimiento + "\n";
+
+    // SEXO
+    var longitud = document.form.sexo.length;
+
+    sexo = new Array(longitud);
+
+    for (i = 0; i < longitud; i++) {
+        sexo[i] = null;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        sexo[i] = document.form.sexo[i].checked;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        if (sexo[i] == true) {
+            switch (i) {
+                case 0:
+                    mensaje = mensaje + "Tu sexo es hombre.\n";
+                    break;
+                case 1:
+                    mensaje = mensaje + "Tu sexo es mujer.\n";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    }
+
+    // DISCAPACIDAD
+
+    longitud = document.form.disc.length;
+    discapacidad = new Array(longitud);
+
+    for (i = 0; i < longitud; i++) {
+        discapacidad[i] = null;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        discapacidad[i] = document.form.disc[i].checked;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+                                        if (discapacidad[i] == true) {
+                                                                        switch (i) {
+                                                                                    case 0:
+                                                                                        mensaje = mensaje + "Con discapacidad.\n";
+                                                                                        break;
+                                                                                    case 1:
+                                                                                        mensaje = mensaje + "Sin discapacidad.\n";
+                                                                                        break;
+                                                                                
+                                                                                    default:
+                                                                                        break;
+                                                                                    }
+                                                                    }
+    }
+
+    
+    // NACIONALIDAD
+    switch (nacionalidad) {
+                            case "esp":
+                                mensaje = mensaje + "Nacionalidad Española" + "\n";
+                                break;
+                            case "ext":
+                                    mensaje = mensaje + "Nacionalidad Extranjera" + " con NIE: " + nie_completo + "\n";
+                                    break;
+                            default:
+                                alert("Escoja su nacionalidad");
+                                break;
+                            }
+
+    // ESTUDIOS
+
+    var var3 = document.form.var3.checked;	
+    var var4 = document.form.var4.checked;
+    var var5 = document.form.var5.checked;
+    var var6 = document.form.var6.checked;
+    var var7 = document.form.var7.checked;
+    var var8 = document.form.var8.checked;
+    var var9 = document.form.var9.checked;
+    var var10 = document.form.var10.checked;
+    var var11 = document.form.var11.checked;
+    var varExtra = document.form.varExtra.value;
+
+    if ( (var3 == false) && (var4 == false) && (var5 == false) && (var6 == false) && (var7 == false) && (var8 == false) && (var9 == false) && (var10 == false) && (var11 == false) ) {
+        estudios = "";
+    }else {
+        estudios = "Tu estudios son: ";
+    }
+
+    if (var3 == true) {
+        estudios = estudios + "Sin titulación ";
+    }
+
+    if (var4 == true) {
+        estudios = estudios + "ESO / Graduado Esc.";
+    }
+
+    if (var5 == true) {
+        estudios = estudios + "Técnico FP Grado Medio / FP1 ";
+    }
+
+    if (var6 == true) {
+        estudios = estudios + "Técnico FP Grado Superior / FP2 ";
+    }
+
+    if (var7 == true) {
+        estudios = estudios + "Bachiller ";
+    }
+
+    if (var8 == true) {
+        estudios = estudios + "Diplomado (E. Universitaria 1º Ciclo) ";
+    }
+
+    if (var9 == true) {
+        estudios = estudios + "Diplomado (E. Universitaria 2º Ciclo) ";
+    }
+
+    if (var10 == true) {
+        estudios = estudios + "Doctor ";
+    }
+
+    if (var11 == true) {
+        estudios = estudios  + varExtra;
+    }
+
+    mensaje = mensaje + estudios + "\n";
+
+
+    // SITUACION LABORAL Y CATEGORIA
+
+    // SITUACION LABORAL
+
+    longitud = document.form.sit_lab.length;
+    sit_lab = new Array(longitud);
+
+    for (i = 0; i < longitud; i++) {
+        sit_lab[i] = null;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        sit_lab[i] = document.form.sit_lab[i].checked;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        if (sit_lab[i] == true) {
+            switch (i) {
+                case 0:
+                    mensaje = mensaje + "Area Funcional: Dirección\n";
+                    break;
+                case 1:
+                    mensaje = mensaje + "Area Funcional: Administración\n";
+                    break;
+                case 2:
+                    mensaje = mensaje + "Area Funcional: Comercial\n";
+                    break;
+                case 3:
+                    mensaje = mensaje + "Area Funcional: Mantenimiento\n";
+                    break;
+                case 4:
+                    mensaje = mensaje + "Area Funcional: Producción\n";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    }
+
+    // CATEGORIA
+
+    longitud = document.form.categ.length;
+    categ = new Array(longitud);
+
+    for (i = 0; i < longitud; i++) {
+        categ[i] = null;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        categ[i] = document.form.categ[i].checked;
+    }
+
+    for ( i = 0; i < longitud; i++) {
+        if (categ[i] == true) {
+            switch (i) {
+                case 0:
+                    mensaje = mensaje + "Categoría: Directivo/a\n";
+                    break;
+                case 1:
+                    mensaje = mensaje + "Categoría: Mando Intermedio\n";
+                    break;
+                case 2:
+                    mensaje = mensaje + "Categoría: Técnico\n";
+                    break;
+                case 3:
+                    mensaje = mensaje + "Categoría: Trabajador/a cualificado\n";
+                    break;
+                case 4:
+                    mensaje = mensaje + "Categoría: Trabajador/a de baja cualificación\n";
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+    }
+
+
+
+    var ventana = window.open("", "Ventana Externa", "top=150px,left=150px,width=800px,height=500px");
+
+    ventana.document.write('<head><title>Ventana Externa</title></head>');
+    ventana.document.write('<body>');		
+    ventana.document.write('<div id="contenedor" align="center" style="width: 550px; border: 2px solid blue; padding: 50px;" >');
+    ventana.document.write('<textarea id="pizarra" cols="60" rows="20" readonly style="resize: none; box-shadow: 10px 10px 10px brown; border-radius: 15px; padding: 25px;"></textarea><br><br>');
+    ventana.document.write('<img id="im" src="" style="width: 200px; box-shadow: 10px 10px 10px brown;" ><br><br>');
+
+    ventana.document.write('<button id="boton" onclick="window.close()" style=" padding: 10px 20px; border-radius: 15px; margin-top: 20px; border: 2px solid black;" >Cerrar</button><br><br>');
+
+    ventana.document.write('</div></body>');
+
+    ventana.document.getElementById("im").src = impImg;
+
+
+    ventana.document.getElementById("pizarra").value = mensaje;
+
+
+}
+
+
+function generarLetra() {
+
+    nacionalidad = document.form.nacionalidad.value;
+
+    switch(nacionalidad) {
+        
+        case "esp":
+          
+            var numero_nif, resto, letra_nif;
+
+            
+            numero_nif = document.getElementById("nif_control").value;
+                
+                if (numero_nif.length != 8) {                            
+                    alert("Ingrese un numero de 8 digitos"); 
+                }
+        
+                console.log(numero_nif);
+        
+                resto = numero_nif % 23;
+                
+                console.log(resto);
+        
+                switch (resto) {
+                    case 0:
+                        letra_nif = "T";
+                        break;
+                    case 1:
+                        letra_nif = "R";
+                        break;
+                    case 2:
+                        letra_nif = "W";
+                        break;
+                    case 3:
+                        letra_nif = "A";
+                        break;
+                    case 4:
+                        letra_nif = "G";
+                        break;
+                    case 5:
+                        letra_nif = "M";
+                        break;
+                    case 6:
+                        letra_nif = "Y";
+                        break;
+                    case 7:
+                        letra_nif = "F";
+                        break;
+                    case 8:
+                        letra_nif = "P";
+                        break;
+                    case 9:
+                        letra_nif = "D";
+                        break;
+                    case 10:
+                        letra_nif = "X";
+                        break;
+                    case 11:
+                        letra_nif = "B";
+                        break;
+                    case 12:
+                        letra_nif = "N";
+                        break;
+                    case 13:
+                        letra_nif = "J";
+                        break;
+                    case 14:
+                        letra_nif = "Z";
+                        break;
+                    case 15:
+                        letra_nif = "S";
+                        break;
+                    case 16:
+                        letra_nif = "Q";
+                        break;
+                    case 17:
+                        letra_nif = "V";
+                        break;
+                    case 18:
+                        letra_nif = "H";
+                        break;
+                    case 19:
+                        letra_nif = "L";
+                        break;
+                    case 20:
+                        letra_nif = "C";
+                        break;
+                    case 21:
+                        letra_nif = "K";
+                        break;
+                    case 22:
+                        letra_nif = "E";
+                        break;
+                    default:
+                        break;
+                }
+        
+                
+            
+        
+            console.log(letra_nif);
+            document.getElementById("letra_control").value = letra_nif;
+
+            mensaje = mensaje + "Española";
+            break;
+
+        case "ext":
+            var numero_nie, letra, letra_nie ,resto;
+
+            letra = document.getElementById("letra_nie").value;
+    
+            numero_nie = document.getElementById("nif_control").value;   
+           
+            numero_nie = parseInt(numero_nie);
+
+            if ( letra == "Y") {
+                numero_nie = numero_nie + 10000000;
+            }
+
+            if ( letra == "Z") {
+                numero_nie = numero_nie + 20000000;
+            }
+    
+            resto = numero_nie % 23;
+                
+            console.log(resto);
+    
+                switch (resto) {
+                    case 0:
+                        letra_nie = "T";
+                        break;
+                    case 1:
+                        letra_nie = "R";
+                        break;
+                    case 2:
+                        letra_nie = "W";
+                        break;
+                    case 3:
+                        letra_nie = "A";
+                        break;
+                    case 4:
+                        letra_nie = "G";
+                        break;
+                    case 5:
+                        letra_nie = "M";
+                        break;
+                    case 6:
+                        letra_nie = "Y";
+                        break;
+                    case 7:
+                        letra_nie = "F";
+                        break;
+                    case 8:
+                        letra_nie = "P";
+                        break;
+                    case 9:
+                        letra_nie = "D";
+                        break;
+                    case 10:
+                        letra_nie = "X";
+                        break;
+                    case 11:
+                        letra_nie = "B";
+                        break;
+                    case 12:
+                        letra_nie = "N";
+                        break;
+                    case 13:
+                        letra_nie = "J";
+                        break;
+                    case 14:
+                        letra_nie = "Z";
+                        break;
+                    case 15:
+                        letra_nie = "S";
+                        break;
+                    case 16:
+                        letra_nie = "Q";
+                        break;
+                    case 17:
+                        letra_nie = "V";
+                        break;
+                    case 18:
+                        letra_nie = "H";
+                        break;
+                    case 19:
+                        letra_nie = "L";
+                        break;
+                    case 20:
+                        letra_nie = "C";
+                        break;
+                    case 21:
+                        letra_nie = "K";
+                        break;
+                    case 22:
+                        letra_nie = "E";
+                        break;
+                    default:
+                        break;
+                }
+    
+                
+            numero_nie = numero_nie - 10000000;
+    
+            document.getElementById("letra_control").value = letra_nie;
+    
+            console.log(letra_nie);
+            console.log(numero_nie);
+            
+            nie_completo = letra + numero_nie + letra_nie;
+            mensaje = mensaje + "Extranjera";
+            break;
+            
+        default:
+            alert("Escoja su nacionalidad");
+            break;
+    }
+    
+}
+
+function verImpreso() {
+
+    var impreso;
+    impreso = window.open("docs/Anexo IX.pdf");
+
+    
+}

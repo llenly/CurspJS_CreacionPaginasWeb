@@ -1,0 +1,299 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+    <meta language="esp" />
+    <meta name="author" content="Javier el Profe" />
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta name="keywords" content="Plantilla Javascript" />
+    <link rel="icon" href="img/favicon.png">
+    <title> Ejercicio81 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+    /* En CSS los comentarios se escriben asi */
+
+    body {
+        background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+
+    header {
+        background-color: #D0D6D8;
+        width: 1000px;
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+
+    #principal {
+        background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        width: 1000px;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    article {
+        background: rgba(250, 250, 250, 0.5);
+        width: 500px;
+        border-radius: 20px;
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+    }
+
+
+    nav {
+        background-color: #D0D6D8;
+        width: 1000px;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        border-color: black;
+        border-width: 2px;
+        border-style: solid;
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: Calibri, sans-serif;
+        font-weight: bold;
+        color: blue;
+    }
+
+
+    /* area de texto para leer el mensaje de esepra */
+    #area {
+        width: 500px;
+        height: 30px;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin: auto;
+        resize: none;
+    }
+
+    button {
+        margin-top: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .nif {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    #formulario {
+        width: 450px;
+        height: 250px;
+        border: 5px solid black;
+        border-radius: 10px;
+        background-color: #ccc;
+    }
+</style>
+
+
+
+
+
+<body>
+    <!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+    <header>
+
+        <img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+        <section>
+            <h1>Creación de Páginas Web</h1>
+            <h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+            <h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+        </section>
+
+        <img src="imagenes/CSS3.png" style="height:150px;" alt="CSS3">
+
+    </header>
+
+    <div id="principal">
+        <article>
+            <h1>NIF</h1>
+        </article>
+    </div>
+
+
+    <nav>
+
+        <img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+        <div id="formulario">
+            <h1>NIF</h1>
+            <div id="datos">
+                <div><label id="nif">tu numero</label></div>
+                <div><input id="bton" onclick="verNumero()"></input></div>
+                <div><label id="nif">tu letra</label></div>
+                <div><input id="btn" onclick="calcularLetra()"></input></div>
+
+            </div>
+            <div> <button type="reset" id="borrar" onclick="borrarDatos()">Borrar</button></div>
+            </fieldset>
+        </div>
+
+
+        <img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+    </nav>
+
+    <!-- PANTALLA PARA MOSTRAR LAS DNI -->
+
+    <!-- <div class="nif">
+		<iframe id="documento"></iframe>
+	</div> -->
+    <!-- El número debe ser entre 0 y 99999999
+    Debemos calcular el resto de la división entera entre el número introducido y el número 23.
+    Según el resultado, de 0 a 22, le corresponderá una letra de las siguientes: (T, R, W, A, G, M, Y, F, P, D, X, B, N,
+    J, Z, S, Q, V, H, L, C, K, E).
+    Si lo introducido no es un número válido deberá indicarse con un alert y volver a preguntar.
+    Tomamos el número completo de hasta 8 cifras de nuestro NIF, lo dividimos entre 23 y nos quedamos con el resto de
+    dicha división, o dicho de otro modo, calculamos el módulo 23 del NIF.
+
+    El resultado anterior es un número entre 0 y 22. A cada uno de estos posibles números le corresponde una letra, a la
+    que podemos acceder construyendo un array y rellenándolo con las siguientes letras:
+
+    Sólo queda buscar el número completo junto a la letra obtenida en el paso anterior y ya tienes el NIF con su letra
+    correspondiente. -->
+
+
+
+    <script>
+
+        var nif = prompt("ingrese un numero entre el 0 y 99999999");
+        nif = parseInt(nif);
+
+        var mensaje = "";
+        if (nif < 0) {
+            console.log(nif);
+            mensaje = mensaje + "por favor ingrese un numero mayor que 0";
+        }
+        else if (nif < 99) {
+            mensaje = mensaje + "por favor ingrese un numero menor que 99";
+        }
+
+
+
+//letra es un array de 23 posiciones
+        var letra = new Array(23);
+
+        letra[0] = "T ";
+        letra[1] = "R ";
+        letra[2] = "W ";
+        letra[3] = "A ";
+        letra[4] = "G ";
+        letra[5] = "M ";
+        letra[6] = " Y";
+        letra[7] = "F ";
+        letra[8] = " P";
+        letra[9] = "D ";
+        letra[10] = " X";
+        letra[11] = " B";
+        letra[12] = " N";
+        letra[13] = "J ";
+        letra[14] = " Z";
+        letra[15] = " S";
+        letra[16] = " Q";
+        letra[17] = "V ";
+        letra[18] = " H";
+        letra[19] = "L ";
+        letra[20] = " C";
+        letra[21] = " K";
+        letra[22] = " E";
+
+        //pregunta como le puedo pasar el numero que mete el cliente por parametro o sea que lo capture la funcion
+
+        function calcularLetra() {
+            console.log(nif);
+            //sacar el resto del numero introducido pro el usuario con esa formula
+            var resto = nif % 23;
+//variable nueva resultadoLetra va a coger el contenido del array letra y resto va a se una de las posiciones del array 
+            resultadoLetra = letra[resto];
+
+            mensaje = mensaje + "el resto de tu numero es" + resto + " el resultado de la letra es" + resultadoLetra;
+
+            //hago un for para que me reocrra el array de letras 
+            // for (i = 0; i < letra.length; i++) {
+
+            //     letra[i] = resto;
+            //     resto = resultadoLetra;    
+            // }
+
+
+            document.getElementById("btn").value = resultadoLetra;
+
+            //ver que saca por pantalla cada var
+
+            console.log(resto);
+            console.log(resultadoLetra);
+
+        }
+
+        function verNumero() {
+            valor = document.getElementById("bton").value = nif;
+        }
+
+        function borrarDatos() {
+            document.getElementById("btn").value = "";
+            document.getElementById("bton").value = "";
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="Plantilla Javascript" />								
+	<link rel="icon" href="img/favicon.png">										
+	<title> ejercicio 79</title>	
+	
+</head>
+
+
+	<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+	
+	
+	
+			<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS3 -->
+	
+	<style type="text/css"> 	/* En CSS los comentarios se escriben asi */
+	
+	
+
+	
+	</style>
+
+
+<body>		<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+	
+	
+	Origen: <input type="text" id="origen" readonly /> <br><br>
+	
+	Destino: <input type="text" id="destino" readonly /> <br><br>
+	
+	Contraseña: <input type="password" id="pass" /> <br><br>
+	
+	
+	
+	<button onclick="escribir('H')">H</button> 
+	<button onclick="escribir('O')">O</button>
+	<button onclick="escribir('L')">L</button>
+	<button onclick="escribir('A')">A</button><br><br>
+	
+	
+	<button onclick="verificar()">Verificar</button>
+		
+	<button onclick="borrar()">Borrar</button>
+	
+	<button onclick="ver3()">Ver/Ocultar</button>
+	
+	
+	
+	
+		
+	
+</body>
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+											// Si solo ocupan una línea también se escriben así
+	
+	
+	
+	var cambio = true;
+	
+	
+	
+	function borrar(){
+						
+						document.getElementById("origen").value = "";
+						document.getElementById("pass").value = "";
+						
+					}
+	
+
+	function verificar(){
+		 document.getElementById("destino").value = document.getElementById("origen").value;
+		}
+
+	
+					
+	function ver(){
+	
+				var mensaje;
+						
+						if (cambio == true){
+											mensaje = "text";
+											cambio = false;
+											}
+							else {mensaje = "password";
+									cambio = true;
+								}
+	
+						
+						document.getElementById("pass").type = mensaje;
+			
+
+					}
+					
+					
+					
+	function ver2(){
+	
+				var valor, mensaje;
+				
+				
+					valor = document.getElementById("pass").type;
+				
+						
+						if (valor == "text"){mensaje = "password"; }
+							else {mensaje = "text"; }
+						
+						
+						
+						document.getElementById("pass").type = mensaje;
+			
+
+					}
+					
+					
+	function ver3(){
+	
+				var valor, mensaje;
+				
+				
+					valor = document.getElementById("pass").type;
+				
+						
+					switch (valor){
+
+						case "text": mensaje = "password";
+									break;
+									
+						default: mensaje = "text";
+									break;
+											
+					
+						}
+	
+					document.getElementById("pass").type = mensaje;
+			
+
+					}	
+
+					
+	function escribir(pinchotortilla){			// Esta es una funcion por parametro o argumento
+												// Si desde button ejecutamos escribir('H'), automáticamente		
+						var contenido;			// la variable pinchotortilla='H'
+						
+						contenido = document.getElementById("origen").value
+						
+						document.getElementById("origen").value = contenido + pinchotortilla;
+						
+						}
+					 
+	
+
+</script>
+
+
+
+</html>

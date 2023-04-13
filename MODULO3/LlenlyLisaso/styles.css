@@ -1,0 +1,117 @@
+
+
+		
+header{
+    background: #3B82A0;
+    width: 1200px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    margin-left:auto; 
+    margin-right:auto;
+    border-color: black;
+    border-width:2px;
+    border-style: solid;
+    }
+
+img {
+    width:240px;
+    height:80px;
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    border-radius:5px;
+    }
+
+h1{	
+    color: blue;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size:20px;
+    padding-top:30px;
+    text-align:center;
+    /* padding-botton: 50px; */
+}
+
+
+#segundo {
+    color: black;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size:18px;	
+}
+
+p{
+    float: left;
+    }
+        
+#obligatorio {
+    color: red;
+    }
+
+        
+div{
+    background-color: #D0D6D8;
+    width: 1200px;
+    height: 880px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 20px;
+    }
+    
+form{
+    padding-left: 35px;
+    margin-left:auto; 
+    margin-right:auto;
+    }
+    
+#lateral{
+            float:left;
+            margin-right: 21px;
+        }
+        
+                
+footer {
+    background-color: #3B82A0;
+    width: 1200px;
+    height: 50px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top: 20px;
+    border-color: black;
+    border-width:2px;
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    }
+    
+
+article{
+        color: white;
+        font-family: Calibri;
+        font-weight: bold;
+        font-size:18px;
+        margin-left:auto; 
+        margin-right:auto;
+        }
+        
+section {	width: 1200px;
+            text-align: center;}		
+        
+#botones {
+            margin: 5px;
+            width: 100px;
+            height: 25px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            line-height: 1;
+            color: #444;
+            background-color: #fff;
+            border: 2px solid blue;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+            }		
+        
+        

@@ -1,0 +1,335 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> Ejercicio 86 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	.titulo {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+
+
+	label {
+		color: blue;
+		font-weight: bold;
+	}
+
+	.botones-input input {
+		padding: 10px 15px;
+		border-radius: 15px;
+		border: 1px solid blue;
+	}
+
+	button {
+		padding: 0.4rem 0.9rem;
+		border-radius: 10px;
+		border: 2px solid blue;
+		cursor: pointer;
+		box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.3);
+	}
+
+	.datos {
+		height: 400px;
+
+		display: flex;
+
+		align-items: center;
+		justify-content: space-around;
+		margin: 0 auto;
+	}
+
+	#texto {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: self-end;
+		width: 200px;
+		height: 380px;
+	}
+
+	#caja {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: self-start;
+		width: 250px;
+		height: 380px;
+	}
+
+	.textarea {
+		display: flex;
+		flex-direction: column;
+	}
+
+	textarea {
+		width: 250px;
+		height: 200px;
+		border-radius: 10px;
+		resize: none;
+		box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.3);
+		padding: 30px;
+		border: 3px solid blue;
+	}
+
+
+	.formulario {
+	height: 500px;
+	}
+
+	.btn{
+		display: flex;
+		justify-content: space-evenly;
+		margin-top: 20px;
+	}
+	span {
+		color: red;
+	}
+</style>
+
+
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:100px;" alt="CSS3">
+
+	</header>
+
+	<div class="titulo">
+		<article>
+			<h1>Formulario</h1>
+		</article>
+	</div>
+
+
+	<nav>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div class="formulario">
+			<form id="form" action="javascript:enviarDatos()">
+				<div class="datos">
+					<div id="texto">
+						<label for="nombre">Nombre:</label>
+						<label for="apellido1">Apellido 1:</label>
+						<label for="apellido2">Apellido 2:</label>
+						<label for="edad">Edad:</label>
+						<label for="poblacion">Población:</label>
+						<label for="movil">Móvil:</label>
+						<label for="tel">Teléfono Fijo:</label>
+						<label for="email">E-Mail:</label>
+
+					</div>
+					<div id="caja">
+						<div><input type="text" id="nombre" required />*</div>
+						<div><input type="text" id="apellido1" required />*</div>
+						<div><input type="text" id="apellido2" required />*</div>
+						<div><input type="number" id="edad" /></div>
+						<div><input type="text" id="poblacion" /></div>
+						<div><input type="number" id="movil" /></div>
+						<div><input type="number" id="tel" /></div>
+						<div><input type="email" id="email" />*</div>
+					</div>
+
+				</div>
+				<div>
+					<span>*Campos Obligatorios</span>
+				</div>
+
+
+				<div class="btn">
+					<button type="submit" value="Enviar" id="enviar">Enviar</button>
+					<button type="reset" value="Borrar">Borrar</button>
+				</div>
+
+
+
+			</form>
+          </div>
+
+			<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+	<script type="text/javascript">
+
+		function enviarDatos() {
+
+			var mensaje;
+
+			var nombre = document.getElementById("nombre").value;
+			var apellido1 = document.getElementById("apellido1").value;
+			var apellido2 = document.getElementById("apellido2").value;
+
+			var edad = document.getElementById("edad").value;
+			var poblacion = document.getElementById("poblacion").value;
+			var movil = document.getElementById("movil").value;
+			var tel = document.getElementById("tel").value;
+			var email = document.getElementById("email").value;
+
+			mensaje = "Nombre de usuario: " + nombre + "\nApellidos: " + apellido1 + " " + apellido2;
+
+			if (edad != "") {
+				mensaje = mensaje + "\nEdad: " + edad;
+			}
+
+			if (poblacion != "") {
+				mensaje = mensaje + "\nPobl: " + poblacion;
+			}
+
+			if (movil != "") {
+				mensaje = mensaje + "\nMovil: " + movil;
+			}
+
+			if (tel != "") {
+				mensaje = mensaje + "\nTeléfono Fijo: " + tel;
+			}
+
+			mensaje = mensaje + "\nE-Mail: " + email;
+
+
+			//capturo los datos enviados al boton enviar por su id
+			var datos = document.getElementById("enviar").value = mensaje;
+
+			//creo na ventana externa
+			var ventana = window.open("", "Pizarra Externa", "top=150px,left=150px,width=500px,height=500px");
+
+
+
+			ventana.document.write('<head><title>Pizarra Externa</title></head>');
+			ventana.document.write('<body>');
+
+			ventana.document.write('<div id="contenedor" align="center" style="width: 400px; border: 2px solid blue; padding: 50px;" >');
+			ventana.document.write('<textarea id="pizarra" cols="45" rows="7" readonly style="resize: none; border: 2px solid blue;"></textarea><br><br>');//creo el texarea pa mostrar datos
+			ventana.document.write('<button id="boton"  onclick="window.close()" style="width: 100px ; height = 100px ; border-radius:10px; border: none; " >Cerrar</button>');//me cierra la ventana
+
+			ventana.document.write('</div></body>');
+
+			//captro lo que hay en rl texarea por su id e imprimo datos que viene lleno con los datos del btn enviar
+			ventana.document.getElementById("pizarra").value = datos;
+
+
+
+
+		}
+
+
+
+
+
+	</script>
+</body>
+
+</html>

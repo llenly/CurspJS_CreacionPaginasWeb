@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio73</title>
+<style>
+    #contenedor{
+        width: 650px;
+        height: 500px;
+        border: 1px solid black;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #btn{
+        width: 450px;
+        height: 100px;
+        display: flex;
+        justify-content:  space-evenly;
+        align-items: center;
+    }
+    #boton{
+        width: 150px;
+        height: 40px;
+        background-color: bisque;
+        text-align: center;
+        cursor: pointer;
+    
+    }
+
+    #box{
+        width: 650px;
+        height: 250px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #area1{
+        width: 250px;
+        height: 200px;
+        border: 1px solid black;
+        resize: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #area2{
+        width: 250px;
+        height: 200px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+</style>
+
+<script>
+
+    function contarCaracter() {
+ //creo una variable que me captura a traves del id de la textarea 1 lo que hay dentro
+//       var mensaje = document.getElementById("area1").value;
+//luego creo otra variable que me captura con el length lo que hay dentro de la variable que guarda los datos de la texarea1
+//       contador = ("hay un total de " + mensaje.length + "caracteres" );
+//y aqui creo otra para guardar el valor de la variable que contiene la longitd y lo guardo en el teaxrea2 mediante si id
+//       cantidad = document.getElementById("area2").value = contador;
+ 
+       var contador = 0;
+       var mensaje = document.getElementById("area1").value;
+
+       var mensaje = document.getElementById("area1").value;
+       for ( i = 0; i < mensaje.length; i++) {
+      
+          contador++;  
+       }
+       mensaje = document.getElementById("area2").value = contador; 
+    }
+
+    function borrar() {
+        document.getElementById("area1").value = " ";
+        document.getElementById("area2").value = " ";
+    }
+</script>
+</head>
+<body>
+    <!-- Crear una página Web con dos botones y dos áreas de texto.
+     Una de las áreas permitirá introducir un mensaje, 
+     y al pulsar un botón se mostrará otro mensaje en la otra área de texto indicando cuántos caracteres tiene el primer mensaje introducido.
+      Con el segundo botón se borrarán las dos áreas de texto. -->
+
+    <div id="contenedor">
+
+        <div id="box">
+            <textarea id="area1" > </textarea>
+            <textarea id="area2" readonly=""> </textarea> <!--no puede escribir -->
+        </div>
+       
+
+        <div id="btn">
+   <!-- aqui se llaman a la funciones con el onclik y busca datos de los elementos y los buscas por los id-->
+            <button id="boton" onclick="contarCaracter()">Contar Caracteres</button>
+            <button id="boton" onclick="borrar()">Borrar el texto</button>
+        </div>
+
+        
+
+    </div>
+
+
+
+</body>
+
+</html>

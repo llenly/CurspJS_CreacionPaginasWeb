@@ -1,0 +1,647 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> Ejercicio 84 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+	// Si solo ocupan una línea también se escriben así
+	// () Parentesis
+	// [] Corchetes
+	// {} Llaves
+
+
+	function enviarDtos() {
+		var nombre, telefono, email, poblacion, sex,
+			aficiones, sexo, hijos, lab, valorLab, mensaje, longitudSex, longitudLab, situacionLab;
+
+
+		nombre = document.datos.nombre.value;
+		email = document.datos.email.value;
+		telefono = document.datos.phone.value;
+		poblacion = document.datos.poblacion.value;
+
+		//aqui defino el mensaje
+		mensaje = "";
+
+		mensaje = mensaje + "Nombre: " + nombre + "\n";
+		mensaje = mensaje + "E-Mail: " + email + "\n";
+		mensaje = mensaje + "Teléfono: " + telefono + "\n";
+
+		console.log(nombre);
+		console.log(email);
+		console.log(telefono);
+
+		//hago un switch para localizar que poblacion escogio
+
+		switch (poblacion) {
+			case "1":
+				mensaje = mensaje + "tu tienda es en Madrid" + "\n";
+				break;
+			case "2":
+				mensaje = mensaje + "tu tienda es en Alcorcon" + "\n";
+				break;
+			case "3":
+				mensaje = mensaje + "tu tienda es en Guardalajara" + "\n";
+				break;
+			case "4":
+				mensaje = mensaje + "tu tienda es en Mostoles" + "\n";
+				break;
+			case "5":
+				mensaje = mensaje + "tu tienda es en Segovia" + "\n";
+				break;
+
+			default:
+				break;
+
+				console.log(poblacion);
+		}
+
+		//validacion para las aficiones 
+		// AFICIONES
+
+		var bicicleta = document.datos.bici.checked;
+		var tenis = document.datos.tenis.checked;
+		var natacion = document.datos.natac.checked;
+		var yoga = document.datos.yoga.checked;
+
+		if ((bicicleta == false) && (tenis == false) && (natacion == false) && (yoga == false)) {
+			aficiones = "por favor marque una aficion";
+		} else {
+			aficiones = "Tus aficiones son: ";
+		}
+
+
+		if (bicicleta == true) {
+			aficiones = aficiones + "bicicleta" + "\n";
+
+		}
+		if (natacion == true) {
+			aficiones = aficiones + "natacion" + "\n";
+
+		}
+		if (tenis == true) {
+			aficiones = aficiones + "tenis" + "\n";
+
+		}
+		if (yoga == true) {
+			aficiones = aficiones + "yoga" + "\n";
+		}
+
+		mensaje = mensaje + aficiones + "\n";
+
+		//aqui hago el array para recorrer los hijos 
+		longitudHijos = document.datos.hijos.length;
+
+		arrayHijos = new Array(longitudHijos);
+		for (i = 0; i < longitudHijos; i++) {
+			arrayHijos[i] = null;
+		}
+
+		for (i = 0; i < longitudHijos; i++) {
+			arrayHijos[i] = document.datos.hijos[i].checked;
+		}
+
+		for (i = 0; i < longitudHijos; i++) {
+			if (arrayHijos[i] == true) {
+				
+				//con un switch capturo que caso se sexo esta marcado 
+				switch (i) {
+					case 0:
+						mensaje = mensaje + "tiene hijos" + "\n";
+						break;
+					case 1:
+						mensaje = mensaje + " no tiene hijos" + "\n";
+						break;
+					default:
+						break;
+				}
+			}
+
+			//validacion para los hijos 
+			// if (arrayHijos[i] == 0) {
+
+			// 	console.log(arrayHijos[i]);
+			// 	console.log(i);
+				
+			// 	mensaje = mensaje + " tiene hijos" + "\n";
+				
+			// } else {
+			// 	console.log(arrayHijos[i]);
+			// 	console.log(i);
+			// 	mensaje = mensaje + " no tiene hijos" + "\n";
+			// }
+		}
+
+		// creo un array para que me guarde las variable sexo cuantos hay marcado 
+
+		longitudSex = document.datos.sex.length;
+		// longitud va a gauradr a lo que tenga dentro la var sexo, midiendo su longitud
+		sexo = new Array(longitudSex);//creo un nuevo array sexo  con lo que viene de la var sexo 
+
+		for (i = 0; i < longitudSex; i++) {
+			sexo[i] = null;//vacio el array sexo
+
+		}
+		//recorro el array sexo y guardo en i lo que venga marcado de la var sexo capturada por su name = sex 
+		for (i = 0; i < longitudSex; i++) {
+			sexo[i] = document.datos.sex[i].checked;// el checked se sustituye por el value en los casos de radiobutton
+			console.log(sexo[i]);
+			console.log(i);
+
+		}
+
+		//recorro el array para ver cual de las opciones se marcaron
+		for (i = 0; i < longitudSex; i++) {
+			// creo una condicion para evaluar si sexo esta marcado 
+			if (sexo[i] == true) {
+				console.log(sexo[i]);
+				console.log(i);
+				//con un switch capturo que caso se sexo esta marcado 
+				switch (i) {
+					case 0:
+						mensaje = mensaje + " tu sexo es mujer" + "\n";
+						break;
+					case 1:
+						mensaje = mensaje + " tu sexo es hombre " + "\n";
+						break;
+					default:
+						break;
+				}
+			}
+
+		}
+
+		// hacer el mismo recorrido para la situacion laboral,
+		//crear una variable que capture por el name(sustituvo del id) lo que viene del input situavion laboral 
+		// crear otra var que guarde un array que tenga adentro ela primera var la que captura lo que viene del input
+		// vaciarlo y recorrerlo en cada posicion para llenarlo con lo que se ha marcado
+		// recorrer el array y evaluar con switch que caso se marco, con un if para comprobar si se marco
+
+
+		//crear una variable que capture por el name(sustituvo del id) lo que viene del input situavion laboral 
+		longitudLab = document.datos.valorLab.length;
+
+		// crear otra var que guarde un array que tenga adentro ela primera var la que captura lo que viene del input
+		situacionLab = new Array(longitudLab);
+		// vaciarlo
+		for (i = 0; i < longitudLab; i++) {
+			situacionLab[i] = null;
+		}
+		// recorrerlo en cada posicion para llenarlo con lo que se ha marcado		
+		for (i = 0; i < longitudLab; i++) {
+			situacionLab[i] = document.datos.valorLab[i].checked;// el checked se sustituye por el value en los casos de radiobutton
+			console.log(situacionLab[i]);
+		}
+		// recorrer el array y evaluar con switch que caso se marco, con un if para comprobar si se marco
+		for (i = 0; i < longitudLab; i++) {
+			if (situacionLab[i] == true) {
+				console.log(situacionLab[i]);
+				console.log(i);
+				switch (i) {
+					case 0:
+						mensaje = mensaje + "Su situacion laboral es desempleado.";
+						console.log(situacionLab[i]);
+						break;
+					case 1:
+						mensaje = mensaje + "Su situacion laboral es autónomo.";
+						break;
+					case 2:
+						mensaje = mensaje + "Su situacion laboral es tiempo parcial.";
+						break;
+					case 3:
+						mensaje = mensaje + "Su situacion laboral es tiempo completo.";
+						break;
+
+					default:
+						break;
+				}
+
+			}
+		}
+		//captura por el id el area y mostar los mensajes
+		document.getElementById("text_area").value = mensaje;
+		console.log(mensaje);
+	}
+
+	function borrarDtos() {
+		document.getElementById("text_area").value = "";
+
+
+	}
+
+
+</script>
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	.titulo {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1200px;
+		height: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+	#formulario {
+		width: 800px;
+		height: 500px;
+		/* border: 1px solid black; */
+	}
+
+	#box1 {
+		height: 300px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.date {
+		width: 260px;
+		height: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.mail {
+		width: 250px;
+		height: 50px;
+	}
+
+	.name,
+	.telefono,
+	.pobl {
+		width: 250px;
+		height: 50px;
+
+	}
+
+	span {
+		color: red;
+		font-weight: bold;
+	}
+
+	#box2 {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	#caja1 {
+		width: 300px;
+		height: 200px;
+
+	}
+
+	#caja2 {
+		width: 200px;
+		height: 150px;
+	}
+
+	#sexos,
+	#child {
+		width: 130px;
+		height: 100px;
+	}
+
+
+
+	#aficiones,
+	#children,
+	#sexo,
+	#lab {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#especial {
+
+		display: flex;
+		justify-content: flex-start;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	#laboral {
+		width: 200px;
+		height: 150px;
+	}
+
+	#boton {
+		margin-top: 50px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+
+	textarea {
+		width: 230px;
+		height: 180px;
+		border-radius: 10px;
+		resize: none;
+		box-shadow: 5px 5px 18px 5px rgba(0, 0, 0, 0.3);
+		padding: 30px;
+		border: 3px solid blue;
+	}
+
+	button {
+		width: 80px;
+		height: 40px;
+		border: 1px solid blue;
+		border-radius: 10px;
+		color: blue;
+	}
+</style>
+
+
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:100px;" alt="CSS3">
+
+	</header>
+
+	<div class="titulo">
+		<article>
+			<h1>Formulario con name ejercicio 84</h1>
+		</article>
+	</div>
+
+
+	<nav>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div id="formulario">
+			<!-- CONTENDOR PARA LOS PRIMEROS DATOS -->
+			<form action="javascript:enviarDtos()" id="form" name="datos">
+				<div id="box1">
+					<!-- Caja uno Datos personales -->
+					<fieldset id="caja1">
+						<legend>Datos personales</legend>
+						<div class="date">
+							<div class="name">
+								<input type="text" name="nombre" required>
+								<label for="nombre">Nombre</label>
+
+							</div>
+							<div class="telefono">
+								<input type="tel" name="phone" required>
+								<label for="telefono">Telefono</label>
+
+							</div>
+
+							<div class="mail">
+								<input type="email" name="email" required>
+								<label for="email">Correo </label>
+
+							</div>
+							<div class="pobl">
+								<select name="poblacion" id="pob">
+									<option value="">Marca tu ciudad</option>
+									<option value="1">Madrid</option>
+									<option value="2">Alcorcon</option>
+									<option value="3">Guardalajara</option>
+									<option value="4">Mostoles</option>
+									<option value="5">Segovia</option>
+								</select>
+							</div>
+							<div>
+								<span>*Campos obligatorios</span>
+
+							</div>
+
+						</div>
+					</fieldset>
+
+					<fieldset id="caja2">
+						<legend>Aficiones</legend>
+						<div id="aficiones">
+							<div>
+								<div><input type="checkbox" name="bici"></div>
+								<div><input type="checkbox" name="tenis"></div>
+								<div><input type="checkbox" name="natac"></div>
+								<div><input type="checkbox" name="yoga"></div>
+
+
+							</div>
+
+							<div id="especial">
+								<div><label for="bici">Bicicleta</label></div>
+								<div><label for="tenis">Tenis</label></div>
+								<div><label for="natacion">Natacion</label></div>
+								<div><label for="yoga">Yoga</label></div>
+
+							</div>
+
+						</div>
+					</fieldset>
+				</div> <!-- SE ACABA EL CONTENDOR PARA LOS PRIMEROS DATOS -->
+
+
+				<!--   CONTENEDOR DE ABAJO -->
+				<div id="box2">
+
+					<!-- PRIMERA CAJA SEXO -->
+					<fieldset id="sexos">
+						<legend id="leyenda">Sexo</legend>
+						<div id="sexo">
+							<div>
+								<div><input type="radio" name="sex" /></div>
+								<div><input type="radio" name="sex" /></div>
+
+							</div>
+
+							<div>
+
+								<div><label for="sex">Mujer</label></div>
+								<div><label for="sex">Hombre</label></div>
+							</div>
+
+						</div>
+
+					</fieldset>
+					<!-- SEGUNDA CAJA PARA HIJOS -->
+					<fieldset id="child">
+						<legend id="leyenda">Hijos</legend>
+						<div id="children">
+							<div>
+								<div><input type="radio" name="hijos" id="yes" /></div>
+								<div><input type="radio" name="hijos" id="non" /></div>
+
+							</div>
+
+							<div>
+								<div><label for="hijos">Si</label></div>
+								<div><label for="hijos">No</label></div>
+							</div>
+
+						</div>
+
+					</fieldset>
+					<!-- TERCERA CAJA PARA SIUACION LABORAL -->
+					<fieldset id="laboral">
+						<legend id="leyenda">Situacion Laboral</legend>
+						<div id="lab">
+							<div>
+								<div><input type="radio" name="valorLab" id="desempleado" /></div>
+								<div><input type="radio" name="valorLab" id="autonomo" /></div>
+								<div><input type="radio" name="valorLab" id="parcial" /></div>
+								<div><input type="radio" name="valorLab" id="completo" /></div>
+
+							</div>
+
+							<div id="especial">
+								<div><label for="valorLab">Desempleado</label></div>
+								<div><label for="valorLab">Autónomo</label></div>
+								<div><label for="valorLab">Tiempo Parcial</label></div>
+								<div><label for="valorLab">Tiempo Completo</label></div>
+							</div>
+
+						</div>
+
+					</fieldset>
+
+				</div> <!-- FIN  CONTENEDOR DE ABAJO -->
+
+
+				<div id="boton">
+
+					<button id="botones" type="submit">Enviar</button>
+					<button id="botones" type="reset">Borrar</button>
+
+
+				</div>
+			</form>
+
+		</div>
+
+		<!-- AREA PARA LA CAJA DEL MENSAJE -->
+
+		<div id="derecha">
+			<div id="area">
+				<textarea id="text_area" readonly></textarea>
+			</div>
+			<div id="boton">
+				<button id="botones" type="reset" onclick="borrarDtos()">Borrar</button>
+			</div>
+
+		</div>
+
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+
+</body>
+
+</html>

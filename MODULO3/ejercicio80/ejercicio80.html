@@ -1,0 +1,326 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> Ejercicio80 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+	// Si solo ocupan una línea también se escriben así
+	// () Parentesis
+	// [] Corchetes
+	// {} Llaves
+	//hago una funcio por paramentros que estan definidos en cada enlace 									
+	function abrirPeriodico(noticias) {
+		switch (noticias) {
+			case "pais":
+				document.getElementById("mensaje").value = "Un momento, estamos conectando con El Pais";
+				document.getElementById("periodico").src = "https://elpais.com/";
+				break;
+			case "mundo":
+				document.getElementById("mensaje").value = "Un momento, estamos conectando con El Mundo";
+				document.getElementById("periodico").src = "https://elmundo.es/";
+				break;
+			case "rolling":
+				document.getElementById("mensaje").value = "Un momento, estamos conectando con RollingStone";
+				document.getElementById("periodico").src = "https://www.rollingstone.com/";
+				break;
+			case "abc":
+				document.getElementById("mensaje").value = "Un momento, estamos conectando con ABC";
+				document.getElementById("periodico").src = "https://www.abc.es/";
+				break;
+			case "hola":
+				document.getElementById("mensaje").value = "Un momento, estamos conectando con Hola";
+				document.getElementById("periodico").src = "https://www.hola.es/";
+			default:
+				document.getElementById("mensaje").value = "";
+				break;
+		}
+	}
+
+
+
+
+
+</script>
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	#principal {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+	#periodicos {
+		width: 780px;
+		height: 140px;
+		/* border: 1px solid black; */
+
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	/* 	
+	a img {
+		width: 100px;
+		height: 50px;
+		background-image: none;
+	} */
+
+	#pais {
+		width: 155px;
+		height: 35px;
+		background: url("imagenes/El\ Pais.png");
+		background-image: src="imagenes/El Pais.png"alt="El Pais";
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+	}
+
+	#mundo {
+		width: 100px;
+		height: 100px;
+		background: url("imagenes/El\ Mundo.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+	}
+
+	#rolling {
+		width: 175px;
+		height: 40px;
+		background: url("imagenes/Rolling\ Stone.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+	}
+
+	#abc {
+		width: 115px;
+		height: 80px;
+		background: url("imagenes/ABC.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		/*para lograr que la imagen se mas pequeña*/
+		background-position: center;
+
+	}
+
+	#hola {
+		width: 115px;
+		height: 80px;
+		background: url("imagenes/HOLA.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+	}
+
+	/* area de texto para leer el mensaje de esepra */
+	#mensaje {
+		width: 500px;
+		height: 30px;
+		border: 2px solid black;
+		border-radius: 10px;
+		margin: auto;
+		resize: none;
+	}
+
+	/* iframe */
+
+	.iframe {
+		display: flex;
+		justify-content: center;
+		margin-top: 15px;
+	}
+
+	#periodico {
+		width: 1000px;
+		height: 700px;
+		border: 5px solid black;
+		border-radius: 10px;
+		background-color: #ccc;
+	}
+</style>
+
+
+
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:150px;" alt="CSS3">
+
+	</header>
+
+	<div id="principal">
+		<article>
+			<h1>Prensa diaria con iframes</h1>
+		</article>
+	</div>
+
+
+	<nav>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div>
+			<div id="periodicos">
+				<!-- vincular un enlace al div, el enlace envuelve el div -->
+				<a href="javascript:abrirPeriodico('pais')">
+					<div id="pais"></div>
+				</a>
+
+				<a href="javascript:abrirPeriodico('mundo')">
+					<!-- <img src="imagenes/El Mundo.png" alt="El Mundo"> -->
+					<div id="mundo"> </div>
+				</a>
+
+				<a href="javascript:abrirPeriodico('rolling')">
+					<!-- <img src="imagenes/Rolling Stone.png" alt="rollingstone"> -->
+					<div id="rolling"></div>
+				</a>
+			
+				<a href="javascript:abrirPeriodico('abc')">
+					<!-- <img src="imagenes/ABC.png" alt="ABC"> -->
+					<div id="abc"></div>
+				</a>	
+				
+				<a href="javascript:abrirPeriodico('hola')">
+					<!-- <img src="imagenes/HOLA.png" alt="Hola"> -->
+					<div id="hola">	</div>
+				</a>
+			
+			</div>
+
+			<!-- AREA PARA VER MESNAJE DE ESPERA MIENTRAS CONECTA -->
+			<div id="navegacion">
+				<textarea id="mensaje" readonly></textarea>
+			</div>
+		</div>
+
+
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+
+	<!-- PANTALLA PARA MOSTRAR LAS PAGINAS -->
+
+	<div class="iframe">
+		<iframe id="periodico"></iframe>
+	</div>
+
+</body>
+
+</html>

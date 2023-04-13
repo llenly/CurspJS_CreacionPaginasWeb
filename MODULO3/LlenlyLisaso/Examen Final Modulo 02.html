@@ -1,0 +1,222 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="plantilla HTML5" />								
+	<link rel="icon" href="img/favicon.png">	
+	<link rel="stylesheet" type="text/css" href="styles.css" media="screen" />
+	<script src="index.js"></script>								
+	<title> Examen Modulo 02 - UF2: Anexo IX de la Comunidad de Madrid </title>														
+</head>
+
+</head>
+
+<body>					<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+	<header>
+	
+		<img id="" src="imagenes\Logo CCMM.png">
+		<img id="" src="imagenes\Logo FSE.png">
+		<img id="" src="imagenes\Logo MinisterioTrabajo.png">
+	
+	</header>
+
+	<div>
+	
+	<form action="javascript:enviarDatos()" name="formulario" >
+	
+		<h1>FORMULARIO DEL ANEXO IX - FORMACIÓN DE LA COMUNIDAD DE MADRID</h1>
+	
+
+	<!-- La etiqueta FIELDSET Sirve para agrupar elementos en un área visible dentro del formulario -->
+
+		<fieldset style="width:1100px;">
+	
+			<legend id="segundo">DATOS DEL/LA TRABAJADOR/A PARTICIPANTE</legend>
+			
+			<font face="calibri" color="#393E46" size="3">
+			
+			<p>Apellidos y Nombre: <input type="text" name="nombre" id="name_control" maxlength="50" style="width:500px; border-color: red;"/>&nbsp &nbsp &nbsp &nbsp </p>
+			
+			<p>Dirección: <input type="text" id="dir_control" name="direccion" style="width:300px; border-color: red;" maxlength="100"/> &nbsp &nbsp &nbsp </p> <!-- La etiqueta &nbsp Sirve para dar espacio -->
+		
+			<p>Localidad: <input type="text" name="localidad"  id="loc_control" style="width:200px; border-color: red;" maxlength="100" /> &nbsp &nbsp &nbsp </p>
+			
+			<p>Comunidad: <select id="regiones" name = "comunidad" size="1" style="width:100px; border-color: red;"> <!-- Seleccionar desplegable comunidades. SIZE=1 Ver sólo una opción --> 
+								<option value="bot"></option>
+								<option value="and">Andalucía</option>
+								<option value="ara">Aragón</option>
+								<option value="cat">Cataluña</option>
+								<option value="mad">Madrid</option>
+								<option value="val">Valencia</option>
+								<option value="gal">Galicia</option>
+								<option value="leo">Castilla León</option>
+								<option value="vas">País Vasco</option>
+								<option value="cna">Islas Canarias</option>
+								<option value="cas">Castilla La Mancha</option>
+								<option value="mur">Murcia</option>
+								<option value="bal">Islas Baleares</option>
+								<option value="ext">Extremadura</option>
+								<option value="ast">Principado de Asturias</option>
+								<option value="nav">Navarra</option>
+								<option value="can">Cantabria</option>
+								<option value="rio">La Rioja</option>
+								<option value="ceu">Ceuta</option>
+								<option value="mel">Melilla</option>
+						</select> &nbsp &nbsp &nbsp </p>
+		
+			<p>CP: <input type="text" name="cp" id="cp_control" style="width:100px;" maxlength="5" /></p>
+			
+			<p>Teléfono Móvil: <input type="text" name="movil" id="mov_control" style="width:100px; border-color: red;" maxlength="9" />&nbsp &nbsp </p>
+		
+			<p>Teléfono Fijo: <input type="text" name="telefono" id="tel_control" style="width:200px;" /></p>
+			
+			<br><br><br>
+			
+			<p>Correo Electronico: <input type="email" name="correo" style="width:300px;border-color: red;" id="email_control" /> &nbsp &nbsp &nbsp </p>
+		
+			<p>Nº de Afiliación a la Seguridad Social: <input type="text" name="seguridadsocial" id="seg_control" style="width:200px;" />&nbsp &nbsp &nbsp </p>
+			
+			<p>Fecha de nacimiento: <input type="date" name="nacimiento" id="date_control" /> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </p><br><br>
+		
+			<p>Sexo:	<input type="radio" id="var1" name="sexo"/>Hombre 
+						<input type="radio" id="var1" name="sexo" />Mujer &nbsp &nbsp &nbsp </p>
+				
+			<p>Discapacidad: 	<input type="radio" id="var2" name="discapacidad" /> SI
+								<input type="radio" id="var2" name="discapacidad"/> NO</p>  
+			
+			<br><br><br>
+			<br><br><br>
+					
+			<p>Nacionalidad: <select id="nac_control" style="width:100px; border-color: red;" size="1"> <!-- Seleccionar nacionalidad. SIZE=1 Ver sólo una opción --> 
+								<option value="bot"></option>
+								<option value="esp">Española</option>
+								<option value="ext">Extranjera</option></select>&nbsp &nbsp </p>
+			
+			<p>NIF / NIE:    <input type="text" name="generarLetra" id="letra_nie" style="width:15px;" maxlength="1" value=""/>
+							- <input type="text" name="generarnif" id="nif_control" style="width:100px; border-color: red;" maxlength="9"/> 
+							- <input type="text" name="generarletra" id="letra_control" style="width:15px;" maxlength="1" readonly />&nbsp &nbsp &nbsp </p><br><br><br>
+					
+	
+				<button id="botones" style="height:50px" onclick="generarId()" type="button">Generar Letra NIF/NIE</button>
+			
+			<br>		
+			
+			<font face="calibri" color="red" size="1"> 
+				<i> <sup>(*)</sup>Los campos en rojo son obligatorios. </i><font>
+					
+			
+		
+		</fieldset><br>
+	
+		<fieldset style="width:1100px;">
+	
+			<legend id="segundo">ESTUDIOS</legend> 
+			
+			<font face="calibri" color="#393E46" size="3">
+			
+			<table ><tr>
+				<td width="200px"></td>
+				<td>
+					<input type="checkbox" id="var3" > Sin titulación <br>
+					<input type="checkbox" id="var4" > ESO / Graduado Esc. <br>
+					<input type="checkbox" id="var5" > Técnico FP Grado Medio / FP1 <br>
+					<input type="checkbox" id="var6" > Técnico FP Grado Superior / FP2 <br>
+					<input type="checkbox" id="var7" > Bachiller <br>
+				</td>
+				<td width="100px"></td>
+				<td>
+					<input type="checkbox" id="var8"> Diplomado (E. Universitaria 1º Ciclo) <br>
+					<input type="checkbox" id="var9"> Licenciado (E. Universitaria 2º Ciclo) <br>
+					<input type="checkbox" id="var10"> Doctor <br>
+					<input type="checkbox" id="var11"> Otra titulación (especificar)<br>
+									&nbsp &nbsp &nbsp <input type="text" name="apoyo" style="width:300px;" maxlength="200"/>
+				</td></tr>
+			</table></font>
+			
+		</fieldset>
+	
+		<fieldset id="lateral" style="width:500px;height:180px;">
+	
+			<legend id="segundo">SITUACIÓN LABORAL</legend>
+		
+			
+			<font face="calibri" color="#393E46" size="3">
+			
+			<table><tr>
+				<td width="200px"><b>ÁREA FUNCIONAL</b></td>
+				<td>
+					<input type="radio" id="var12" name="laboral" > Dirección <br>
+					<input type="radio" id="var12" name="laboral" > Administración <br>
+					<input type="radio" id="var12" name="laboral" > Comercial <br>
+					<input type="radio" id="var12" name="laboral" > Mantenimiento <br>
+					<input type="radio" id="var12" name="laboral"> Producción <br>
+				</td>
+				
+			</table>
+			</font>
+			
+		</fieldset>
+		
+		<fieldset style="width:550px; height:180px;">
+	
+			<legend id="segundo">CATEGORÍA</legend>
+			
+			<font face="calibri" color="#393E46" size="3">
+			
+			<table><tr>
+				<td width="200px"><b>CATEGORÍA</b></td>
+				<td>
+					<input type="radio" id="var13" name="categ" > Directivo/a <br>
+					<input type="radio" id="var13" name="categ" > Mando Intermedio <br>
+					<input type="radio" id="var13" name="categ" > Técnico <br>
+					<input type="radio" id="var13" name="categ" > Trabajador/a cualificado <br>
+					<input type="radio" id="var13" name="categ" > Trabajador/a de baja cualificación <sup>(*)</sup>  <br>
+				</td></font>
+				
+				
+				<tr>
+					<td colspan=7> <font face="calibri" color="#393E46" size="1">
+					<sup>(*)</sup> <i> Grupos de cotización 6, 7, 9, 10. <br>Desempleados sin carné profesional, cert. prof. nivel 2 ó 3, título de formación profesional ni titulación universitaria. </i>
+					</font></td>
+				</tr>
+				
+			</table>
+			
+			
+		</fieldset><br>
+	
+		
+		<section>
+		
+			<input id="botones" type="reset" value="Borrar"/> 
+			
+			<input id="botones" class="mostrar" type="submit" value="Enviar"/> 
+
+			 <form action="./docs/Anexo IX.pdf">
+				<button id="botones" value="Ver Impreso" onclick="descargar()">Ver Impreso </button>
+			 </form>
+			
+	
+	
+		</section>
+		
+	</form>
+	
+	</div>
+
+<footer>
+	
+		<article>Esta página web pertenece al curso "Creación Páginas Web"</article>
+
+</footer>
+
+ 
+
+</body>
+
+</html>

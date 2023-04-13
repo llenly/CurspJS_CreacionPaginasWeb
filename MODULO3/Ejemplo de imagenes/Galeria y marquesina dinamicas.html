@@ -1,0 +1,286 @@
+<!DOCTYPE html>			<!-- Este es el inicio obligatorio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					<!-- La etiqueta HEAD sirve para delimitar la cabecera de la página Web. Aqui se contienen todos los metadatos, codificaciones
+								básicas y los enlaces a ficheros externos CSS3 y Javascript -->
+
+	<meta language="esp" />															<!-- El parámetro LANGUAGE define el idioma en el que se escribe el contenido de la página WEB -->
+	
+	<meta name="author" content="Javier el Profe"/>									<!-- Podemos definir cualquier metadato usando los parámetros NAME y CONTENT. Aqui por ejemplo 
+																							estamos definiendo los datos del autor de la página -->
+																							
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	<!-- Es conveniente definir la codificación de los símbolos del lenguaje que estamos usando. 
+																							Para los idiomas latinos y anglosajones se suele usar las codificaciones UTF-8 o algún
+																							estándar predefinido. En español el estándar más usado es el ISO-8859-1-->
+																							
+	<meta name="keywords" content="Plantilla Javascript" />								<!-- El metadato de las palabras clave se define con el nombre KEYWORDS. Las palabas clave a usar 
+																							se definen mediante el parámetro CONTENT. Van entre comillas y separadas por espacios en blanco.
+																							Es conveniente usar palabras en plural y no más de 10 palabras clave -->
+																							
+	<link rel="icon" href="img/favicon.png"/>										<!-- Podemos definir cualquier icono personalizado en cada página WEB usando la etiqueta LINK y los parámetros 
+																							REL y HREF para crear un enlace a la imagen del icono. Aqui por ejemplo estamos definiendo el icono 
+																							que va a aparecer en la pestaña de la página WEB-->
+																							
+	<title> Ejemplo basico de galeria y marquesina</title>														<!-- Del mismo modo podemos definir el nombre que va a aparecer en la pestaña de la página WEB usando la 
+																							etiqueta TITLE-->
+</head>
+
+
+<style>
+
+		
+img {	width: 1000px;
+					height: 500px;
+					}
+					
+	marquee {	width: 800px;
+					height: 400px;
+					}				
+		
+	input{text-decoration: none;
+			border: 0px solid white;
+			text-align: center;
+			margin-top: 10px;
+			margin-left: 500px;}
+			
+	textarea{
+			width: 500px;
+			height: 100px;
+			text-align: center;
+			margin-top: 10px;
+			margin-left: 300px;
+			resize: none;}
+
+	
+
+</style>
+
+
+
+
+
+
+
+
+<body>					<!-- La etiqueta BODY es obligatoria si queremos visualizar la página. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+	
+	<!--	<form name="datos">
+	
+				<input name="pepe"/>
+				
+		</form>
+		
+		
+		<form name="conjunto">
+	
+				<input name="pepe"/>
+				
+		</form>
+		
+		<form name="datos">
+	
+				<input name="pepe"/>
+				
+		</form>
+		
+		
+		<form name="conjunto">
+	
+				<input name="pepe" type="text  />
+				
+		</form> -->
+		
+		
+		<button onclick="retroceder()">Retroceder</button>
+		
+			
+			<img id="fotito" src="imagenes/merry_christmas.jpg" alt="arbol"/>
+		
+		
+		<button onclick="adelante()">Avanzar</button><br>
+		
+		<input id="texto" value="Foto de Merry Christmas" readonly /><br><br>
+		
+		<textarea id="texto2" readonly value="Felicitacion Navideña que se envia por correo fisico o electrónico tipica de los pises occidentales"></textarea><br><br>
+		
+		
+		
+
+		
+		<marquee>
+		
+			<img id="foto0" name="imagen" class="fotito" src=""/>
+			<img id="foto1" name="imagen" class="fotito" src=""/>
+			<img id="foto2" name="imagen" class="fotito" src=""/>
+			<img id="foto3" name="imagen" class="fotito" src=""/>
+				
+		
+		</marquee>
+		
+		<br><br><br><br><br><br>
+		
+		
+		
+		
+		
+	
+</body>
+
+
+<script>
+
+				
+		// Los datos desde y hacia HTML identificados por ID se rastrean por getElementById("identificador")
+		
+		// Los datos desde y hacia HTML identificados por NAME se rastrean por getElementsByName("pepe")[i].checked
+				
+		// Los datos desde y hacia HTML identificados por CLASS se rastrean por getElementsByClassName("identificador")		
+		
+		// Los datos desde y hacia HTML identificados por NAME se rastrean por document.conjunto.pepe[i].checked
+		
+		
+	var fotos = new Array(4);
+
+		fotos[0]="imagenes/merry_christmas.jpg";
+		fotos[1]="imagenes/navidad_eco.jpg";
+		fotos[2]="imagenes/navidad-celebracion.jpg";
+		fotos[3]="imagenes/snowman.jpg";
+		
+	var fotos2 = new Array(4);
+
+		fotos2[0]="imagenes/487.jpg";
+		fotos2[1]="imagenes/image rebajas.jpg";
+		fotos2[2]="imagenes/images.jpg";
+		fotos2[3]="imagenes/índice.jpg";	
+		
+		
+	var texto = new Array(4);
+
+		texto[0]="Foto de Merry Christmas";
+		texto[1]="Foto de Arbol de Navidad";
+		texto[2]="Foto de Nacimiento";
+		texto[3]="Foto de Hombre de Nieve";
+			
+	var parrafo = new Array(4);
+
+		parrafo[0]="Felicitacion Navideña que se envia por correo fisico o electrónico tipica de los pises occidentales";
+		parrafo[1]="El Arbol de Navidad tiene su origen en los paises nórdicos";
+		parrafo[2]="El Nacimiento tuvo su origen en el sudeste asiatico y a España lo trajo Carlos III desde Nápoles";
+		parrafo[3]="El Hombre de Nieve tiene su origen en la simbología nórdica de representacion de la naturaleza.";		
+		
+		
+		
+		
+		
+		
+	var contador=0;
+	
+	
+	
+	var fecha = new Date();
+	
+	var dia = fecha.getDate();
+	
+	var anyo = fecha.getFullYear();
+	
+	var mes = fecha.getMonth();
+	
+	mes = parseInt(mes)+1;
+	
+	anyo = parseInt(anyo);
+	
+	dia = parseInt(dia);
+	
+	
+	
+	//alert(dia + " " + mes + " " + anyo);
+	
+	
+						
+			if ((dia >= 3) && (anyo >= 2022) && ((mes >= 1) && (mes <= 2)){
+						
+						
+						for (i=0; i<4; i++){
+						
+							document.getElementsByClassName("fotito")[i].src = fotos2[i];
+							
+							document.getElementsByName("imagen")[i].src = fotos2[i];
+							
+							document.getElementById("foto" + i).src = fotos2[i];
+						
+								}
+						
+					
+					/*	document.getElementById("fotito0").src = fotos2[0];
+						document.getElementById("fotito1").src = fotos2[1];
+						document.getElementById("fotito2").src = fotos2[2];
+						document.getElementById("fotito3").src = fotos2[3];*/
+
+						}
+					else{
+					
+						for (i=0; i<4; i++){
+						
+							document.getElementsByClassName("fotito")[i].src = fotos[i];
+							
+							document.getElementsByName("imagen")[i].src = fotos[i];
+							
+							document.getElementById("foto" + i).src = fotos[i];
+						
+								}
+					
+					/*	document.getElementById("fotito0").src = fotos[0];
+						document.getElementById("fotito1").src = fotos[1];
+						document.getElementById("fotito2").src = fotos[2];
+						document.getElementById("fotito3").src = fotos[3];*/
+
+					
+						}
+
+	
+				
+				
+	
+	function adelante(){
+				
+				
+				
+				document.getElementById("fotito").src = fotos[contador];
+				
+				document.getElementById("texto").value = texto[contador];
+				
+				document.getElementById("texto2").value = parrafo[contador];
+				
+				contador++;
+				
+				if (contador >=4){contador = 0;}
+				
+				
+				}
+				
+				
+	function retroceder(){
+				
+				
+				
+				document.getElementById("fotito").src = fotos[contador];
+				
+				document.getElementById("texto").value = texto[contador];
+				
+				document.getElementById("texto2").value = parrafo[contador];
+				
+				contador--;
+				
+				if (contador <0){contador = 3;}
+				
+				
+				}	
+		
+		
+		
+	
+</script>
+
+</html>

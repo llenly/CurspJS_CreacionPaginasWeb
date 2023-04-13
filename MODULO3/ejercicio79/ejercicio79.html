@@ -1,0 +1,420 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> ejercicio79 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+	// Si solo ocupan una línea también se escriben así
+	// () Parentesis
+	// [] Corchetes
+	// {} Llaves
+	var dato1;
+	//funcion para validar los datos 
+	
+	do {
+		dato1 = prompt("Introduce una contraseña numerica de seis digitos ");
+		if (dato1.length > 6)  {
+			alert("tienes mas de seis numeros");
+		}
+
+	} while (dato1.length !=6);
+
+	console.log(dato1);
+
+	function imprimir(num) {			// Esta es una funcion por parametro o argumento
+		// Si desde button ejecutamos escribir('H'), automáticamente		
+		var contenido;			// la variable pinchotortilla='H'
+
+		contenido = document.getElementById("pass").value
+
+		document.getElementById("pass").value = contenido + num;
+
+	}
+	// contador var global , porque si no cada vez que entra se queda en5
+	var contador = 5;
+	var acierto = false; // par controlar los aciertos y que el programa no sida dandote intentos
+
+	function verificarDatos() {
+
+		var mensaje;
+		
+		var codigo = document.getElementById("pass").value;
+			
+		 	if (codigo != dato1) {
+	  		    contador--; //duda si primero evalua y luego descuenta
+		 		mensaje = " la contraseña o el codigo son  incorrecta" +
+		 			" \n " + " tienes " + contador + " intentos ";
+		 		document.getElementById("emoj").src = "imagenes/error.png";
+		 		console.log(contador, 'este es el contador');
+		 		console.log(codigo);
+		 		console.log(dato1);
+		 	}
+          // controlar solo una oportunidad 
+              if (contador ==1) {
+				mensaje = "todos los datos son correctos" + "\n"
+		 			+ " contraseña" + " " + codigo;
+		 		document.getElementById("emoj").src = "imagenes/solouna.png";
+		 		console.log(contador, 'este es el contador');
+			  }
+
+		 	if (codigo == dato1) {
+		 		contador = 0;
+				acierto = true;
+		 		mensaje = "todos los datos son correctos" + "\n"
+		 			+ " contraseña" + " " + codigo;
+		 		document.getElementById("emoj").src = "imagenes/acierto.png";
+		 		console.log(contador, 'este es el contador');
+		 	}
+           
+			 if ((contador <=0) && (acierto == true)) {
+		 		mensaje = "todos los datos son correctos" + "\n"
+		 			+ " contraseña" + " " + codigo;
+		 		document.getElementById("emoj").src = "imagenes/acierto.png";
+		 		console.log(contador, 'este es el contador');
+		 	}
+		
+
+			 if ((contador <=0) && (acierto == false)) {
+		 		mensaje = "Lo siento, ya no tienes mas oportunidades";
+		 		document.getElementById("emoj").src = "imagenes/fallo.png";
+		 		console.log(contador, 'este es el contador');
+		 	}
+
+          
+
+		document.getElementById("area").value = mensaje;
+	}
+
+
+	//FUNCION PARA VER LOS DATOS
+	var cambio;
+	function verDatos() {
+
+		var mensaje;
+
+		if (cambio == true) {
+			mensaje = "text";
+			cambio = false;
+		}
+		else {
+			mensaje = "password";
+			cambio = true;
+		}
+
+
+
+		document.getElementById("pass").type = mensaje;
+
+
+	}
+
+
+
+	//funcion para borar los datos
+	function borrarDatos() {
+
+
+		document.getElementById("pass").value = "";
+		document.getElementById("area").value = "Hola vamos a ver si te sabes el nombre y la contraseña";
+		document.getElementById("emoj").src = "imagenes/passwd.png"
+	}
+
+
+</script>
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	#ejercicios {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 250px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+	#contend {
+		width: 400px;
+		height: 250px;
+		/* border: 1px solid black;  */
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#btn {
+		width: 150px;
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+
+	textarea {
+		width: 250px;
+		height: 110px;
+		border: 2px solid blue;
+		border-radius: 15px;
+		resize: none;
+	}
+
+	#btnver,
+	#btnverificar {
+		width: 100px;
+		height: 35px;
+		border: 1px solid blue;
+		border-radius: 15px;
+	}
+
+	#borrar {
+		width: 100px;
+		height: 30px;
+		border: 1px solid blue;
+		border-radius: 15px;
+	}
+
+	#ver {
+		width: 240px;
+		height: 55px;
+		/* border: 1px solid blue; */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#form {
+		height: 210px;
+		/* border: 1px solid black; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	#nombre,
+	#password {
+		width: 170px;
+		height: 60px;
+		/* border: 1px solid black; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	label {
+		color: blue;
+		font-size: 20px;
+		text-shadow: darkcyan;
+		font-weight: bold;
+	}
+
+	button {
+		width: 35px;
+		height: 30px;
+		border: 1px solid blue;
+	}
+
+	input {
+		width: 150px;
+		/* 	height: 25px; no funciona */
+	}
+
+	#emoj {
+		width: 170px;
+		height: 145px;
+	}
+
+	#btnum {
+		width: 280px;
+		height: 80px;
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:100px;" alt="CSS3">
+
+	</header>
+
+	<div id="ejercicios">
+		<article>
+			<h1>Ejercicio79 Contraseña</h1>
+		</article>
+	</div>
+
+
+	<nav>
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div id="contend">
+
+			<div id="btnum">
+				<div id="uno">
+					<button onclick="imprimir('1')">1</button>
+					<button onclick="imprimir('2')">2</button>
+					<button onclick="imprimir('3')">3</button>
+					<button onclick="imprimir('4')">4</button>
+					<button onclick="imprimir('5')">5</button>
+				</div>
+
+				<div id="dos">
+					<button onclick="imprimir('6')">6</button>
+					<button onclick="imprimir('7')">7</button>
+					<button onclick="imprimir('8')">8</button>
+					<button onclick="imprimir('9')">9</button>
+					<button onclick="imprimir('0')">0</button>
+				</div>
+
+			</div>
+
+			<div>
+				<button id="borrar" onclick="borrarDatos()">Borrar</button>
+			</div>
+
+			<div id="codigo">
+				<label>Escribe el codigo</label>
+				<input id="pass" type="password" />
+			</div>
+
+
+			<div id="ver">
+				<button id="btnver" onclick="verDatos()">Ver Ocultar</button>
+
+				<button id="btnverificar" onclick="verificarDatos()">Verificar</button>
+
+			</div>
+		</div>
+
+
+		<div id="mensaje">
+			<textarea name="mensaj" id="area" cols="25" rows="6"
+				readonly>Hola vamos a ver si te sabes el nombre y la contraseña</textarea>
+		</div>
+
+		<div id="imagen">
+			<img id="emoj" src="imagenes/passwd.png">
+		</div>
+		</div>
+
+
+
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+
+</body>
+
+</html>

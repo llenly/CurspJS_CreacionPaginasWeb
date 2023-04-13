@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio74</title>
+    <!-- Crear una página Web en la que se pida mediante pop-ups (prompt) un nombre y una contraseña. Después se cargará el HTML con dos campos, nombre y contraseña, y un área de texto.
+    El programa deberá controlar que el nombre y la contraseña que se escriben en los campos coinciden con los datos de nombre y contraseña introducidos por los pop-ups,
+     mostrando los mensajes de acierto y error en el área de texto. -->
+
+    <style>
+        #contenedor {
+            width: 800px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #btn {
+            width: 450px;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #boton {
+            width: 150px;
+            height: 40px;
+            background-color: rgb(240, 236, 231);
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+
+        }
+
+        #box {
+            width: 700px;
+            height: 180px;
+            /*border: 1px solid black;*/
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #area1 {
+            width: 300px;
+            height: 150px;
+            border: 1px solid black;
+            resize: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        //pido nombre y contraseña y lo capaturo en las variable valor
+        //para luego ese valor compararlo con lo escrito en el form
+        //primero se carga las alert y luego el form
+
+        var valor1 = prompt("Escribe un nombre");
+        var valor2 = prompt("Escribe una contraseña");
+
+        function validarDatos() {
+
+            var nombre;
+            var password;
+            var mensaje;
+
+            nombre = document.getElementById("name").value;
+            password = document.getElementById("password").value;
+
+            if (nombre == valor1) {
+               mensaje = " el nombre del usuario  es correcto" + " <br>";
+            }else if (valor1 == "") {
+                mensaje = "el campo esta vacio , escribe el nombre" + " <br>";
+            } else{
+                 mensaje = "el nombre no esta bien escrito"+ " <br>";
+            }
+
+            if (password == valor2) {
+                mensaje =  mensaje + "contraseña  es correcta" + " <br>";
+                console.log(password);
+                console.log(mensaje);
+
+            }else if (valor2 == ""){
+                mensaje = mensaje + "el campo esta vacio , escribe la contraseña" + " <br>";
+            }else{
+                mensaje = mensaje + " contraseña incoreecta" + " <br>";
+            }
+            if ((nombre == valor1) && (password == valor2)) {
+
+                mensaje = "todos los datos son correctos"+ "<br>"+
+                 " nombre"  + nombre + " <br>" 
+                 +  password + " contraseña";
+               
+            }
+            document.getElementById("area1").value = mensaje;
+
+        }
+
+        function borrarDatos() {
+
+            document.getElementById("name").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("area1").value = "";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="formulario">
+            <h1>Escribe tu nombre y contraseña</h1>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" />
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" id="password" />
+        </div>
+        <div>
+            <button id="boton" onclick="validarDatos()">Validar Datos</button>
+        </div>
+
+        <div id="box">
+            <textarea id="area1" readonly></textarea>
+        </div>
+
+        <div id="btn">
+            <!-- aqui se llaman a la funciones con el onclik y busca datos de los elementos y los buscas por los id-->
+            <button id="boton" onclick="borrarDatos()">Borrar Datos</button>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

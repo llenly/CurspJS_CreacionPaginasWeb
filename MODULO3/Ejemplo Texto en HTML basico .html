@@ -1,0 +1,102 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="Plantilla Javascript" />								
+	<link rel="icon" href="img/favicon.png">										
+	<title> Plantilla Javascript </title>	
+	
+</head>
+
+	<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+	
+	<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+		                                 	// Si solo ocupan una línea también se escriben así
+	
+											// () Parentesis
+											// [] Corchetes
+											// {} Llaves
+	
+	
+	var pepe;		// Variable global
+	
+
+	
+	
+	function texto()
+			{
+			
+			var nom, apel, pob, mensaje;
+			
+			mensaje = document.getElementById("pizarra").value;
+			
+			nom = document.getElementById("nombre").value;
+			
+			apel = document.getElementById("apellidos").value;
+			
+			pob = document.getElementById("poblacion").value;
+			
+			mensaje = mensaje + ("El usuario " + nom + " " + apel + " vive en " + pob + "\n");
+			
+			document.getElementById("pizarra").value= mensaje;
+			
+			
+			
+			
+			}
+	
+	
+	
+	function borrar()
+			{
+	
+			
+			document.getElementById("nombre").value= "";
+			
+			document.getElementById("apellidos").value="";
+			
+			document.getElementById("poblacion").value="";
+			
+			document.getElementById("pizarra").value= "";
+			
+			}
+	
+	
+	
+
+	</script>
+
+	
+			<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS3 -->
+	
+	<style type="text/css"> 	/* En CSS los comentarios se escriben asi */
+	
+	
+	#pizarra {}
+
+	
+	</style>
+
+
+<body>		<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+		Nombre: <input type="text" id="nombre"/><br>
+		Apellidos: <input type="text" id="apellidos"/><br>
+		Poblacion: <input type="text" id="poblacion"/><br><br>
+		
+		
+		
+		<button id="boton" onclick="texto()">Introduce valores</button><br><br>
+	
+		<textarea id="pizarra" cols="40" rows="5" readonly="readonly"></textarea><br><br>
+
+		<button id="boton" onclick="borrar()">Borrar el texto</button><br><br>
+	
+</body>
+
+
+</html>

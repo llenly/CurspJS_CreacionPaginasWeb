@@ -1,0 +1,292 @@
+<!DOCTYPE html> <!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<meta language="esp" />
+	<meta name="author" content="Javier el Profe" />
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="keywords" content="Plantilla Javascript" />
+	<link rel="icon" href="img/favicon.png">
+	<title> Ejercicio 75 </title>
+
+</head>
+
+<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+
+<script type="text/javascript"> 		/* En Javascript los comentarios se escriben así */
+	// Si solo ocupan una línea también se escriben así
+	// () Parentesis
+	// [] Corchetes
+	// {} Llaves
+
+
+	//     5. Volumen de un cubo (JS 57).
+	// Escribir un programa que pida por teclado la arista de un cubo mediante un número. Si
+	// el número es menor de cero el programa seguirá pidiendo un número positivo. En el
+	// caso de que la arista sea mayor que cero, mostrará por pantalla el mensaje:
+	// "El volumen del cubo de arista <arista> es: <volumen>".
+	// El volumen de un cubo = arista3
+	// . Al final del programa se le preguntará al usuario si
+	// quiere repetir el proceso o finalizar el programa.
+	// La función para calcular una potencia es Math.pow(base, exponente).
+
+
+	//funcion para el volumen de un cubo
+	function volumenCubo() {
+		calculo = document.getElementById("volumen").value;
+		var arist = prompt("Inserte una arista: ");
+		var arist = parseInt(arist);
+
+		var volumen;
+
+		if (arist == 0) {
+			arist = alert("escriba el numero");
+
+		} else if (arist > 0) {
+			volumen = Math.pow(arist, 3);
+			// console.log(volumen);
+			// console.log(arist);
+		} {
+
+			//   alert(" El volumen del cubo es "+ volumen);
+		}
+		while (arist < 0) {
+
+		}
+		alert(" El volumen del cubo es " + volumen);
+
+	}
+
+	//funcion para el volumen 
+	// Suponiendo que pi = 3.1416. Escribe un programa que pida al usuario que introduzca el 
+	// radio, y presente por pantalla el cálculo del perímetro de la circunferencia (P=2*pi*r), el 
+	// área del círculo (A=pi*r2), y el volumen de la esfera (V = 4*pi*r3/3) redondeando a dos decimales
+
+	var perimetro, area, vol;
+	const pi = 3.1416;
+
+
+	function calculoEsfera() {
+		volumen = document.getElementById("esfera").value;
+
+		var radio = parseInt(prompt("diga el radio de la circunferencia"));
+
+		perimetro = 2 * pi * radio;
+		area = pi * radio * radio;
+		vol = (4 * pi * radio * radio * radio) / 3;
+
+		alert(" perimetro es " + perimetro + " \n"
+			+ "el area es " + area + " \n" + "el volumen es " + vol);
+	}
+	//funcion para el triengulo rectangulo
+
+	//     Escribir un programa que pida por teclado la base y la altura de un triángulo
+	// rectángulo. Si los números son menores de cero el programa seguirá pidiendo
+	// números positivos. El programa deberá calcular el área del triángulo, el perímetro y la
+	// hipotenusa. Se mostrará el resultado por pantalla ajustado a dos decimales.
+	// • Área de un triángulo = (base * altura) / 2
+	// • Perímetro de un triángulo rectángulo = base + altura + hipotenusa
+	// • Hipotenusa = √𝑏𝑎𝑠𝑒2 + 𝑎𝑙𝑡𝑢𝑟𝑎2
+	// La función para la raíz cuadrada es Math.sqrt(valor a calcular).
+	// La función para calcular una potencia es Math.pow(base, exponente).
+
+	var base, altura, area, perimetro, hipotenusa;
+	var mensaje1 = "el area del triengulo es ";
+	var mensaje2 = "la hipotenusa del tringulo es ";
+	var mensaje3 = "el perimetro del tringulo es ";
+
+	function triangRectang() {
+
+		rectangTrinagulo = document.getElementById("triengulo").value;
+		do {
+
+			base = parseInt(prompt("introduce la base del triangulo"));
+			altura = parseInt(prompt("introduce la altura del triangulo"));
+
+			if (base <= 0 || altura <= 0) {
+				base = parseInt(prompt("la base del triangulo debe ser mayor a cero"));
+				altura = parseInt(prompt("la altura del triangulo debe ser mayor a cero"));
+				// console.log(base);
+				// console.log(altura);
+			}
+			area = (base * altura) / 2;
+			hipotenusa = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+			perimetro = base + altura + hipotenusa;
+
+			area = Math.round(area);
+			hipotenusa = Math.round(hipotenusa);
+			perimetro = Math.round(perimetro);
+
+
+		}
+		while (base < 0 || altura < 0);
+		alert(mensaje1 + area + "\n"
+			+ mensaje2 + hipotenusa + "\n "
+			+ mensaje3 + perimetro);
+	}
+
+</script>
+
+<!-- La etiqueta STYLE es ÚNICA. Sirve para delimitar donde se incia y termina la parte de CSS -->
+
+<style type="text/css">
+	/* En CSS los comentarios se escriben asi */
+
+	body {
+		background: url("imagenes/Wallpaper HTML5-CSS3.jpg") no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+
+	header {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+
+	#ejercicios {
+		background: url("imagenes/javascript-1.png") no-repeat center center scroll;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+	}
+
+	article {
+		background: rgba(250, 250, 250, 0.5);
+		width: 500px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+	}
+
+
+	nav {
+		background-color: #D0D6D8;
+		width: 1000px;
+		height: 150px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 20px;
+		border-radius: 20px;
+		border-color: black;
+		border-width: 2px;
+		border-style: solid;
+		text-align: center;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: Calibri, sans-serif;
+		font-weight: bold;
+		color: blue;
+	}
+
+	#btn {
+		width: 530px;
+		height: 130px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	button {
+		height: 50px;
+		border: 1px solid blue;
+		border-radius: 5px;
+		cursor: pointer;
+		color: #434546;
+	}
+
+	 button:hover{
+		 background-color: #575d5f;
+		 color: aliceblue;
+		 font-size: 20px;
+	 }
+</style>
+
+<body>
+	<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+	<header>
+
+		<img src="imagenes/HTML5.png" style="height:100px;" alt="HTML5">
+
+		<section>
+			<h1>Creación de Páginas Web</h1>
+			<h2>Módulo 02: Programación con lenguajes de guión en páginas Web</h2>
+			<h3>Unidad Formativa 2: Pruebas de funcionalidades y optimización de páginas web</h3>
+		</section>
+
+		<img src="imagenes/CSS3.png" style="height:100px;" alt="CSS3">
+
+	</header>
+
+	<div id="ejercicios">
+		<article>
+			<h1>JS49 Soluciones de los ejercicio avanzados</h1>
+		</article>
+	</div>
+
+
+	<nav>
+
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+		<div id="btn">
+			<div>
+				<button id="volumen" onclick="volumenCubo()">Volumen de un cubo</button>
+			</div>
+			<div>
+				<button id="esfera" onclick="calculoEsfera()">Calculo de la esfera</button>
+			</div>
+			<div>
+				<button id="triengulo" onclick="triangRectang()">Triangulo Rectangulo</button>
+			</div>
+		</div>
+		<img src="imagenes/Javascript.png" style="height:100px;" alt="Javascript">
+
+
+	</nav>
+
+</body>
+
+</html>
