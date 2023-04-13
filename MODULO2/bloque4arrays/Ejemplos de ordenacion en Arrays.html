@@ -1,0 +1,94 @@
+<!DOCTYPE html>			<!-- Este es el inicio obligatorio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					<!-- La etiqueta HEAD sirve para delimitar la cabecera de la página Web. Aqui se contienen todos los metadatos, codificaciones
+								básicas y los enlaces a ficheros externos CSS3 y Javascript -->
+
+	<meta language="esp" />															<!-- El parámetro LANGUAGE define el idioma en el que se escribe el contenido de la página WEB -->
+	
+	<meta name="author" content="Javier el Profe"/>									<!-- Podemos definir cualquier metadato usando los parámetros NAME y CONTENT. Aqui por ejemplo 
+																							estamos definiendo los datos del autor de la página -->
+																							
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	<!-- Es conveniente definir la codificación de los símbolos del lenguaje que estamos usando. 
+																							Para los idiomas latinos y anglosajones se suele usar las codificaciones UTF-8 o algún
+																							estándar predefinido. En español el estándar más usado es el ISO-8859-1-->
+																							
+	<meta name="keywords" content="Plantilla Javascript" />								<!-- El metadato de las palabras clave se define con el nombre KEYWORDS. Las palabas clave a usar 
+																							se definen mediante el parámetro CONTENT. Van entre comillas y separadas por espacios en blanco.
+																							Es conveniente usar palabras en plural y no más de 10 palabras clave -->
+																							
+	<link rel="icon" href="img/favicon.png"/>										<!-- Podemos definir cualquier icono personalizado en cada página WEB usando la etiqueta LINK y los parámetros 
+																							REL y HREF para crear un enlace a la imagen del icono. Aqui por ejemplo estamos definiendo el icono 
+																							que va a aparecer en la pestaña de la página WEB-->
+																							
+	<title> Metodo de ordenacion burbuja </title>														<!-- Del mismo modo podemos definir el nombre que va a aparecer en la pestaña de la página WEB usando la 
+																							etiqueta TITLE-->
+</head>
+
+
+<style>
+</style>
+
+
+<script>
+
+	//var datos = new Array(12, 23, 15, 8, 13, 5, 25, 4, 21, 10);
+	
+	var datos = new Array("N", "F", "J", "H", "S", "A", "R", "Z", "C", "W");
+	
+	var numero, cambio;
+
+	for (i=0 ; i<10 ; i++)
+		{
+		
+			document.write(datos[i] + " ");
+		
+		}
+		
+	document.write("<br><br>");
+	
+	
+	do{
+		cambio = false;
+		
+		for (i=0 ; i<9 ; i++)
+			{
+			
+				if(datos[i]<datos[i+1])
+					{
+						numero = datos[i];
+						datos[i] = datos[i+1];
+						datos[i+1] = numero;
+						cambio = true;
+					}
+			}
+	
+		for (i=0 ; i<10 ; i++){
+					document.write(datos[i] + " ");}
+		
+		document.write("<br><br>");
+		
+	
+	
+	}while (cambio==true);
+	
+	
+	
+	
+
+</script>
+
+
+
+
+
+
+<body>					<!-- La etiqueta BODY es obligatoria si queremos visualizar la página. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+	
+	
+</body>
+
+
+</html>

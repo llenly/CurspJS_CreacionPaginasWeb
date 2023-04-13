@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio69</title>
+    <script>
+        //  I. Realizar un programa que cree un array de 10 posiciones y vacíalo.
+        //  Rellenarlo con 10 números distintos del 25 al 50 a través de consola, ordenarlo de menor a mayor y luego nos imprima por pantalla el resultado. (JS 69A).
+        // Repetir el proceso ordenándolos de mayor a menor
+
+
+
+        var total = 5;
+
+        //declarar el array y vaciarlo
+        var posiciones = new Array(total);
+        for (var i = 0; i < posiciones; i++) {
+            posiciones[i] = null;
+
+        }
+
+        //rellenar el array de posiciones con los numeros
+        //hago un for con los do while dentro para que mientas hace el bucle recorra el array y elo rellene y compruebe
+        for (i = 0; i < total; i++) {
+
+            do {
+                //este do es para que me emeta numeros en el rago del 25 al 50
+                //y comorobar si estan o no y rellenar el array
+                var numero = prompt("Introduce un numeros del 25 al 50");
+                numero = parseInt(numero);
+
+                if ((numero < 25) || (numero > 50)) {
+
+                    alert("Has metido un numero equivocado. Repitelo.");
+                }
+                var existe = false;
+
+                console.log(posiciones, " array");
+                console.log(numero);
+
+                //meter los numeros introducidos en el el array 
+
+                for (j = 0; j < total; j++) {
+                    //comprobar  si el numro ya esta escrito
+                    if (posiciones[j] == numero) {
+                        existe = true;
+
+                    }
+                }
+
+                if (existe == true) {
+                    alert("este número ya esta en el array");
+                }
+
+
+            } while ((numero < 25) || (numero > 50) || existe == true)
+            // while (posiciones == total);
+
+            //si el numero no esta coje el numero y gayrdamelo en el array en la psociiom
+            //lo saco del while por se va a ejecutar si se cumplen todas las ocndiciones
+            if (existe == false) {
+                posiciones[i] = numero;
+            }
+        }
+
+        // mostar el array
+        for (i = 0; i < total; i++) {
+            document.write(posiciones[i] + " ");
+            console.log(posiciones[i] + " ");
+        }
+
+        document.write("<br><br>");
+
+        do {
+            cambio = false;
+            // HACER EL ORDENAMIENTO DEL ARRAY METODO BURBUJA
+            //posiciones[i + 1] para saltar a la siguiente posciion
+            for (i = 0; i < 9; i++) {
+
+                if (posiciones[i] > posiciones[i + 1]) {
+                    numero = posiciones[i];
+                    posiciones[i] = posiciones[i + 1];
+                    posiciones[i + 1] = numero;
+                    cambio = true;
+                }
+
+
+            }
+
+        } while (cambio == true);
+
+        for (i = 0; i < total; i++) {
+            document.write(posiciones[i] + " ");
+        }
+
+        document.write("<br><br>");
+
+
+        //Repetir el proceso ordenándolos de mayor a menor
+
+        do {
+            cambio = false;
+
+            for (i = 0; i < 9; i++) {
+
+                if (posiciones[i] < posiciones[i + 1]) {
+                    numero = posiciones[i];
+                    posiciones[i] = posiciones[i + 1];
+                    posiciones[i + 1] = numero;
+                    cambio = true;
+                }
+            }
+
+        } while (cambio == true); //este while se va a ejecutar mientras el numero exista
+
+        //muestro el array tal cual 
+        for (i = 0; i < total; i++) {
+            document.write(posiciones[i] + " ");
+        }
+
+        document.write("<br><br>");
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

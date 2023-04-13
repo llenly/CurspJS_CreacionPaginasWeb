@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio52</title>
+</head>
+<script>
+    /*  Realizar un programa que pida por pantalla un nombre de usuario y una contraseña.
+      A continuación se le preguntará qué datos quiere cambiar mediante una letra. Si elige la letra n se cambiará el nombre,
+       si elige la letra c se cambiará la contraseña, y si elige la letra t se cambiará tanto el nombre como la contraseña.
+       Al final del programa se mostrarán tanto el nombre y la contraseña originales como los cambiados. */
+
+  
+     var nombre = prompt("escribe tu nombre");
+     var contraseña = prompt("escribe tu contraseña");
+     var datos = prompt("escoge la letra n para cambiar el nombre, la letra c cambiar la contraseña, letra t cambiara el nombre y la contraseña.")
+     var mensaje;
+     var nuevoNombre;
+     var nuevoContraseña;
+
+     switch (datos) {
+     case "n":
+         nuevoNombre = prompt("cambia el nombre");
+         mensaje = (nuevoNombre);
+         break;
+
+         case "c":
+         nuevoContraseña = prompt("cambia la contraseña");
+         mensaje = ( nuevoContraseña)
+         break;
+
+         case "t":
+         nuevosDtos = prompt("cambia  el nombre y la contraseña");
+         mensaje = (nuevosDtos)
+         break;
+     default:
+         break;
+ }
+ alert( nombre + "\n" + mensaje  +"\n"+ contraseña+ "\n" +  mensaje +"\n"+  datos+ "\n" +  mensaje); 
+/*  switch (datos) {
+     case "n":
+       
+         nuevoNombre =  prompt("cambia el nombre");
+         mensaje = nombre + nuevoNombre;
+         break;
+         case "c":
+         mensaje = ("cambia la contraseña");
+         mensaje = ( nuevoContraseña)
+         break;
+         case "t":
+         nuevosDtos = prompt("cambia  el nombre y la contraseña");
+         mensaje = (nuevosDtos)
+         break;
+     default:
+         break;
+ }
+ alert(  mensaje +nuevoContraseña +contraseña); */
+/* 
+    switch (cambiarDatos) {
+
+        case "n":
+        nuevoNombre = prompt(" escribe otro nombre");
+        nuevoNombre  = otroNombre;
+          //  Mensaje = (nuevoNombre);
+            break;
+       case "c":
+        nuevaContraseña = prompt(" escribela nueva contraseña");
+        nuevaContraseña = contraseña ;
+        Mensaje = (nuevaContraseña);
+           break;
+       
+
+        default:
+            break;
+       
+    }
+    
+    alert(nombre + otroNombre + contraseña + nuevaContraseña); */
+</script>
+
+<body>
+
+</body>
+
+</html>

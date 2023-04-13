@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio55</title>
+</head>
+<script>
+//     Mostrar calificación WHILE / DO-WHILE con IF (JS 55).
+// Escribir un programa que pida por teclado una nota de evaluación. La nota podrá ser
+// decimal, no inferior a 0 ni superior a 10, redondeada a dos decimales. Si no cumple los
+// requisitos el programa seguirá pidiendo una nota. Cuando se introduzca un valor entre
+// 0 y 10 se mostrará la calificación según la nota:
+// 0 - 2,99: Muy deficiente
+// 3 - 4,99: Insuficiente
+// 5 - 5,99: Suficiente
+// 6 - 7’99: Bien
+// 8 - 8,99: Notable
+// 9 - 10: Sobresaliente
+
+notas = prompt("Inserte una nota: ");
+            var nota = parseFloat(notas);
+
+            if (nota >= 0 && nota <= 10) {
+                if (nota >= 0 && nota <= parseFloat(2.99)) {
+                    mensaje = "Muy deficiente";
+                } else if (nota >= 3 && nota <= parseFloat(4.99)) {
+                    mensaje = "Insuficiente";
+                } else if (nota >= 5 && nota <= parseFloat(5.99)) {
+                    mensaje = "Suficiente";
+                } else if (nota >= 6 && nota <= parseFloat(7.99)) {
+                    mensaje = "Bien";
+                } else if (nota >= 8 && nota <= parseFloat(8.99)) {
+                    mensaje = "Notable";
+                } else if (nota >= 9 && nota <= 10) {
+                    mensaje = "Sobresaliente";
+                }
+                alert(mensaje);
+            }
+while (notas < 0 || notas > 10) {
+    alert(mensaje);
+}
+
+
+var nota;
+
+        do {
+            nota = prompt("Inserte una nota: ");
+            var i = parseFloat(nota);
+
+            if (i >= 0 && i <= 10) {
+                if (i >= 0 && i <= parseFloat(2.99)) {
+                    text = "Muy deficiente";
+                } else if (i >= 3 && i <= parseFloat(4.99)) {
+                    text = "Insuficiente";
+                } else if (i >= 5 && i <= parseFloat(5.99)) {
+                    text = "Suficiente";
+                } else if (i >= 6 && i <= parseFloat(7.99)) {
+                    text = "Bien";
+                } else if (i >= 8 && i <= parseFloat(8.99)) {
+                    text = "Notable";
+                } else if (i >= 9 && i <= 10) {
+                    text = "Sobresaliente";
+                }
+                alert(text);
+            }
+
+        } while (nota < 0 || nota > 10);
+
+</script>
+<body>
+    
+</body>
+</html>

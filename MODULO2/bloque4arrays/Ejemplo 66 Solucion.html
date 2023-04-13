@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Este es el inicio obligatorio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>
+<!-- La etiqueta HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>
+	<!-- La etiqueta HEAD sirve para delimitar la cabecera de la página Web. Aqui se contienen todos los metadatos, codificaciones
+								básicas y los enlaces a ficheros externos CSS3 y Javascript -->
+
+	<meta language="esp" />
+	<!-- El parámetro LANGUAGE define el idioma en el que se escribe el contenido de la página WEB -->
+
+	<meta name="author" content="Javier el Profe" />
+	<!-- Podemos definir cualquier metadato usando los parámetros NAME y CONTENT. Aqui por ejemplo 
+																							estamos definiendo los datos del autor de la página -->
+
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<!-- Es conveniente definir la codificación de los símbolos del lenguaje que estamos usando. 
+																							Para los idiomas latinos y anglosajones se suele usar las codificaciones UTF-8 o algún
+																							estándar predefinido. En español el estándar más usado es el ISO-8859-1-->
+
+	<meta name="keywords" content="Plantilla Javascript" />
+	<!-- El metadato de las palabras clave se define con el nombre KEYWORDS. Las palabas clave a usar 
+																							se definen mediante el parámetro CONTENT. Van entre comillas y separadas por espacios en blanco.
+																							Es conveniente usar palabras en plural y no más de 10 palabras clave -->
+
+	<link rel="icon" href="img/favicon.png" />
+	<!-- Podemos definir cualquier icono personalizado en cada página WEB usando la etiqueta LINK y los parámetros 
+																							REL y HREF para crear un enlace a la imagen del icono. Aqui por ejemplo estamos definiendo el icono 
+																							que va a aparecer en la pestaña de la página WEB-->
+
+	<title> Ejemplo basico </title>
+	<!-- Del mismo modo podemos definir el nombre que va a aparecer en la pestaña de la página WEB usando la 
+																							etiqueta TITLE-->
+</head>
+
+
+<style>
+</style>
+
+
+<script>
+
+
+	var numero, existe;
+
+	var datos = new Array(10);	/* Crear un array de 5 posiciones que se recorren de 0 a n-1*/
+	/* Siendo n el número de posiciones del array */
+
+	for (i = 0; i < 10; i++) { datos[i] = null; }
+
+	for (i = 0; i < 10; i++) {
+		do {
+			numero = prompt("Introduce un numero del 25 al 50");
+			numero = parseInt(numero);
+
+			if ((numero < 25) || (numero > 50)) { alert("Has metido un numero equivocado. Repitelo."); }
+
+			existe = false;
+
+			for (j = 0; j < 10; j++) {
+				if (datos[j] == numero) { existe = true; }
+
+			}
+
+			if (existe == true) { alert("Este número ya está en el array. Repitelo."); }
+
+
+		} while (((numero < 25) || (numero > 50)) || (existe == true));
+
+
+		if (existe == false) { datos[i] = numero; }
+
+
+	}
+
+
+	for (i = 0; i < 10; i++) { document.write(datos[i] + " "); }
+
+
+
+
+</script>
+
+
+
+
+
+
+<body>
+	<!-- La etiqueta BODY es obligatoria si queremos visualizar la página. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+
+
+</body>
+
+
+</html>

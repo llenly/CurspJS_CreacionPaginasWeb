@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio57</title>
+</head>
+<html>
+<script>
+    //     5. Volumen de un cubo (JS 57).
+    // Escribir un programa que pida por teclado la arista de un cubo mediante un número. Si
+    // el número es menor de cero el programa seguirá pidiendo un número positivo. En el
+    // caso de que la arista sea mayor que cero, mostrará por pantalla el mensaje:
+    // "El volumen del cubo de arista <arista> es: <volumen>".
+    // El volumen de un cubo = arista3
+    // . Al final del programa se le preguntará al usuario si
+    // quiere repetir el proceso o finalizar el programa.
+    // La función para calcular una potencia es Math.pow(base, exponente).
+
+    var arist = prompt("Inserte una arista: ");
+    var arist = parseInt(arist);
+
+    var volumen;
+
+    if (arist == 0) {
+         arist = alert("escriba el numero");
+        
+        } else if (arist > 0) {
+            volumen = Math.pow(arist, 3);
+            // console.log(volumen);
+            // console.log(arist);
+        } {
+         
+          //   alert(" El volumen del cubo es "+ volumen);
+        }
+    while (arist < 0) {
+       
+} 
+   alert(" El volumen del cubo es "+ volumen);
+ 
+
+  var arista;
+do {
+    arista = prompt("Inserte una arista: ");
+    var arista = parseInt(arista);
+
+    if (arista > 0) {
+        mensaje = "El volumen del cubo de arista " + arista + " es: " + Math.pow(arista, 3);
+        alert(mensaje);
+    }
+
+} while (arista < 0);
+
+</script>
+
+
+
+<body>
+
+</body>
+
+</html>

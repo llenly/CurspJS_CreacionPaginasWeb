@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio51</title>
+</head>
+<script>
+   /*   Realizar un programa que pida por pantalla un nombre de usuario y una contraseña.
+      A continuación se le preguntará qué datos quiere mostrar mediante una letra. Si elige la letra n mostrará el nombre, 
+     si elige la letra c mostrará la contraseña, y si elige la letra t mostrará el nombre y la contraseña. */
+
+     var nombre = prompt("escribe tu nombre");
+     var contraseña = prompt("escribe tu contraseña");
+     var datos = prompt("escogela letra n para mostrar el nombre, la letra c mostrará la contraseña, letra t mostrará el nombre y la contraseña.")
+     var mensaje;
+     switch (datos) {
+         case "n":
+         Mensaje = (nombre); 
+             break;
+             case "c":
+         Mensaje = (contraseña); 
+             break;
+             case "t":
+         Mensaje = (nombre + contraseña); 
+             break;
+         default:
+             break;
+     }
+     alert(Mensaje);
+
+    
+</script>
+<body>
+    
+</body>
+</html>

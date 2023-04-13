@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio72</title>
+    <script>
+        //   Se quiere simular un juego en el que participan dos jugadores y otra persona que hacede árbitro. El árbitro selecciona 2 números A y B entre el rango de 1 a 20. A continuación, sin conocer los números que ha elegido el árbitro, cada jugador elige 4números en ese rango (de 1 a 20) pudiendo estar repetidos.
+        // El programa debe ser capaz de calcular cuántos números de los seleccionados por cada jugador están comprendidos entre los valores A y B. Ganará el jugador que más números tenga en dicho intervalo.
+        // Se pide implementar un programa que simule el juego para los jugadores, teniendo en cuenta que:
+        // Tanto los 4 datos de cada jugador, como los valores para A y B se introducirán por teclado. Los números de cada jugador se guardarán en dos arrays distintos. En todos los casos, el programa detectará la entrada de números erróneos, solicitando nuevamente el dato hasta que sea válido.
+        //Se deben mostrar por pantalla no solo qué jugador es el ganador, sino también los aciertos de cada jugador, los datos que ha introducido cada jugador y los que ha seleccionado el árbitro.     
+
+        var jugador1;
+        var jugador2;
+      //  var arbrito;
+        var num1, num2;
+
+        do {
+
+            num1 = prompt("introduce el primer  numero");
+            num1 = parseInt(num1);
+
+            console.log("entra");
+            if ((num1 < 1) || (num1 > 20)) {
+                alert("introduce numero mayores que 1 y menor que 20");
+            }
+
+            //mientras que haya un num menor que 1 y mayor que 20 sigue pidiendo numeros
+        } while ((num1 < 1) || (num1 > 20));
+
+        do {
+            num2 = prompt("introduce un segundo numero");
+            num2 = parseInt(num2);
+
+            if ((num2 < 1) || (num2 > 20)) {
+                alert("introduce numero mayores que 1 y menor que 20");
+            }
+
+        } while ((num2 < 1) || (num2 > 20));
+
+        //creo el array del jugador uno
+
+        var arrayJugad1 = new Array(4);
+
+        for (i = 0; i < arrayJugad1.length; i++) {
+
+            do {
+                numJugad1 = prompt("jugador uno introduce un numero");
+                numJugad1 = parseInt(numJugad1);
+
+                if ((numJugad1 < 1) || (numJugad1 > 20)) {
+                    alert("introduce numero mayores que 1 y menor que 20");
+                }
+ 
+            } while ((numJugad1 < 1) || (numJugad1 > 20) && (arrayJugad1.length < 4));
+
+            //aqui relleno el array del juagador uno con los numero que meta
+            arrayJugad1[i] = numJugad1;
+
+            console.log(arrayJugad1, "este es el array del jugador 1");
+            console.log(i);
+        }
+
+        //recorrer el array de jugador 1 y ver si el numero es igual al numero del arbitro
+        // var numExiste = false;
+        var aciertos1 = 0;
+
+        for (i = 0; i < arrayJugad1.length; i++) {
+            if ((arrayJugad1[i] >= num1) && (arrayJugad1[i] <= num2)) {
+                aciertos1++;
+                console.log(aciertos1);
+            }
+        }
+
+
+        document.write(
+            + num1 + " este es el numero del arbrito" + "<br>"
+            + num2 + " este es el numero del arbrito" + "<br> " + "<br>"
+            + arrayJugad1 + " este es el array del jugador 1" + "<br>" 
+            +aciertos1 + " " + "<br>");
+
+
+
+        //aqui creo el array para el juador2
+        var arrayJugad2 = new Array(4);
+
+        for (i = 0; i < arrayJugad2.length; i++) {
+
+            do {
+                numJugad2 = prompt("jugador dos introduce un numero");
+                numJugad2 = parseInt(numJugad2);
+
+                if ((numJugad2 < 1) || (numJugad2 > 20)) {
+                    alert("introduce numero mayores que 1 y menor que 20");
+                }
+
+            } while ((numJugad2 < 1) || (numJugad2 > 20) && (arrayJugad2.length < 4));
+
+            //aqui relleno el array del juagador uno con los numero que meta
+            arrayJugad2[i] = numJugad2;
+
+            console.log(arrayJugad2, "este es el array del jugador 2");
+            console.log(i);
+        }
+
+        //recorrer el array de jugador 1 y ver si el numero es igual al numero del arbitro
+        // var numExiste = false;
+        var aciertos2 = 0;
+
+        for (i = 0; i < arrayJugad2.length; i++) {
+            if ((arrayJugad2[i] >= num1) && (arrayJugad2[i] <= num2)) {
+                aciertos2++;
+                console.log(aciertos2);
+            }
+        }
+        
+    document.write(
+            + num1 + " este es el numero del arbrito" + "<br>"
+            + num2 + " este es el numero del arbrito" + "<br> " + "<br>"
+            + arrayJugad2 + " este es el array del jugador 2" + "<br>"+
+             aciertos2 + " " + "<br>");
+
+
+        if (aciertos1 <= aciertos2) {
+         document.write("el ganador es el jugador dos" + aciertos2);
+         }
+         else if (aciertos1 >= aciertos2) {
+            document.write("el ganador es el jugador uno" +  " con " + aciertos1);
+        }
+         else if (aciertos1 == aciertos2) {
+            document.write("estan empatados los juagadores"
+             + " juagador1 "+  aciertos1 +"aciertos" 
+             + " jugador2" + aciertos2 + "aciertos");
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio50</title>
+</head>
+<script>
+    /*  Realizar un programa USANDO SWITCH que pregunte al usuario el momento del día con una letra (m-mañana, t-tarde, n-noche), el sexo con otra letra (m-masculino, f-femenino).
+      El programa dirá: buenos días, tardes, o noches (según el momento) señor o señora (según el sexo). */
+
+    var momentoDia = prompt("indique que momento del dia es con una, m , si es mañana, t, si es de tarde , n, si es de noche ");
+    var sexo = prompt("diga su sexo , m ,  si es maculino y,  f , si es femenino");
+
+    var Mensaje;
+    //   cada case admite solo una condicion
+    switch (momentoDia) {
+        case "m":
+            Mensaje = ("Buenos dias ");
+            break;
+        case "t":
+            Mensaje = ("Buenos tardes ");
+            break;
+        case "n":
+            Mensaje = ("Buenos noches ");
+            break;
+
+        default:
+            alert("Te has equivocado de letra");
+            break;
+    }
+
+    switch (sexo) {
+        case "f":
+            Mensaje = Mensaje + "señor ";
+            break;
+        case "m":
+            Mensaje = Mensaje + "señor ";
+            break;
+        default:
+            alert("Te has equivocado de letra");
+            break;
+
+    }
+    alert(Mensaje);
+
+</script>
+
+<body>
+
+</body>
+
+</html>

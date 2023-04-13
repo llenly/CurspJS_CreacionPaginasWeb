@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta language="esp" />
+        <meta name="author" content="Javier El Profe" />
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <meta name="keywords" content="Do while sumando" />
+        <link rel="icon" href="img/favicon.png" />
+        <title> Calculo de Do While </title>
+    </head>
+        <style>
+        </style>
+        <body>
+        </body>
+    <script>
+	
+	
+        var primer, secun, suma, coso, copia;
+        coso="";
+    
+        primer=prompt("Por favor, introduzca el primer numero");
+        secun=prompt("Ahora introduzca el segundo numero");
+		
+		if (primer > secun)
+					{
+					copia = primer;
+					primer = secun;
+					secun = copia;
+					}
+				
+		
+
+        suma=parseInt(primer);
+		
+                do 
+                { 
+                    
+                    coso= coso + suma + " ";
+					suma=suma+1;
+              
+                } while (suma <= secun);
+				
+				 alert(coso);
+
+				
+	</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio48</title>
+</head>
+<script>
+    // Realizar un programa que pregunte al usuario el momento del día con una letra (mmañana, t-tarde, n-noche), el sexo con otra letra (m-masculino, f-femenino). El
+    // programa dirá: buenos días, tardes, o noches (según señor o señora según el sexo.
+
+    var momentDia = prompt("indique que momento del dia es con una, m , si es mañana, t, si es de tarde , n, si es de noche ");
+    var sexo = prompt("diga su sexo , m ,  si es maculino y,  f , si es femenino");
+    var mañana = "m";
+    var tarde = "t";
+    var noche = "n";
+    var femenino = "f";
+    var masculino = "m";
+/* 
+    if (momentDia == mañana && sexo == masculino) {
+        alert("Buenos dias señor");
+    } else if (momentDia == tarde && sexo == masculino) {
+        alert("Buenos tardes señor");
+    } else if (momentDia == noche && sexo == masculino) {
+        alert("Buenos noches señor");
+
+    }
+
+    if (momentDia == mañana && sexo == femenino) {
+        alert("Buenos dias señora");
+    } else if (momentDia == tarde && sexo == femenino) {
+        alert("Buenos tardes señora");
+    } else if (momentDia == noche && sexo == femenino) {
+        alert("Buenos noches señora");
+
+    } */
+
+
+    if (momentDia == mañana && sexo == masculino) {
+        alert("Buenos dias señor");
+        if (momentDia == tarde && sexo == masculino) {
+            alert("Buenos tardes señor");
+        }
+        if (momentDia == noche && sexo == masculino) {
+            alert("Buenos noches señor");
+        }
+
+    } else if (momentDia == mañana && sexo == femenino) {
+        alert("Buenos dias señora");
+        if (momentDia == tarde && sexo == femenino) {
+            alert("Buenos tardes señora");
+        }
+        if (momentDia == noche && sexo == femenino) {
+            alert("Buenos noches señora");
+
+        }
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

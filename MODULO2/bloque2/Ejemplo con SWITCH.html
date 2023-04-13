@@ -1,0 +1,144 @@
+<!DOCTYPE html>			<!-- Este es el inicio de cualquier página Web. Sirve para que el navegador pueda interpretarla -->
+
+<html>					<!-- La etiqueta de HTML es obligatoria. Sirve para delimitar donde se incia y termina el código de la página Web -->
+
+<head>					
+	<meta language="esp"/>															
+	<meta name="author" content="Javier el Profe"/>									
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" /> 	
+	<meta name="keywords" content="Plantilla Javascript" />								
+	<link rel="icon" href="img/favicon.png">										
+	<title> Ejercicio Switch Javascript </title>	
+	
+</head>
+
+	<!-- La etiqueta SCRIPT es ÚNICA. Sirve para delimitar donde se incia y termina la parte de Javascript -->
+	
+<script> 
+
+				/* En Javascript los comentarios se escriben asi */
+	
+	var letra, numero;
+	
+	letra = prompt("Introduce una letra (h, a): ");
+	
+	
+	letra = letra.toLowerCase();		/* Para pasar todo el texto a minusculas */
+	
+	
+	/*letra = letra.toUpperCase();		/* Para pasar todo el texto a mayusculas */
+	
+	
+	
+	
+	
+	if (letra=="h")
+			{
+			alert("HOLA");
+			}
+			else if (letra=="a")
+					{
+					alert("ADIOS");
+					}
+					else 
+						{
+						alert("Te has equivocado de letra");
+						}
+			
+	
+	
+	
+	switch(letra)
+			{
+			
+			case "h":
+					alert("HOLA");
+					break;
+			case "a":
+					alert("ADIOS");
+					break;
+			default:
+					alert("Te has equivocado de letra");
+					break;
+			}
+
+	
+	/*
+	
+	
+	numero = prompt("Escribe un número del 1 al 5.");
+	numero = parseInt(numero);
+	
+	
+	
+	switch(numero)
+			{
+			
+			case 1:
+				alert ("Has escrito el número uno");
+				break;
+				
+			case 2:
+				alert ("Has escrito el número dos");
+				break;
+	
+			case 3:
+				alert ("Has escrito el número tres");
+				break;
+	
+			case 4:
+				alert ("Has escrito el número cuatro");
+				break;
+	
+			case 5:
+				alert ("Has escrito el número cinco");
+				break;
+	
+			default:
+				alert ("No has escrito un número correcto");
+				break;
+	
+		}
+	*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*window.close ();*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	</script>
+
+	
+	<style>
+	
+	</style>
+
+
+<body>					<!-- La etiqueta BODY es obligatoria. Sirve para delimitar donde se incia y termina la parte visible de la página Web -->
+
+	
+	
+</body>
+
+
+</html>

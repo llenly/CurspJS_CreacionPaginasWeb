@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio60</title>
+</head>
+<script>
+    //     Escribir un programa que pida por teclado la base y la altura de un triángulo
+    // rectángulo. Si los números son menores de cero el programa seguirá pidiendo
+    // números positivos. El programa deberá calcular el área del triángulo, el perímetro y la
+    // hipotenusa. Se mostrará el resultado por pantalla ajustado a dos decimales.
+    // • Área de un triángulo = (base * altura) / 2
+    // • Perímetro de un triángulo rectángulo = base + altura + hipotenusa
+    // • Hipotenusa = √𝑏𝑎𝑠𝑒2 + 𝑎𝑙𝑡𝑢𝑟𝑎2
+    // La función para la raíz cuadrada es Math.sqrt(valor a calcular).
+    // La función para calcular una potencia es Math.pow(base, exponente).
+
+    var base, altura, area, perimetro, hipotenusa;
+    var mensaje1 = "el area del triengulo es ";
+    var mensaje2 = "la hipotenusa del tringulo es ";
+    var mensaje3 = "el perimetro del tringulo es ";
+
+
+    do {
+
+        base = parseInt(prompt("introduce la base del triangulo"));
+        altura = parseInt(prompt("introduce la altura del triangulo"));
+
+        if (base <= 0 || altura <= 0) {
+            base =  parseInt(prompt("la base del triangulo debe ser mayor a cero"));
+            altura = parseInt(prompt("la altura del triangulo debe ser mayor a cero"));
+            // console.log(base);
+            // console.log(altura);
+        }
+            area = (base * altura) / 2;
+            hipotenusa = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+            perimetro = base + altura + hipotenusa;
+
+            area = Math.round(area);
+            hipotenusa = Math.round(hipotenusa);
+            perimetro = Math.round(perimetro);
+
+
+    }
+    while (base < 0 || altura < 0);
+    alert(mensaje1 + area + "\n"
+        + mensaje2 + hipotenusa + "\n "
+        + mensaje3 + perimetro);
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

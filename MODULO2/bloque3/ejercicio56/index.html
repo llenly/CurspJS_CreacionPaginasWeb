@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio56</title>
+</head>
+<script>
+    
+    //Realizar un programa que pida por pantalla un nombre de usuario. A continuación pedirá una contraseña y solicitará repetir la contraseña. Se establecerán las siguientes condiciones:
+    // Si el nombre del usuario está vacío el programa seguirá pidiendo unnuevo nombre de usuario.
+    // Si las contraseñas están vacías el programa seguirá pidiendo unasnuevas contraseñas.
+    // Si la primera contraseña es distinta de la segunda el programa mostraráun mensaje de error y pedirá unas nuevas contraseñas.
+    // Cuando el nombre del usuario y las contraseñas estén correctas elprograma finalizará mostrando el nombre del usuario y una de las contraseñas. 
+
+    var nombre = ""
+    var contraseña = "";
+    var VerificarContraseña = "";
+
+    do {
+
+        if (nombre == " ") {
+            var nombre = prompt("escribe el nombre");
+
+        } else if (nombre != "") {
+            var contraseña = prompt("escribe la contraseña");
+
+            if (contraseña != "") {
+                var VerificarContraseña = prompt("Verifique que las contraseñas sean iguales");
+            }
+
+            if (contraseña !== VerificarContraseña) {
+                alert("Verifique que las contraseñas sean iguales");
+                contraseña = "";
+            }
+
+        }
+
+    } while ((nombre == "") || (contraseña == ""));
+
+    alert(nombre + contraseña);
+
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ejercicio44</title>
+    <script>
+//    Escribe un programa que pida al usuario los siguientes datos: días, horas y minutos. Y le 
+// conteste con la cantidad de segundos totales que son esos datos.
+
+        var dia = parseInt(prompt("Ingrese un dia"));
+        var horas = parseInt(prompt("Ingrese una hora"));
+        var min =  parseInt(prompt("Ingrese los minutos"));
+   
+        const totalDia = 24;
+        const totalHoras = 60;
+        const totalSeg = 60;
+
+         dia= dia * totalDia * totalHoras * totalSeg;
+         horas = horas * totalHoras * totalSeg;
+         min = min * totalSeg;
+      
+         var cantidadSegundos =  dia + horas + min;
+        
+         alert(" total de segundos de los datos introducidos es " + cantidadSegundos)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

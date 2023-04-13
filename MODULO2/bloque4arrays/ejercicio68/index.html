@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ejercicio68</title>
+   <script>
+
+      // . Realizar un programa que cree un array de 10 posiciones y vacíalo. Rellenarlo con 10 números distintos del 1 al 100.
+      //  El programa realizará la suma de los números pares que se encuentren en el array y luego nos imprimirá por pantalla el resultado.
+
+      var contador = 0;
+      var total = 10; // total es lo mismo que cear el array en 10 desde la declaracion
+      // creo y vacio el array
+      var arrayPosicion = new Array(total);
+      for (var i = 0; i < arrayPosicion; i++) {
+         arrayPosicion[i] = null;
+      }
+
+      do {
+
+         var numero = prompt("introduce diez numeros del 1 al 100");
+         numero = parseInt(numero);
+         console.log("entra el bucle");
+
+         //meter los numeros introducidos en el el array 
+         //contador es la posicion del array que empieza en cero y luego lo itero
+         arrayPosicion[contador] = numero;
+         contador++;
+         console.log(numero);
+
+      } while (contador < total);
+
+      var suma = 0;
+      //creo un nuevo array para poder sacar los numero pares va  a estar vacio
+      var par = new Array();
+      //j es la posicion  q estoy inicializando de nuevo en  el array para recorrerlo 
+      //sacar numeros pares
+      var contPar = 0;// esto es un contador para que me recorra las posiciones del array par para sacr las psocicion del array
+      for (var j = 0; j < total; j++) {
+         if (arrayPosicion[j] % 2 == 0) {
+            // si el numero en la psociion(j) que se va a iterar en cada vuelta es par 
+            // creo una variable inicializada en cero y va a coger el valor de ella + esa posicion 
+            //o numero del array si es par( declarado en la condicion if)
+            console.log(arrayPosicion[j]);
+            // el array par vacio en la posicion de contPar que va a funcionar con un iterador para que haga el recooorido del array 
+            //va a ser igual a las posiciones del array que ya tiene los numeros siempre  y cuando se cumpla la condicion del 
+            // j sea par cuando recorra el array 
+            par[contPar] = arrayPosicion[j];
+            contPar++;
+
+            suma = suma + arrayPosicion[j]
+
+         }
+         console.log(contador);
+         console.log(arrayPosicion);
+         console.log(suma);
+
+      }
+
+      document.write(arrayPosicion + " esto es el array " + "<br>");
+      document.write(suma + " esto es la suma " + "<br>");
+      document.write(par + "estos son los numeros pares " + "<br>");
+
+      console.log(arrayPosicion, " esto es el array");
+      console.log(suma, "esto es la suma");
+      console.log(par, "estos son los numeros pares");
+
+   </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

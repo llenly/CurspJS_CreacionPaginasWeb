@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio64 </title>
+    <script>
+//         Ejercicio 64 - División de números en enteros y decimales
+// I. Implementar en Javascript un programa que pida un número que admita decimales. El programa deberá devolver por un lado la parte entera del número, y por otro lado la parte decimal. Por ejemplo:
+
+// Ingrese un número:    4.5
+// La parte entera es 4 y la decimal 0.5
+
+// Ingrese un número:    -1.19
+// La parte entera es -1 y la decimal -0.19
+
+  var numeroDecimal = parseFloat(prompt("ingrese un numero decimal"));
+     // numeroDecimal =  parseFloat(numeroDecimal);me convierte el numero decimal en entero
+     console.log(numeroDecimal);
+ 
+  var partEntera = parseInt(numeroDecimal); //aqui saco la parte entera solo del numero decimal introducido
+    //  console.log(partEntera);
+     
+  var parteDecimal = numeroDecimal -  partEntera;
+    //   console.log(parteDecimal);
+  
+
+  document.write("la parte entera es " + partEntera + " \n "+ "la parte decimal es " + parteDecimal);
+    </script>
+   
+</head>
+<body>
+    
+</body>
+</html>

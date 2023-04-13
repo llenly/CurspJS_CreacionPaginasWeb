@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio66</title>
+    <script>
+        //         1. Array de números distintos (JS 66).
+        // Realizar un programa que cree un array de 10 posiciones y vacíalo. Rellenarlo con 10
+        // números distintos del 25 al 50, de tal forma que no pueda introducirse un número que
+        // ya se encuentre en el array.
+
+
+        var numero, datos;
+        var datos = new Array(10); //creo el array
+
+        for (var i = 0; i < 10; i++) {
+         //recorro el array y lo vacio
+            datos[i] = null;
+            console.log(datos[i]);
+
+        }
+        //recorro el array mientras sea menor a cero
+        for (i = 0; i < 10; i++) {
+            do {
+                numero = prompt("Introduce un numero del 25 al 50");
+                numero = parseInt(numero);
+
+                if ((numero < 25) || (numero > 50)) { alert("Has metido un numero equivocado. Repitelo."); }
+
+                existe = false;
+
+                for (j = 0; j < 10; j++) {
+                    if (datos[j] == numero) { existe = true; }
+
+                }
+
+                if (existe == true) { alert("Este número ya está en el array. Repitelo."); }
+                    console.log(existe);
+
+            } while (((numero < 25) || (numero > 50)) || (existe == true));
+
+            if (existe == false) { datos[i] = numero; }
+              console.log(existe);
+              console.log(datos[i]);
+        }
+        for (i = 0; i < 10; i++) { document.write(datos[i] + " "); }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

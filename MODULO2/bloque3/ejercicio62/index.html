@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejrcicio62</title>
+    <script>
+        //         10. Juego del Oráculo y el Adivino (JS 62).
+        // Realizar un programa en el cual un usuario Oráculo introduzca un número entero al
+        // azar entre 1 y 20. Si no cumple los requisitos el programa seguirá pidiendo un número.
+        // A continuación otro usuario Adivino deberá averiguar cuál es ese número, teniendo 5
+        // oportunidades para acertarlo.
+        // Si el Adivino mete un número menor el programa responderá “El número que buscas
+        // es mayor”. Si mete un número mayor el programa responderá “El número que buscas
+        // es menor”. Si averigua el número saldrá el mensaje “¡Enhorabuena, acertaste, es el
+        // número X!”. Si no lo averigua después de 5 intentos saldrá el mensaje “¡Oh, lo siento,
+        // era el número X
+
+        var usuariOraculo;// = prompt("introduzca un numero aleatorio mayor a cero");
+        var adivino, text;
+
+        // do {
+
+        //     usuariOraculo = prompt("introduzca un numero aleatorio mayor a cero");
+        //     usuariOraculo= parseInt(usuariOraculo);
+        //     if (usuariOraculo == 0) {
+        //         alert("introduzca numeros  mayores a cero");
+        //     }
+        //         adivino = parseInt(prompt("tines cincos intentos para adivinar el numero del usuariOraculo "));
+        //         for (i = 0; i < usuariOraculo; i++) {
+        //             //  i = adivino;
+        //             //7 adivino = i;
+        //             console.log(adivino);
+        //             console.log(i);
+
+        //             if (i > usuariOraculo) {
+
+        //                 alert(" hola adivino: tu  numero es mayor");
+        //                 //aqui necesito capturar adivino ?
+        //                 // o necesito una variBLE QUE SERI ADIVINO QUE ME DEJE REPETIR OTRO NUMERO 
+        //             }
+        //             else if (i < usuariOraculo) {
+        //                 alert(" hola adivino: tu  numero es menor");
+        //                 console.log(usuariOraculo);
+        //             }
+        //             else if (i == usuariOraculo) {
+        //                 alert(" ¡Enhorabuena, acertaste, es el número " + usuariOraculo);
+
+        //                 console.log(i);
+        //             }
+        //             alert(" ¡Oh, lo siento,era el número "  + usuariOraculo);
+        //         }
+        //         console.log(adivino);
+        //         console.log(usuariOraculo);
+        //         console.log(i);
+              
+        //     } while (adivino != 0);
+  
+            
+
+
+
+var usuariOraculo = parseInt(prompt("Introduzca un numero cualquiera mayor a cero y menor que 20"));
+        var adivino, text;
+        var i = 0;
+     //   console.log('usuariOraculo', usuariOraculo);
+
+        if (usuariOraculo < 0) {
+            alert("Introduzca numeros mayores a cero");
+        } else if (usuariOraculo > 20) {
+            alert("Introduzca numeros menores que 20");
+        } else {
+            do {
+                if (adivino == usuariOraculo) {
+                    alert("¡Enhorabuena, acertaste, es el número " + usuariOraculo);
+                    i = 6;//para que no pase el ciclo while
+                    //i s la variable que guarda el recoorido del adivino
+                } else if (i == 5) {
+                    alert("¡Oh, lo siento, era el número " + usuariOraculo);
+                } else {
+                    adivino = parseInt(prompt("Tienes cincos intentos para adivinar el numero del usuariOraculo "));
+                    console.log('adivino', adivino);
+                    if (adivino < usuariOraculo) {
+                        alert("El número que buscas es mayor");
+                    } else if (adivino > usuariOraculo) {
+                        alert("El número que buscas es menor");
+                    }
+                }
+//i una variable  que me incremente o recorra el while hasta que cumpla la cndicion de i<5(que lo ejecute hasta cinco veces)
+                i++;
+              //  console.log('i', i);
+            } while (i <= 5);
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

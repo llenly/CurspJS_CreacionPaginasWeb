@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio49</title>
+</head>
+<script>
+    // Realizar un programa que pida tres números y diga cuál es el mayor, cuál es el segundo
+    //mayor, y cuál es el menor. 
+
+    var num1 = prompt("introduce un numero");
+    var num2 = prompt("introduce otro numero");
+    var num3 = prompt("introduce otro numero");
+
+    var num1 = parseInt(num1);
+    var num2 = parseInt(num2);
+    var num3 = parseInt(num3);
+    
+    var mayor; 
+    var menor; 
+    var segundo;
+
+    if ((num1 > num2) && (num1 > num3)) {
+        mayor = num1;
+        alert("el numero mayor es " + num1);
+
+    }else if (num2 > num3) {
+           mayor = num2;
+            alert("el numero mayor es " + num2);
+        
+    } else {
+           mayor = num3;
+            alert("el numero mayor es" + num3);
+        }
+    
+
+    if ((num1 < num2) && (num1 < num3)) {
+            menor = num1;
+    alert("el numero menor es " + num1);
+
+     } else if (num2 < num3) {
+            menor = mun2;
+            alert("el menor  es " + num2);
+     } else {
+            menor = num3;
+            alert("el menor numero es" + num3);
+             }    
+
+/*
+
+    if (((mayor==num1) && (menor==num3)) || ((mayor==num3) && (menor==num1))){
+            segundo = num2;
+            }
+
+    if (((mayor==num2) && (menor==num3)) || ((mayor==num3) && (menor==num2))){
+            segundo = num1;
+            }
+
+    if (((mayor==num1) && (menor==num2)) || ((mayor==num2) && (menor==num1))){
+            segundo = num3;
+            }*/
+
+
+
+    if ((num2 > num3) && (num2 < num1)) {
+        segundo=num2;
+      //  alert("el segundo numero mayor es  " + num2);
+
+     } else if (num3 > num1)
+        {
+            segundo=num3;
+          //  alert("el segundo numero mayor es  " + num3);
+        }
+        
+        else {
+            segundo=num1;
+          //  alert("el segundo numero mayor es" + num1);
+             }    
+
+    
+alert ("Mayor: " + mayor + ", segundo: " + segundo + ", menor: " + menor);
+
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

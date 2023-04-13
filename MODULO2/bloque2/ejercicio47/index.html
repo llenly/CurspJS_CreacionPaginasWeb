@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejercicio47</title>
+</head>
+<script>
+
+  // 1. Condición IF básica (JS 47).
+  // Realizar un programa que pida al usuario tres números y diga cuál es el mayor y cuál el
+  // menor, y además cuáles son pares y cuáles impares. 
+
+  var num1 = prompt("introduce un numero");
+  var num2 = prompt("introduce otro numero");
+  var num3 = prompt("introduce otro numero");
+
+  var num1 = parseInt(num1);
+  var num2 = parseInt(num2);
+  var num3 = parseInt(num3);
+
+  var mayor;
+  var menor; 
+  var par ; 
+  var impar;
+  
+ 
+//  const par = mayor % 2 == 0;
+//  const impar = mayor % 2  == 1;
+
+// sacar el mayor de los numeros
+  if ( (num1 > num2 && num1 > num3)) {
+
+    alert("el numero mayor es " + num1 );
+       mayor = num1
+  } else if (num2 > num3) {
+    alert("el numero mayor es " + num2);
+    mayor = num2;
+  } else {
+    alert("el numero mayor es" + num3);
+    mayor = num3;
+  }
+
+ /*  sacar el menor de los numeros*/
+ 
+  if (num1 < num2 && num1 < num3) {
+
+    alert("el numero menor es " + num1);
+    menor = num1;
+
+  } else if (num2 < num3) {
+    alert("el menor  es " + num2);
+    menor =num2;
+  } else {
+    alert("el menor numero es" + num3);
+    menor = num3;
+  }
+
+/* esto solo define si  el mayor y el menor son pares o impares , no los tres
+
+ if (mayor % 2 == 0 ) {
+  alert("el numero" + mayor + "es par");
+ } else {
+  alert("el numero" + mayor + "es impar");
+ }
+
+
+
+ if (menor % 2 == 0 ) {
+  alert("el numero" + menor + "es par");
+ } else {
+  alert("el numero" + menor + "es impar");
+ } */
+
+
+  // sacar los pares y los imapares
+
+  if (num1 % 2 == 0) {
+    alert("el numero" + num1 + "es par");
+  }
+  else {
+    alert("el numero" + num1 + "es impar");
+  }
+
+
+  if (num2 % 2 == 0) {
+    alert("el numero" + num2 + "es par");
+  } else {
+    alert("el numero" + num2 + "es impar");
+  }
+
+
+
+  if (num3 % 2 == 0) {
+    alert("el numero" + num3 + "es par");
+  } else {
+    alert("el numero" + num3 + "es impar");
+  }
+ 
+
+
+  // if (num1 % 2 == 1) {
+  //   alert("el numero" + num1 + "es impar");
+  // }
+  // if (num2 % 2 == 1) {
+  //   alert("el numero" + num2 + "es impar");
+  // }
+  // if (num3 % 2 == 1) {
+  //   alert("el numero" + num3 + "es impar");
+  // }
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

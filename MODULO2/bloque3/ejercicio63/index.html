@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio63</title>
+    <script>
+//         La sucesión de Fibonacci es una de las secuencias de números más famosas de
+// la historia. La llaman "el código secreto de la naturaleza" o la "secuencia divina",
+// porque aparece una y otra vez en estructuras naturales, como los pétalos de un
+// girasol o la cáscara de una piña.La sucesión de Fibonacci, en ocasiones también conocida como secuencia de Fibonacci,
+// es en sí una sucesión matemática infinita. Consta de una serie de números naturales
+// que se suman de a 2, a partir de 0 y 1. Básicamente, la sucesión de Fibonacci se realiza
+// sumando siempre los últimos 2 números. Todos los números presentes en la sucesión
+// se llaman números de Fibonacci, siendo su secuencia de la siguiente manera:
+// 0,1,1,2,3,5,8,13,21,34...
+// Es decir: (0+1=1 / 1+1=2 / 1+2=3 / 2+3=5 / 3+5=8 / 5+8=13 / 8+13=21 / 13+21=34...)
+// Así sucesivamente, hasta el infinito. Por regla, la sucesión de Fibonacci se escribe así:
+// Xn = Xn-1 + Xn-2
+// Realizar un programa que imprima por pantalla tantos números de la serie de
+// Fibonacci como diga el usuario. Al ejecutarse debe preguntar “Cuantos números desea
+// imprimir? (mínimo 2 números)”, leer el número que introduce el usuario e imprimir la
+// serie numérica en HTML. El número deberá ser positivo y mayor que 2. Si no cumple
+// los requisitos el programa seguirá pidiendo un número 
+//..............................................................................................
+//var limit = [50];
+//const fibonaci = [ 0 , 1]; esta serie siempre empieza con estos valores si o si 
+//i se iguala a 2 por que es el sigueinte elemnto del array a sacar o generar, ya tenemos las dos primeras posciciones 0, 1
+// esta i me recorre el array de la serie a partir de la posicion 2 ,( 2 =(i) - 1) devuelve la psocion 1 que esta en la const , lo mismo para -2
+/* for (i = 2; i < limit ;i++) {
+  fibonaci[i] = fibonaci[i - 1] + fibonaci[i - 2 ];  
+}
+document.write(fibonaci + "\n "+ " ");
+console.log( fibonaci);
+console.log( i); */
+
+
+//esta serie siempre empieza con estos valores si o si 
+//i se iguala a 2 por que es el sigueinte elemnto del array a sacar o generar, ya tenemos las dos primeras posciciones 0, 1
+// esta i me recorre el array de la serie a partir de la posicion 2 ,( 2 =(i) - 1) devuelve la psocion 1 que esta en la const , lo mismo para -2
+var fibo = [ 0 , 1];
+var numero = prompt(" escribe un numero del 0 al 100");
+for (i = 2; i < numero ;i++) {
+ 
+  fibo[i] = fibo[i - 1] + fibo[i - 2];  
+  //fibo en 2 empieza asi = 2-1 + 2 -2 
+  // console.log(i + "posicion");
+  // console.log(fibo);
+  // console.log(fibo[i]);i es la posicion em el array
+}
+
+document.write(fibo + "\n ");
+
+//"\n " este es el salto de linea para las alert
+//<br> este es para cuando usas el document.write
+
+    </script>
+<!-- 
+2posicion
+index.html:45 (3) [0, 1, 1]
+0: 0
+1: 1
+2: 1
+3: 2
+4: 3
+5: 5
+6: 8
+7: 13
+8: 21
+9: 34
+index.html:46 1 
+index.html:44 3posicion
+index.html:45 (4) [0, 1, 1, 2]
+0: 0
+1: 1
+2: 1
+3: 2
+4: 3
+5: 5
+6: 8
+7: 13
+8: 21
+9: 34
+index.html:46 2
+index.html:44 4posicion
+index.html:45 (5) [0, 1, 1, 2, 3]
+index.html:46 3
+index.html:44 5posicion
+index.html:45 (6) [0, 1, 1, 2, 3, 5]
+index.html:46 5
+index.html:44 6posicion
+index.html:45 (7) [0, 1, 1, 2, 3, 5, 8]
+index.html:46 8
+index.html:44 7posicion
+index.html:45 (8) [0, 1, 1, 2, 3, 5, 8, 13]
+index.html:46 13
+index.html:44 8posicion
+index.html:45 (9) [0, 1, 1, 2, 3, 5, 8, 13, 21]
+index.html:46 21
+index.html:44 9posicion
+index.html:45 (10) [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+index.html:46 34
+-->
+
+</head>
+<body>
+    
+</body>
+</html>

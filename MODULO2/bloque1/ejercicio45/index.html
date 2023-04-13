@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio45</title>
+</head>
+<script>
+    // Escribe un programa que pida al usuario que introduzca los segundos, y
+    //  le conteste diciéndole el número de días, horas, minutos y segundos que son.
+ // hay que restar los minutos , horas y segundos gastado en segundos
+  var segundos = parseInt(prompt("Introduzca los segundos"));// lo que entra por pantalla es un entero
+ 
+   dias = segundos/ 84600;
+   dias = parseInt(dias);
+   segundos = segundos - (dias*84600);
+
+  horas = segundos / 3600;
+  horas = parseInt(horas);
+  segundos = segundos - (horas * 3600);
+
+  minutos = segundos / 60;
+  minutos = parseInt(minutos);
+  segundos = segundos - (minutos * 60);
+
+// 90061 1dia 1hora 1 min 1seg hay que porbarlo con esto
+
+
+  alert(" los segundos introducidos equivale a " + dias + "dias \n"
+   + horas + "horas \n" + "\n los minutos a " + minutos + "\n los segundos son" + segundos + "segundos \n")
+
+</script>
+<body>
+    
+</body>
+</html>

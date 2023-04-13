@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercico42</title>
+</head>
+<script>
+// Suponiendo que 1 euro = 1.33250 dólares, escribe un programa que pida al usuario un 
+// número de dólares y calcule el cambio en euros redondeando a dos decimales. Después 
+// pedirá al usuario un número de euros y calculará el cambio en dólares redondeando a dos 
+// decimales.
+ const cambio =  1.13297 ;
+ 
+var dolares =  parseInt(prompt(" introduce el nuemro de dolares"));
+var cambioEuros = Math.round(dolares / cambio);
+
+alert(" su cambio dolares a euros es de"+ cambioEuros);
+
+var euros = parseInt(prompt(" cuantos euros quieres cambiar"));
+var cambioDolar = Math.round(euros * cambio);
+ 
+
+alert(" su cambio dolares a euros es de"+ cambioDolar);
+</script>
+<body>
+    
+</body>
+</html>

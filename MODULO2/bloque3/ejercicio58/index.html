@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio58</title>
+</head>
+<script>
+    /*   Listado de números pares o impares (JS 58).
+  Realizar un programa que pida al usuario dos números y una letra: “i” ó “p”. El
+  programa presentará los números pares (si se pulsó la “p”) ó impares (si se pulsó la “i”)
+  que hay desde el primer número al segundo que introdujo el usuario. Si se pulsa
+  alguna tecla distinta de “p” ó “i”, el programa no imprime ningún número. */
+
+    /* 	var num1, num2, letra, contar, cambio, mensaje;
+ 
+ num1=prompt("Primer número");
+ num2=prompt("Segundo número");
+ 
+ if (num2<num1){
+ 
+             cambio = num1;
+             num1 = num2;
+             num2 = cambio;
+             }	
+ 
+ contar =parseInt(num1);			
+ mensaje="";
+         	  	
+ do{
+     letra=prompt("Introduce letra (p, i)");
+     letra=letra.toLowerCase();
+     if ((letra != "p") && (letra !="i")) {alert ("No has introducido la letra correcta");}
+ }while((letra != "p") && (letra !="i"));
+ 
+ //*********************************
+ 
+ 
+ if (((contar % 2) == 0) && (letra=="i")){contar = contar + 1;}
+ if (((contar % 2) == 1) && (letra=="p")){contar = contar + 1;}
+ 
+ 
+ do{
+     mensaje = mensaje + contar + " ";	
+     contar = contar + 2;
+ }while (contar <= num2);
+ 
+ alert(mensaje);
+  */
+
+    var text = "";
+    var num1 = prompt("Inserte numero 1: ");
+    var num2 = prompt("Inserte numero 2: ");
+    var cambio;
+
+
+    if (num1 == "" || num2 == "") {
+        alert("Debe insertar todos los números");
+
+    } else if (num1 <= 0 || num2 <= 0) {
+        alert("Ambos números deben ser mayor que 0");
+
+    } else {
+
+        if (num1 > num2) {
+            cambio = num1;
+            num1 = num2;
+            num2 = cambio;
+        }
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        letra = prompt("Inserte una letra p o i: ");
+        var i = num1;
+
+        do {
+            console.log("ENTRA");
+            if ((i % 2 == 0) && (letra == "p")) {
+                text = text + i + " ";
+                i = i + 2;
+                console.log(i);
+                console.log(text);
+            }
+            //para caundo el primer numero sea par y quiero sacar los imapares
+          else if ((i % 2 == 0) && (letra == "i")) {
+                text = text + i + " ";
+                i = i + 1;
+                console.log(i);
+            }
+
+           else if ((i % 2 == 1) && (letra == "i")) {
+                //  i = i + 1;
+                text = text + i + " ";
+                i = i + 2;
+                console.log(i);
+
+            }
+            //para caundo el primer numero sea impar y quiero sacar los pares
+          if ((i % 2 == 1) && (letra == "p")) {
+                text = text + i + " ";
+                i = i + 1;
+                console.log(i);
+            }
+
+        }
+        while (i <= num2);
+
+        alert(text);
+
+    }
+
+
+
+</script>
+
+
+
+<body>
+
+</body>
+
+</html>

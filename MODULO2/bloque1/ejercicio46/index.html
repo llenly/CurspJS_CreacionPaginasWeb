@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio46</title>
+</head>
+<script>
+    
+//Escribe un programa que pregunte el precio, el tanto por ciento de descuento, y te diga el 
+//precio con descuento. Por ejemplo, si el precio que introduce el usuario es 300 y el 
+//descuento 20, el programa dirá que el precio final con descuento es de 240 redondeando a dos decimales.
+
+    
+    var precio = parseInt(prompt("diga el precio"));
+    var descuento = parseInt(prompt("diga el descuento"));
+    // el porciento de algo se saca multiplicando las dos cifras y diviendo el resultado entre 100
+
+    precioToatalDescuento =  precio * descuento / 100;
+    precioToatalDescuento  = precio -  precioToatalDescuento;
+
+    alert(" el precio final del producto con descuento es " + precioToatalDescuento)
+</script>
+<body>
+    
+</body>
+</html>

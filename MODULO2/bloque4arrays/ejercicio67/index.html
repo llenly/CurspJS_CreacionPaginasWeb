@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio67</title>
+    <script>
+//   Realizar un programa que cree un array de 10 posiciones y vacíalo. Rellenarlo con los primeros
+//  10 números de la serie de Fibonacci y luego nos imprima por pantalla el resultado.
+
+// var arrayNum = [];
+// var posicion = 10;
+
+// for ( var i = 0; i < posicion ; i++) {
+//   arrayNum[i] = i;// el array de num en la posicion que ocupe i va a ser igual al valor que coja i cuando lo recorra
+
+  //fibo en 2 empieza asi = 2-1 + 2 -2 
+  // console.log(i + "posicion");
+  // console.log(fibo);
+  //console.log(arrayNum[i]);
+//}
+
+// document.write(arrayNum + "<br> ");
+ //vaciar el array
+// var arrayNum = [ 0 , 1];
+
+// for (i = 2; i < posicion ;i++) {
+//     arrayNum[i] = null;
+//     arrayNum[i] = arrayNum[i - 1] + arrayNum[i - 2];  
+// }
+// document.write(arrayNum + " \n ");
+
+// document.write(arrayNum + " \n ");
+
+var numeros;
+	
+	do{
+	
+		numeros =  ("De cuántas posiciones quieres el Array (minimo 2)?");
+		numeros = parseInt(numeros);
+		
+		if (numeros < 2){alert ("El numero que has metido no es válido (minimo 2)");} 
+	
+	}while (numeros < 2);
+	
+//el array va a tener los numeros que meta el cliente
+	var datos = new Array(numeros);
+	
+	for (i = 0 ; i < numeros ; i++){
+        datos[i]=null; //vaciar el array
+    }
+	//var datos = [ 0 , 1]; es lo mismo que abajo pero separado
+	datos[0] = 0;
+	datos[1] = 1;
+	//i empieza a partir de la posicion 2 por la 0 y la 1 estan declarados en datos
+
+	for (i = 2 ; i < numeros ; i++){datos[i]=datos[i-1] + datos[i-2];}
+	console.log(datos);
+    console.log(i);
+    
+	for (i = 0 ; i < numeros ; i++){document.write(datos[i] + " ");}
+	console.log(datos);
+    console.log(i);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

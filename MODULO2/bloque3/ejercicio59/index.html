@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio59</title>
+</head>
+<script>
+//     Escribir un programa que nos permita introducir números hasta que metamos un 0.
+// Calcular la cantidad de números introducidos hasta ese momento y mostrarlo por
+// pantalla con el mensaje “Has introducido <cantidad> números”.
+// Al final del programa se le preguntará al usuario si quiere repetir el proceso o finalizar
+// el programa.
+    var letra = "si";
+    var contador = 0;
+    var cantNum;
+    var text1 = "Has introducido :  "  ;
+    // var text2 = " los números introducidos son "
+    //profe si yo qusiera guardar los numeros introducidos y luego mostrarlos como seria??
+    // podria guardalos en un array y luego recorrerlo , pero como declaro ese num en un array??
+    do {
+        console.log("entro1");
+        do {
+            console.log("entro2");
+            var num = prompt("Inserte un numero");
+            if (num != 0) {
+                contador++;
+                cantNum = contador;
+              /*   console.log(num + "  el numero introducido");
+                console.log(contador + "el contador");
+                console.log(cantNum + "cantidad de numeros introducidos"); */
+            }
+        }
+        while (num != 0);
+        alert(text1 + cantNum + " " + " numeros ");
+      //  alert(text + cantNum + "numeros"); esto es para sacar lso numeros metidos , tendria que estar en un array? o me lo estoy inventando 
+
+        letra = prompt("Desea repetir el proceso, escriba  si o no ");
+
+    } while (letra == "si");
+/// DUDA ME SUMA TODOS LOS NUMEROS ESCRITOS, EN EL SEGUNDO WHILE HAY ALGUNA MANERA DE QUE SOLO
+//IMPRIMA LOS ULTIMOS NUMEROS SOLO , EN VEZ DE SUMARLOS TODOS?
+</script>
+<body>
+    
+</body>
+</html>

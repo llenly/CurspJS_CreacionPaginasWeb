@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio65</title>
+</head>
+<script>
+//     Ejercicio 65 - Cálculo de IMC
+// I. El riesgo de que una persona sufra enfermedades coronarias
+//  depende de su edad y su índice de masa corporal.
+//  El índice de masa corporal es
+//   la división entre el peso del individuo en kilos y el cuadrado de su estatura en metros:
+//   Escribir un programa en Javascript que reciba como entrada la estatura, el peso y la edad de una persona,
+//    y le muestre su IMC, su estado y su condición de riesgo.
+
+var imc, peso, estatura, edad, estado, riesgo;
+    estatura = parseFloat(prompt("diga su estatura"));
+    peso = parseInt(prompt("diga su peso en kg"));
+    edad = prompt("indique su edad");
+
+    imc =( peso / Math.pow(estatura,2));
+    imc = parseInt(imc);
+
+    if (imc < 25.0 && edad < 45) {
+        riesgo = "bajo";
+        alert("tiene un indice bajo de riesgo");
+
+    }else if (imc >= 25.0 && edad < 45) {
+        riesgo = "medio";
+        alert("tiene un indice medio de riesgo");
+
+    }else if (imc < 25.0 && edad >= 45) {
+        riesgo = "medio";
+        alert("tiene un indice medio de riesgo"); 
+
+    }else if (imc >= 25.0 && edad >= 45) {
+        riesgo = "alto";
+        alert("tiene un indice alto de riesgo"); 
+    }
+
+    if(imc < 18.5) {
+	estado = "bajo peso";
+}
+	else if(imc >= 18.5 && imc < 25) {
+		estado = "normal";
+	}		
+		else if(imc >= 25 && imc < 30) {
+			estado = "sobrepeso";
+		}	
+			else if(imc >= 30 && imc < 35) {
+				estado = "obesidad I";
+			}	
+				else if(imc >= 35 && imc < 40) {
+					estado = "obesidad II";
+				}				
+					else if(imc >= 40 && imc < 50) {
+						estado = "obesidad III";
+					}
+						else {
+							estado = "obesidad IV";
+						}
+    alert(imc + "\n" +  estado + "\n " +  riesgo);
+
+
+</script>
+<body>
+    
+</body>
+</html>

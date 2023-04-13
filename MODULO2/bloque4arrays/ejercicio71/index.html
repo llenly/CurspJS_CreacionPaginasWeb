@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 71</title>
+    <script>
+//  I. Realizar un programa que cree un array de X posiciones y vacíalo.
+// Rellenarlo con los X primeros números enteros que formen la serie numérica de cuadrados perfectos (1, 4, 9, 16, 25, 36, ...). A continuación el programa pedirá un segundo número y deberá ofrecer los siguientes resultados:
+// Si el segundo número es menor de 1 o mayor del número máximo que hay en el array, el programa mostrará el mensaje "Ese número esta fuera del array".
+// Si el número está en el array habrá que determinar si es un cuadrado perfecto o no. Si es un cuadrado perfecto el programa mostrará el mensaje “El número es un cuadrado perfecto”.
+// Si el número NO es un cuadrado perfecto el programa mostrará el mensaje “El número NO es un cuadrado perfecto”.
+
+let cantidad, num;
+        
+        do {
+            cantidad = prompt("Cuantos numeros quiere crear");
+            cantidad = parseInt(cantidad);
+        } while ( cantidad < 1 );
+
+        let arrayCant = new Array(cantidad);
+
+        
+        for (i = 0; i < cantidad; i++) {
+            arrayCant[i] = Math.pow(i + 1, 2);
+        }
+
+        document.write(arrayCant + "<br>");
+        
+        numero = prompt("Introduzca el numero que quiere comprobar");
+        numero = parseInt(numero);
+        if ( numero < 1 || numero > Math.pow(i, 2)) {
+            alert("El numero no esta en el array");
+        }else {
+               num2 = 0;
+               ok = false;
+               for (let i = 0; i < cantidad; i++) {
+                   if ( arrayCant[i] == numero ) {
+                       ok = true;
+                       num2 = i;//el numero va ser igual a la posicion del numero (i)
+                       i = numero;
+                    }
+               }
+               if ( ok ) {
+                   document.write("El numero " + numero + " es cuadrado perfecto");
+               }else {
+                    document.write("El numero " + numero + " no es cuadrado perfecto");
+               }
+        }
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio53</title>
+</head>
+<script>
+    /* 1. Bucles WHILE / DO-WHILE (JS 53).
+    Realizar un programa que pida al usuario dos números y presente los números del
+    primer número al segundo que introdujo el usuario. Repetir este ejercicio con los tipos
+    de bucles (WHILE y DO-WHILE). */
+
+    var num1 = prompt("introduce un numero");
+    var num2 = prompt("introduce otro numero");
+
+    var num1 = parseInt(num1);
+    var num2 = parseInt(num2);
+
+    var contador = num1;//esto iguala en contador al numero uno que pongan y de ahi lo va sumando hasta
+    //que ese contador sea menor que el segundo numero introducido
+    var cambio;
+
+    var mensaje = ("los numeros que hay entre" + num1 + "y" + num2 + "son:")
+    // PROFE CUANDO HAGO EL CAMBIO SOLO FUNCIONA SI EL IF SI LO PONGO AL REVES NO SALE 
+    //COMO SE HARIA PARA CUALQUIRA DE LOS DOS CASOS?????????????? 
+    if (num1 > num2) {
+       
+        cambio = num1;
+        num1 = num2;
+        num2 = cambio;
+
+        console.log(num1);  // me cambia el numero uno si es menor por el numero dos al mayor
+        console.log(num2);
+        console.log(cambio); 
+        console.log(num1);
+        console.log("entra al bucle, siempre una primera vez");
+
+
+    }
+    while (contador <= num2) {
+        // la idea es que contador tome el valor del primer numero y lo vaya sumando o iterando
+        // console.log(contador);
+        // console.log(numero); */
+        mensaje = mensaje + contador + (" ");
+        contador++;
+    }
+
+    alert(mensaje);
+
+
+    //LO MISMO CON DO WHILE
+
+
+    var number1 = prompt("Introduce un numero 1");
+    var number2 = prompt("Introduce un numero 2");
+    var mensaje = " ";
+
+    var i = parseInt(number1);// i es un contador q se  inicializo  con el mismo valor del numero 1 para que vaya suamndo o iterando
+    number2 = parseInt(number2);
+
+    if (i > number2) { // i tiene el valor del numero uno , si ponen de pruimero un numero menor que el segundo , se cambia
+        i = number2;//  console.log(num2); me cambia el numero uno si es menor por el numero dos al mayor
+        number2 = number1;
+    }
+
+    do {
+        mensaje += i + " ";
+        i++; // el contador i se va a iterar(aumentar mientas sea menor que el numero dos y me lo va a gauradar en la variable mensaje para mostrarlo despues )
+
+    } while (i <= number2);
+    alert(mensaje)
+</script>
+
+<body>
+
+</body>
+
+</html>
